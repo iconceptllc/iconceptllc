@@ -10,73 +10,76 @@ export default function Preloader({
 }) {
   const [loading, setLoading] = useState(true);
   const [curtainRaised, setCurtainRaised] = useState(false);
+  const [hidePreloader, setHidePreloader] = useState(false);
 
   useEffect(() => {
-    // Simulate loading time (minimum 2 seconds for animation to be visible)
     const timer = setTimeout(() => {
       setLoading(false);
-      // Start curtain animation after loading completes
+      // Start curtain raise immediately after icon starts fading
       setTimeout(() => {
         setCurtainRaised(true);
-      }, 100);
+      }, 300);
+      // Hide preloader completely after animations
+      setTimeout(() => {
+        setHidePreloader(true);
+      }, 2000);
     }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
 
+  if (hidePreloader) {
+    return <>{children}</>;
+  }
+
   return (
     <>
       {children}
 
-      {/* Preloader Overlay */}
+      {/* Curtain that rises up - this is BEHIND the loading screen */}
       <div
-        className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-500 ${
-          curtainRaised ? "pointer-events-none opacity-0" : "opacity-100"
-        }`}
+        className="fixed inset-0 z-40 overflow-hidden"
+        style={{ pointerEvents: "none" }}
       >
-        {/* Rotating Icon */}
         <div
-          className={`transition-all duration-700 ${
-            loading ? "scale-100 opacity-100" : "scale-75 opacity-0"
-          }`}
+          className="curtain-wrapper"
+          style={{
+            transform: curtainRaised ? "translateY(-100%)" : "translateY(0)",
+          }}
         >
-          <Image
-            src="/iconcept-icon.png"
-            alt="iConcept Logo"
-            width={120}
-            height={120}
-            className="animate-spin-slow"
-            priority
-          />
-        </div>
-      </div>
-
-      {/* Curtain Layer */}
-      <div
-        className={`fixed inset-0 z-40 overflow-hidden pointer-events-none`}
-        style={{ opacity: loading ? 0 : 1 }}
-      >
-        {/* Main Curtain */}
-        <div
-          className={`absolute inset-x-0 bottom-0 bg-black transition-transform duration-1000 ease-[cubic-bezier(0.76,0,0.24,1)] ${
-            curtainRaised ? "-translate-y-full" : "translate-y-0"
-          }`}
-          style={{ height: "120vh" }}
-        >
-          {/* Curved Top Edge */}
-          <div className="absolute -top-24 left-0 right-0 h-32">
+          {/* Main curtain body with integrated curve using clip-path */}
+          <div className="curtain-body">
             <svg
-              viewBox="0 0 1440 120"
+              className="curtain-svg"
+              viewBox="0 0 100 100"
               preserveAspectRatio="none"
-              className="h-full w-full"
             >
               <path
-                d="M0,120 L0,60 Q360,0 720,60 Q1080,120 1440,60 L1440,120 Z"
+                d="M0,0 L0,85 Q50,100 100,85 L100,0 Z"
                 fill="black"
               />
             </svg>
           </div>
         </div>
+      </div>
+
+      {/* Loading screen with icon - this is ON TOP */}
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black"
+        style={{
+          opacity: loading ? 1 : 0,
+          visibility: loading ? "visible" : "hidden",
+          transition: "opacity 0.4s ease",
+        }}
+      >
+        <Image
+          src="/iconcept-icon.png"
+          alt="iConcept Logo"
+          width={120}
+          height={120}
+          className="animate-spin-slow"
+          priority
+        />
       </div>
 
       <style jsx global>{`
@@ -91,6 +94,30 @@ export default function Preloader({
 
         .animate-spin-slow {
           animation: spin-slow 2s linear infinite;
+        }
+
+        .curtain-wrapper {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 115vh;
+          will-change: transform;
+          transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .curtain-body {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 100%;
+        }
+
+        .curtain-svg {
+          width: 100%;
+          height: 100%;
+          display: block;
         }
       `}</style>
     </>
