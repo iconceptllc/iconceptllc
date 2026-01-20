@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Funnel_Display, Handjet } from "next/font/google";
 import "./globals.css";
 import Preloader from "./components/Preloader";
+import CustomCursor from "./components/CustomCursor";
 
 const funnelDisplay = Funnel_Display({
   variable: "--font-funnel-display",
@@ -40,6 +41,7 @@ export default function RootLayout({
       <body
         className={`${funnelDisplay.variable} ${handjet.variable}`}
       >
+        <CustomCursor />
         <Preloader>{children}</Preloader>
       </body>
     </html>
