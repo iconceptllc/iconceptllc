@@ -1,0 +1,249 @@
+"use client";
+
+import Link from "next/link";
+
+const services = [
+  {
+    number: "01",
+    title: "UI/UX Design",
+    items: ["UI/UX Design", "Web Development", "Marketing"],
+  },
+  {
+    number: "02",
+    title: "User Research",
+    items: ["UI/UX Design", "Web Development", "Marketing"],
+  },
+  {
+    number: "03",
+    title: "Branding",
+    items: ["UI/UX Design", "Web Development", "Marketing"],
+  },
+  {
+    number: "04",
+    title: "3D & Motion",
+    items: ["UI/UX Design", "Web Development", "Marketing"],
+  },
+];
+
+export default function ServicesSection() {
+  return (
+    <section className="services-section">
+      <div className="sec-head">
+        <h6>OUR SERVICES</h6>
+      </div>
+
+      <div className="services-list">
+        {services.map((service, index) => (
+          <div key={index} className="service-item">
+            <div className="service-row">
+              <div className="service-left">
+                <span className="number">{service.number}</span>
+                <Link href="/services" className="service-title">
+                  {service.title}
+                </Link>
+              </div>
+              <div className="service-middle">
+                <ul>
+                  {service.items.map((item, i) => (
+                    <li key={i}>+ {item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="service-right">
+                <Link href="/services" className="arrow-btn">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7 11.5H17.0635M17.0635 11.5L12.5635 7M17.0635 11.5L12.5635 16"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="view-all">
+        <Link href="/services" className="view-all-btn">
+          <span>VIEW ALL SERVICES</span>
+          <span className="arrow-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 11.5H17.0635M17.0635 11.5L12.5635 7M17.0635 11.5L12.5635 16"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+            </svg>
+          </span>
+        </Link>
+      </div>
+
+      <style jsx>{`
+        .services-section {
+          background: #1a1a1a;
+          border-radius: 15px;
+          padding: 60px 40px;
+          margin-top: 20px;
+        }
+
+        .sec-head {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          padding-bottom: 20px;
+          margin-bottom: 60px;
+        }
+
+        .sec-head h6 {
+          font-size: 0.875rem;
+          font-weight: 500;
+          letter-spacing: 1px;
+          color: white;
+        }
+
+        .service-item {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          padding: 30px 0;
+        }
+
+        .service-item:first-child {
+          padding-top: 0;
+        }
+
+        .service-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr auto;
+          align-items: center;
+          gap: 20px;
+        }
+
+        .service-left {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+        }
+
+        .number {
+          font-size: 0.875rem;
+          color: rgba(255, 255, 255, 0.5);
+        }
+
+        .service-left :global(.service-title) {
+          font-size: 2rem;
+          font-weight: 500;
+          color: white;
+          text-decoration: none;
+          transition: opacity 0.3s ease;
+        }
+
+        .service-left :global(.service-title:hover) {
+          opacity: 0.7;
+        }
+
+        .service-middle ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .service-middle li {
+          font-size: 0.875rem;
+          color: rgba(255, 255, 255, 0.6);
+          margin-bottom: 8px;
+        }
+
+        .service-middle li:last-child {
+          margin-bottom: 0;
+        }
+
+        .service-right :global(.arrow-btn) {
+          width: 50px;
+          height: 50px;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          transition: all 0.3s ease;
+        }
+
+        .service-right :global(.arrow-btn:hover) {
+          background: white;
+          color: black;
+        }
+
+        .service-right :global(.arrow-btn) svg {
+          width: 24px;
+          height: 24px;
+        }
+
+        .view-all {
+          display: flex;
+          justify-content: center;
+          margin-top: 50px;
+        }
+
+        .view-all :global(.view-all-btn) {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 15px 30px;
+          background: #8b5cf6;
+          border-radius: 30px;
+          color: white;
+          text-decoration: none;
+          font-size: 0.875rem;
+          font-weight: 500;
+          letter-spacing: 0.5px;
+          transition: all 0.3s ease;
+        }
+
+        .view-all :global(.view-all-btn:hover) {
+          background: #7c3aed;
+        }
+
+        .arrow-icon {
+          display: flex;
+        }
+
+        .arrow-icon svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        @media (max-width: 1024px) {
+          .service-row {
+            grid-template-columns: 1fr auto;
+          }
+
+          .service-middle {
+            display: none;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .services-section {
+            padding: 40px 20px;
+          }
+
+          .service-left :global(.service-title) {
+            font-size: 1.5rem;
+          }
+
+          .service-left {
+            gap: 15px;
+          }
+        }
+      `}</style>
+    </section>
+  );
+}
