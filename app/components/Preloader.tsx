@@ -13,19 +13,30 @@ export default function Preloader({
   const [hidePreloader, setHidePreloader] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    let curtainTimer: ReturnType<typeof setTimeout> | null = null;
+    let hideTimer: ReturnType<typeof setTimeout> | null = null;
+
+    const minDisplayTimer = setTimeout(() => {
       setLoading(false);
       // Start curtain raise immediately after icon starts fading
-      setTimeout(() => {
+      curtainTimer = setTimeout(() => {
         setCurtainRaised(true);
-      }, 300);
-      // Hide preloader completely after animations
-      setTimeout(() => {
+      }, 100);
+      // Hide preloader quickly after animations
+      hideTimer = setTimeout(() => {
         setHidePreloader(true);
-      }, 2000);
-    }, 2000);
+      }, 900);
+    }, 200);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(minDisplayTimer);
+      if (curtainTimer) {
+        clearTimeout(curtainTimer);
+      }
+      if (hideTimer) {
+        clearTimeout(hideTimer);
+      }
+    };
   }, []);
 
   if (hidePreloader) {
@@ -72,30 +83,19 @@ export default function Preloader({
           transition: "opacity 0.4s ease",
         }}
       >
-        <Image
-          src="/iconcept-icon.png"
-          alt="iConcept Logo"
-          width={120}
-          height={120}
-          className="animate-spin-slow"
-          priority
-        />
+        <div className="animate-spin-slow">
+          <Image
+            src="/iconcept-icon.png"
+            alt="iConcept Logo"
+            width={120}
+            height={120}
+            className="block"
+            priority
+          />
+        </div>
       </div>
 
       <style jsx global>{`
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-
-        .animate-spin-slow {
-          animation: spin-slow 2s linear infinite;
-        }
-
         .curtain-wrapper {
           position: absolute;
           top: 0;

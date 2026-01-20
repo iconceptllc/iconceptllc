@@ -82,38 +82,7 @@ export default function HeroSection() {
               <h1 className="title-agency">agency</h1>
             </div>
 
-            <div className="clutch-rating">
-              <div className="clutch-icon">
-                <Image
-                  src="/logo-clutch.svg"
-                  alt="Clutch"
-                  width={40}
-                  height={40}
-                />
-              </div>
-              <div className="clutch-info">
-                <h6 className="rating-text">
-                  4.9/5
-                  <span className="stars">
-                    {[...Array(5)].map((_, i) => (
-                      <svg
-                        key={i}
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="#f5a623"
-                      >
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                      </svg>
-                    ))}
-                  </span>
-                </h6>
-                <p>
-                  Based on 24 reviews on <a href="#">Clutch</a>
-                </p>
-              </div>
-            </div>
+            
           </div>
         </div>
 
@@ -294,48 +263,7 @@ export default function HeroSection() {
           margin-top: 0;
         }
 
-        .clutch-rating {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-        }
-
-        .clutch-icon {
-          background: white;
-          border-radius: 50%;
-          width: 50px;
-          height: 50px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-
-        .rating-text {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 0.95rem;
-          font-weight: 600;
-          color: white;
-          margin: 0;
-        }
-
-        .stars {
-          display: flex;
-          gap: 2px;
-        }
-
-        .clutch-info p {
-          font-size: 0.75rem;
-          color: rgba(255, 255, 255, 0.6);
-          margin-top: 3px;
-        }
-
-        .clutch-info a {
-          color: white;
-          text-decoration: underline;
-        }
+       
 
         .hero-right {
           display: flex;
