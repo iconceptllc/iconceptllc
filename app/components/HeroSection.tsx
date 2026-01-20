@@ -497,22 +497,22 @@ export default function HeroSection() {
         }
 
         .slide-pink {
-          background: #ff6b81;
+          background: #f82cbb;
           color: white;
         }
 
         .slide-yellow {
-          background: #f5d547;
+          background: #dbbb06;
           color: black;
         }
 
         .slide-coral {
-          background: #ff8a65;
+          background: #fd5a4a;
           color: white;
         }
 
         .slide-teal {
-          background: #20c997;
+          background: #14aab5;
           color: white;
         }
 

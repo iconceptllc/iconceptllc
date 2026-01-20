@@ -46,15 +46,15 @@ export default function LeftSidebar() {
             <Image
               src="/circle-text.svg"
               alt="Circle Text"
-              width={150}
-              height={150}
+              width={210}
+              height={210}
               className="circle-text"
             />
             <Image
               src="/iconcept-icon.png"
               alt="iConcept Icon"
-              width={120}
-              height={120}
+              width={170}
+              height={170}
               className="center-icon"
             />
           </div>
@@ -147,7 +147,7 @@ export default function LeftSidebar() {
           top: 0;
           left: 50%;
           transform: translateX(-50%);
-          width: 80%;
+          width: 85%;
           max-width: 1600px;
           height: 100vh;
           display: flex;
@@ -158,7 +158,7 @@ export default function LeftSidebar() {
         }
 
         .left-sidebar > * {
-          width: 350px;
+          width: 300px;
           pointer-events: auto;
         }
 
@@ -192,10 +192,15 @@ export default function LeftSidebar() {
         }
 
         .circle-text-wrapper {
-          position: relative;
-          width: 150px;
-          height: 150px;
+          width: 220px;
+          height: 220px;
           margin: 0 auto;
+          position: relative;
+          border-radius: 50%;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .circle-text-wrapper :global(.circle-text) {
@@ -220,8 +225,8 @@ export default function LeftSidebar() {
 
         .contact-info {
           margin-top: 30px;
-          color: #999;
-          font-size: 14px;
+          color: #fff;
+          font-size: 18px;
         }
 
         .contact-info ul {

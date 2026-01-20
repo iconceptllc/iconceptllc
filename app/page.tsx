@@ -51,12 +51,12 @@ export default function Home() {
 
         .content-wrapper {
           display: flex;
-          gap: 24px;
+          gap: 12px;
         }
 
         .left-spacer {
           flex-shrink: 0;
-          width: 350px;
+          width: 300px;
         }
 
         .right-content {
