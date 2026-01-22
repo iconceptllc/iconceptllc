@@ -265,3 +265,34 @@ a:hover {
   margin-top: -35px;
 }
 
+/* ============================================
+   Work With Us Button
+   ============================================ */
+
+.work-with-us-btn {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 10px;
+  padding: 14px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+
+.work-with-us-btn:hover {
+  background: white;
+  color: #1a1a1a;
+  border-color: white;
+}
+
+.work-with-us-btn .btn-icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+

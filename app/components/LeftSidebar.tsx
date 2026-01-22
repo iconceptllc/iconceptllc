@@ -279,27 +279,31 @@ export default function LeftSidebar() {
           padding-left: 30px;
         }
 
-        .work-with-us-btn {
+        :global(.work-with-us-btn) {
           display: inline-flex;
+          flex-direction: row;
           align-items: center;
           gap: 10px;
-          padding: 12px 24px;
+          padding: 14px 26px;
           border: 1px solid rgba(255, 255, 255, 0.3);
-          border-radius: 30px;
-          color: white;
+          border-radius: 50px;
+          color: rgba(255, 255, 255, 0.7);
           text-decoration: none;
           font-size: 14px;
-          transition: all 0.3s ease;
+          transition: all 0.4s ease;
+          background: transparent;
         }
 
-        .work-with-us-btn:hover {
+        :global(.work-with-us-btn:hover) {
           background: white;
-          color: black;
+          color: #1a1a1a;
+          border-color: white;
         }
 
-        .btn-icon {
-          display: flex;
+        :global(.work-with-us-btn .btn-icon) {
+          display: inline-flex;
           align-items: center;
+          flex-shrink: 0;
         }
 
         @media (max-width: 1024px) {
