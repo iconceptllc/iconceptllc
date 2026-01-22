@@ -121,8 +121,6 @@ export default function LeftSidebar() {
 
       <div className="sidebar-bottom">
         <Link href="/contact" className="work-with-us-btn">
-          <span className="btn-border"></span>
-          <span className="btn-fill"></span>
           <span className="btn-icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +137,7 @@ export default function LeftSidebar() {
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
             </svg>
           </span>
-          <span className="btn-text">Work With Us</span>
+          <span>Work With Us</span>
         </Link>
       </div>
 
@@ -285,61 +283,23 @@ export default function LeftSidebar() {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          padding: 14px 28px;
-          border-radius: 50px;
-          color: rgba(255, 255, 255, 0.6);
+          padding: 12px 24px;
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-radius: 30px;
+          color: white;
           text-decoration: none;
           font-size: 14px;
-          position: relative;
-          background: transparent;
-          transition: color 0.5s ease;
-        }
-
-        .btn-border {
-          position: absolute;
-          inset: 0;
-          border-radius: 50px;
-          border: 1px solid rgba(255, 255, 255, 0.25);
-          transition: border-color 0.5s ease;
-          pointer-events: none;
-        }
-
-        .btn-fill {
-          position: absolute;
-          top: 4px;
-          left: 4px;
-          right: 4px;
-          bottom: 4px;
-          border-radius: 50px;
-          background: white;
-          transform: scaleX(0);
-          transform-origin: left center;
-          transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-          pointer-events: none;
+          transition: all 0.3s ease;
         }
 
         .work-with-us-btn:hover {
-          color: #1a1a1a;
-        }
-
-        .work-with-us-btn:hover .btn-border {
-          border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .work-with-us-btn:hover .btn-fill {
-          transform: scaleX(1);
+          background: white;
+          color: black;
         }
 
         .btn-icon {
           display: flex;
           align-items: center;
-          position: relative;
-          z-index: 1;
-        }
-
-        .btn-text {
-          position: relative;
-          z-index: 1;
         }
 
         @media (max-width: 1024px) {
