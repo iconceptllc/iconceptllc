@@ -120,7 +120,9 @@ export default function LeftSidebar() {
       </div>
 
       <div className="sidebar-bottom">
-        <Link href="/contact" className="work-with-us-btn flex items-center gap-2">
+        <Link href="/contact" className="work-with-us-btn">
+          <span className="btn-border"></span>
+          <span className="btn-fill"></span>
           <span className="btn-icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +139,7 @@ export default function LeftSidebar() {
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
             </svg>
           </span>
-          <span>Work With Us</span>
+          <span className="btn-text">Work With Us</span>
         </Link>
       </div>
 
@@ -254,12 +256,25 @@ export default function LeftSidebar() {
         }
 
         .social-icons a {
-          color: #999;
-          transition: color 0.3s ease;
+              color: #999;
+              transition: color .3s;
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              margin: 0 2px;
+              font-size: 14px;
+              width: 50px;
+              height: 50px;
+              line-height: 50px;
+              border-radius: 50%;
+              transition: all 0.4s;
+              display: flex;
+              justify-content: center;
+              align-items: center;
         }
 
         .social-icons a:hover {
           color: white;
+          background: #fff;
+          color: #1f1f1f;
         }
 
         .sidebar-bottom {
@@ -270,23 +285,61 @@ export default function LeftSidebar() {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          padding: 12px 24px;
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          border-radius: 30px;
-          color: white;
+          padding: 14px 28px;
+          border-radius: 50px;
+          color: rgba(255, 255, 255, 0.6);
           text-decoration: none;
           font-size: 14px;
-          transition: all 0.3s ease;
+          position: relative;
+          background: transparent;
+          transition: color 0.5s ease;
+        }
+
+        .btn-border {
+          position: absolute;
+          inset: 0;
+          border-radius: 50px;
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          transition: border-color 0.5s ease;
+          pointer-events: none;
+        }
+
+        .btn-fill {
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          right: 4px;
+          bottom: 4px;
+          border-radius: 50px;
+          background: white;
+          transform: scaleX(0);
+          transform-origin: left center;
+          transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          pointer-events: none;
         }
 
         .work-with-us-btn:hover {
-          background: white;
-          color: black;
+          color: #1a1a1a;
+        }
+
+        .work-with-us-btn:hover .btn-border {
+          border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .work-with-us-btn:hover .btn-fill {
+          transform: scaleX(1);
         }
 
         .btn-icon {
           display: flex;
           align-items: center;
+          position: relative;
+          z-index: 1;
+        }
+
+        .btn-text {
+          position: relative;
+          z-index: 1;
         }
 
         @media (max-width: 1024px) {
