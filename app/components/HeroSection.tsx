@@ -1,7 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
+
+const serviceTags = [
+  { id: 1, label: "Video Production", color: "tag-pink", finalPos: { top: "15%", left: "25%", rotate: -5 } },
+  { id: 2, label: "Web Solutions", color: "tag-cyan", finalPos: { top: "32%", left: "15%", rotate: 8 } },
+  { id: 3, label: "Marketing & Advertising", color: "tag-yellow", finalPos: { top: "52%", left: "5%", rotate: -3 } },
+  { id: 4, label: "AI, 3D, CGI Production", color: "tag-green", finalPos: { top: "72%", left: "10%", rotate: 5 } },
+];
 
 const servicesSlides = [
   {
@@ -36,6 +43,98 @@ const servicesSlides = [
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(2);
+  const [tagsAnimated, setTagsAnimated] = useState(false);
+  const [animationComplete, setAnimationComplete] = useState(false);
+  const [tagPositions, setTagPositions] = useState<{ [key: number]: { x: number; y: number } }>({});
+  const [draggingTag, setDraggingTag] = useState<number | null>(null);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const [velocity, setVelocity] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const lastMousePos = useRef({ x: 0, y: 0, time: Date.now() });
+
+  // Trigger falling animation after page loads
+  useEffect(() => {
+    const timer = setTimeout(() => setTagsAnimated(true), 800);
+    // Animation complete after all tags have landed (4 tags * 0.3s delay + 0.8s animation)
+    const completeTimer = setTimeout(() => setAnimationComplete(true), 3000);
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(completeTimer);
+    };
+  }, []);
+
+  // Handle drag start
+  const handleDragStart = useCallback((e: React.MouseEvent | React.TouchEvent, tagId: number) => {
+    e.preventDefault();
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+
+    setDraggingTag(tagId);
+    setDragStart({ x: clientX, y: clientY });
+    lastMousePos.current = { x: clientX, y: clientY, time: Date.now() };
+  }, []);
+
+  // Handle drag move
+  const handleDragMove = useCallback((e: React.MouseEvent | React.TouchEvent) => {
+    if (draggingTag === null) return;
+
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+
+    const now = Date.now();
+    const dt = Math.max(now - lastMousePos.current.time, 1);
+
+    setVelocity({
+      x: (clientX - lastMousePos.current.x) / dt * 16,
+      y: (clientY - lastMousePos.current.y) / dt * 16,
+    });
+
+    lastMousePos.current = { x: clientX, y: clientY, time: now };
+
+    const dx = clientX - dragStart.x;
+    const dy = clientY - dragStart.y;
+
+    setTagPositions(prev => ({
+      ...prev,
+      [draggingTag]: { x: dx, y: dy }
+    }));
+  }, [draggingTag, dragStart]);
+
+  // Handle drag end with bounce back
+  const handleDragEnd = useCallback(() => {
+    if (draggingTag === null) return;
+
+    const tagId = draggingTag;
+    const currentPos = tagPositions[tagId] || { x: 0, y: 0 };
+    const vel = velocity;
+
+    // Apply throw effect - stronger multiplier for more dramatic throw
+    const throwMultiplier = 15;
+    const throwDistance = {
+      x: vel.x * throwMultiplier,
+      y: vel.y * throwMultiplier
+    };
+
+    // First, throw in the direction with momentum
+    setTagPositions(prev => ({
+      ...prev,
+      [tagId]: {
+        x: currentPos.x + throwDistance.x,
+        y: currentPos.y + throwDistance.y
+      }
+    }));
+
+    // Then bounce back to origin with a slight delay
+    setTimeout(() => {
+      setTagPositions(prev => ({
+        ...prev,
+        [tagId]: { x: 0, y: 0 }
+      }));
+    }, 300);
+
+    setDraggingTag(null);
+    setVelocity({ x: 0, y: 0 });
+  }, [draggingTag, tagPositions, velocity]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % servicesSlides.length);
@@ -94,12 +193,37 @@ export default function HeroSection() {
               At iconcept we blend creativity with strategy, turning bold ideas
               into digital experiences that captivate and inspire.
             </h6>
-            <div className="service-tags-wrapper">
+            <div
+              className="service-tags-wrapper"
+              ref={containerRef}
+              onMouseMove={handleDragMove}
+              onMouseUp={handleDragEnd}
+              onMouseLeave={handleDragEnd}
+              onTouchMove={handleDragMove}
+              onTouchEnd={handleDragEnd}
+            >
               <div className="service-tags">
-                <span className="tag tag-teal rotate-1">Web Solutions</span>
-                <span className="tag tag-pink rotate-2">Video Production</span>
-                <span className="tag tag-orange rotate-3">AI, 3D, CGI Production</span>
-                <span className="tag tag-yellow rotate-4">Marketing & Advertising</span>
+                {serviceTags.map((tag, index) => (
+                  <span
+                    key={tag.id}
+                    className={`tag ${tag.color} ${tagsAnimated ? 'tag-landed' : 'tag-falling'} ${animationComplete ? 'draggable' : ''}`}
+                    style={{
+                      position: 'absolute',
+                      top: tag.finalPos.top,
+                      left: tag.finalPos.left,
+                      ['--final-rotate' as string]: `${tag.finalPos.rotate}deg`,
+                      ['--drag-x' as string]: `${tagPositions[tag.id]?.x || 0}px`,
+                      ['--drag-y' as string]: `${tagPositions[tag.id]?.y || 0}px`,
+                      animationDelay: `${index * 0.35}s`,
+                      transition: draggingTag === tag.id ? 'none' : 'transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+                      cursor: draggingTag === tag.id ? 'grabbing' : 'grab',
+                    }}
+                    onMouseDown={(e) => handleDragStart(e, tag.id)}
+                    onTouchStart={(e) => handleDragStart(e, tag.id)}
+                  >
+                    {tag.label}
+                  </span>
+                ))}
               </div>
               <div className="icon-circle icon-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -120,7 +244,7 @@ export default function HeroSection() {
           <div className={`services-slider ${servicesSlides[currentSlide].color}`}>
             <div className="slide-item">
               <div className="slide-header">
-                <span className="plus-icon">+</span>
+               
                 <div>
                   <h4>{servicesSlides[currentSlide].title}</h4>
                   <span className="subtitle">
@@ -246,13 +370,14 @@ export default function HeroSection() {
         }
 
         .tagline {
-          max-width: 180px;
-          font-size: 0.75rem;
-          font-weight: 300;
-          line-height: 1.6;
-          color: rgba(255, 255, 255, 0.7);
+          color: #ffffffb3;
+          max-width: 230px;
           margin: 0;
-          padding-top: 8px;
+          padding-top: 25px;
+          font-size: .85rem;
+          font-weight: 30;
+          line-height: 1.1rem;
+          text-align: right;
         }
 
         .title-digital {
@@ -273,54 +398,86 @@ export default function HeroSection() {
         }
 
         .services-info {
-          background: #1a1a1a;
+          background: #fff;
           border-radius: 15px;
           padding: 25px;
-          height: 50%;
+          height: 55%;
           display: flex;
           flex-direction: column;
         }
 
         .services-info h6 {
-          font-size: 1.1rem;
-          font-weight: 400;
-          line-height: 1.5;
-          color: white;
+          font-size: 1.3rem;
+          font-weight: 500;
+          line-height: 1.2;
+          color: #212529;
           margin: 0 0 20px 0;
         }
 
         .service-tags-wrapper {
           flex: 1;
           position: relative;
+          overflow: visible;
         }
 
         .service-tags {
-          position: relative;
-          height: 100%;
+          position: absolute;
+          inset: 0;
+          overflow: visible;
         }
 
         .tag {
-          padding: 6px 14px;
-          border-radius: 20px;
-          font-size: 0.65rem;
+          padding: 8px 18px;
+          border-radius: 25px;
+          font-size: 0.75rem;
           font-weight: 500;
           white-space: nowrap;
-          position: absolute;
+          user-select: none;
+          z-index: 10;
         }
 
-        .tag-teal {
-          background: #20c997;
-          color: white;
+        .tag-falling {
+          opacity: 0;
+          transform: translateY(-400px) rotate(0deg);
+        }
+
+        .tag-landed {
+          animation: fallAndBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .tag-landed.draggable {
+          animation: none;
+          transform: translate(var(--drag-x, 0px), var(--drag-y, 0px)) rotate(var(--final-rotate, 0deg));
+        }
+
+        @keyframes fallAndBounce {
+          0% {
+            opacity: 0;
+            transform: translateY(-400px) rotate(0deg);
+          }
+          50% {
+            opacity: 1;
+          }
+          70% {
+            transform: translate(var(--drag-x, 0px), calc(var(--drag-y, 0px) + 15px)) rotate(var(--final-rotate, 0deg));
+          }
+          85% {
+            transform: translate(var(--drag-x, 0px), calc(var(--drag-y, 0px) - 8px)) rotate(var(--final-rotate, 0deg));
+          }
+          100% {
+            opacity: 1;
+            transform: translate(var(--drag-x, 0px), var(--drag-y, 0px)) rotate(var(--final-rotate, 0deg));
+          }
         }
 
         .tag-pink {
-          background: #ff6b81;
+          background: #ff6b9d;
           color: white;
         }
 
-        .tag-orange {
-          background: #ff9f43;
-          color: black;
+        .tag-cyan {
+          background: #17c3d6;
+          color: white;
         }
 
         .tag-yellow {
@@ -328,28 +485,9 @@ export default function HeroSection() {
           color: black;
         }
 
-        .rotate-1 {
-          top: 5px;
-          right: -10px;
-          transform: rotate(90deg);
-        }
-
-        .rotate-2 {
-          top: 45px;
-          left: 50px;
-          transform: rotate(15deg);
-        }
-
-        .rotate-3 {
-          top: 85px;
-          left: 30px;
-          transform: rotate(20deg);
-        }
-
-        .rotate-4 {
-          bottom: 10px;
-          left: 20px;
-          transform: rotate(15deg);
+        .tag-green {
+          background: #7edd8a;
+          color: black;
         }
 
         .icon-circle {
@@ -363,16 +501,17 @@ export default function HeroSection() {
           justify-content: center;
           color: white;
           position: absolute;
+          z-index: 5;
         }
 
         .icon-1 {
           left: 5px;
-          top: 50px;
+          top: 5%;
         }
 
         .icon-2 {
-          right: 15px;
-          bottom: 5px;
+          right: 5px;
+          bottom: 5%;
         }
 
         .services-slider {
@@ -380,7 +519,7 @@ export default function HeroSection() {
           overflow: hidden;
           display: flex;
           flex-direction: column;
-          height: 50%;
+          height: 45%;
         }
 
         .slide-item {
@@ -405,21 +544,21 @@ export default function HeroSection() {
         }
 
         .slide-item h4 {
-          font-size: 1.2rem;
+          font-size: 1.7rem;
           font-weight: 600;
           margin: 0;
           line-height: 1.1;
         }
 
         .slide-item .subtitle {
-          font-size: 0.85rem;
+          font-size: 1.1rem;
           opacity: 0.8;
           display: block;
         }
 
         .slide-item p {
-          font-size: 0.75rem;
-          line-height: 1.55;
+          font-size: 0.9rem;
+          line-height: 1.75;
           opacity: 0.9;
           margin: 0;
         }
