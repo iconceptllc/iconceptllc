@@ -1,31 +1,47 @@
 "use client";
 
 import Link from "next/link";
+import { useRef, useCallback } from "react";
 
 const services = [
   {
     number: "01",
     title: "UI/UX Design",
     items: ["UI/UX Design", "Web Development", "Marketing"],
+    image: "/imgs/serv/s1.jpg",
   },
   {
     number: "02",
     title: "User Research",
     items: ["UI/UX Design", "Web Development", "Marketing"],
+    image: "/imgs/serv/s2.jpg",
   },
   {
     number: "03",
     title: "Branding",
     items: ["UI/UX Design", "Web Development", "Marketing"],
+    image: "/imgs/serv/s3.jpg",
   },
   {
     number: "04",
     title: "3D & Motion",
     items: ["UI/UX Design", "Web Development", "Marketing"],
+    image: "/imgs/serv/s4.jpg",
   },
 ];
 
 export default function ServicesSection() {
+  const imgRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent, index: number) => {
+    const el = imgRefs.current[index];
+    if (!el) return;
+    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    el.style.transform = `translate(${x}px, ${y}px)`;
+  }, []);
+
   return (
     <section className="services-section">
       <div className="sec-head">
@@ -34,7 +50,11 @@ export default function ServicesSection() {
 
       <div className="services-list">
         {services.map((service, index) => (
-          <div key={index} className="service-item">
+          <div
+            key={index}
+            className="service-item"
+            onMouseMove={(e) => handleMouseMove(e, index)}
+          >
             <div className="service-row">
               <div className="service-left">
                 <span className="number">{service.number}</span>
@@ -65,6 +85,11 @@ export default function ServicesSection() {
                 </Link>
               </div>
             </div>
+            <div
+              className="reveal-img"
+              ref={(el) => { imgRefs.current[index] = el; }}
+              style={{ backgroundImage: `url(${service.image})` }}
+            />
           </div>
         ))}
       </div>
@@ -112,10 +137,33 @@ export default function ServicesSection() {
         .service-item {
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           padding: 30px 0;
+          position: relative;
         }
 
         .service-item:first-child {
           padding-top: 0;
+        }
+
+        .reveal-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 200px;
+          height: 140px;
+          background-size: cover;
+          background-position: center;
+          border-radius: 8px;
+          pointer-events: none;
+          opacity: 0;
+          transform: translate(0, 0);
+          transition: opacity 0.3s ease;
+          z-index: 5;
+          margin-top: -70px;
+          margin-left: -100px;
+        }
+
+        .service-item:hover .reveal-img {
+          opacity: 1;
         }
 
         .service-row {
