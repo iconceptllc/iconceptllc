@@ -19,18 +19,31 @@ export default function ClientsSection() {
         <h6>OUR CLIENTS</h6>
       </div>
 
-      <div className="clients-grid">
-        {clients.map((client, index) => (
-          <div key={index} className="client-item">
-            <Image
-              src={client.logo}
-              alt={client.name}
-              width={120}
-              height={60}
-              style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }}
-            />
-          </div>
-        ))}
+      <div className="clients-carousel" aria-label="Client logos">
+        <div className="clients-track">
+          {clients.map((client, index) => (
+            <div key={`client-${index}`} className="client-item">
+              <Image
+                src={client.logo}
+                alt={client.name}
+                width={120}
+                height={60}
+                style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }}
+              />
+            </div>
+          ))}
+          {clients.map((client, index) => (
+            <div key={`client-dup-${index}`} className="client-item">
+              <Image
+                src={client.logo}
+                alt={client.name}
+                width={120}
+                height={60}
+                style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }}
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       <style jsx>{`
@@ -54,11 +67,17 @@ export default function ClientsSection() {
           color: white;
         }
 
-        .clients-grid {
-          display: grid;
-          grid-template-columns: repeat(6, 1fr);
-          gap: 30px;
+        .clients-carousel {
+          overflow: hidden;
+          position: relative;
+        }
+
+        .clients-track {
+          display: flex;
           align-items: center;
+          gap: 30px;
+          width: max-content;
+          animation: marquee 24s linear infinite;
         }
 
         .client-item {
@@ -67,15 +86,19 @@ export default function ClientsSection() {
           justify-content: center;
           opacity: 0.6;
           transition: opacity 0.3s ease;
+          min-width: 160px;
         }
 
         .client-item:hover {
           opacity: 1;
         }
 
-        @media (max-width: 1024px) {
-          .clients-grid {
-            grid-template-columns: repeat(3, 1fr);
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
           }
         }
 
@@ -84,8 +107,9 @@ export default function ClientsSection() {
             padding: 40px 20px;
           }
 
-          .clients-grid {
-            grid-template-columns: repeat(2, 1fr);
+          .clients-track {
+            gap: 20px;
+            animation-duration: 18s;
           }
         }
       `}</style>
