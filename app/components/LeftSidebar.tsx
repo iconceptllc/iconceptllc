@@ -67,7 +67,7 @@ export default function LeftSidebar() {
               <li>Dubai &amp; Sharjah</li>
               <li>United Arab Emirates</li>
             </ul>
-            <span className="copyright">© 2024, All Rights Reserved</span>
+            <span className="copyright">© 2026, All Rights Reserved</span>
             <div className="social-icons">
               <a href="#" aria-label="Twitter">
                 <svg
