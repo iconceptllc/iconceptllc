@@ -287,15 +287,15 @@ export default function HeroSection() {
               <div
                 className={`slides-track ${isSliding ? "is-animating" : ""}`}
                 style={{
-                  width: transition ? "200%" : "100%",
+                  width: transition ? "calc(200% + 10px)" : "100%",
                   transform: transition
                     ? transition.direction === "next"
                       ? isSliding
-                        ? "translateX(-50%)"
+                        ? "translateX(calc(-50% - 5px))"
                         : "translateX(0%)"
                       : isSliding
                         ? "translateX(0%)"
-                        : "translateX(-50%)"
+                        : "translateX(calc(-50% - 5px))"
                     : "translateX(0%)",
                 }}
               >
@@ -643,6 +643,7 @@ export default function HeroSection() {
           display: flex;
           height: 100%;
           transform: translateX(0%);
+          gap: 10px;
         }
 
         .slides-track.is-animating {
