@@ -171,6 +171,8 @@ export default function ServicesSection() {
           grid-template-columns: 1fr 1fr auto;
           align-items: center;
           gap: 20px;
+          z-index: 6;
+          position: relative;
         }
 
         .service-left {
@@ -223,6 +225,9 @@ export default function ServicesSection() {
           color: white;
           transition: all 0.3s ease;
         }
+          .service-right {
+              z-index: 99;
+          }
 
         .service-right :global(.arrow-btn:hover) {
           background: white;

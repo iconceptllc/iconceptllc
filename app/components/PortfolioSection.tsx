@@ -34,7 +34,7 @@ const portfolioItems = [
   },
   {
     type: "video",
-    src: "/videos/w8.mp4",
+    src: "/works/w8.mp4",
     title: "Newz - Magazine Site",
     tags: ["Branding", "UI/UX", "Motion"],
     colSpan: "8",
@@ -84,8 +84,8 @@ export default function PortfolioSection() {
                     <span key={i}>{tag}</span>
                   ))}
                 </div>
-              </div>
               <h6 className="item-title">{item.title}</h6>
+              </div>
             </Link>
           </div>
         ))}
@@ -115,11 +115,7 @@ export default function PortfolioSection() {
         .portfolio-grid {
           display: grid;
           grid-template-columns: repeat(12, 1fr);
-          gap: 20px;
-        }
-
-        .portfolio-item {
-          margin-bottom: 10px;
+          gap: 30px 20px;
         }
 
         .col-full {
@@ -156,11 +152,16 @@ export default function PortfolioSection() {
           position: relative;
           border-radius: 10px;
           overflow: hidden;
-          aspect-ratio: 16/10;
+          height: 400px;
         }
 
-        .col-full .media-wrapper {
-          aspect-ratio: 21/9;
+        .media-wrapper::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to top, #1f1f1f, transparent);
+          opacity: 0.7;
+          pointer-events: none;
         }
 
         .media-wrapper video {
@@ -171,27 +172,33 @@ export default function PortfolioSection() {
 
         .tags {
           position: absolute;
-          bottom: 15px;
-          left: 15px;
+          top: 15px;
+          right: 15px;
           display: flex;
           gap: 8px;
           flex-wrap: wrap;
+          z-index: 2;
         }
 
         .tags span {
-          background: white;
-          padding: 6px 14px;
-          border-radius: 20px;
-          font-size: 0.75rem;
+          background: rgba(0, 0, 0, 0.2);
+          backdrop-filter: blur(5px);
+          padding: 7px 15px;
+          border-radius: 30px;
+          font-size: 0.8rem;
           font-weight: 500;
-          color: #333;
+          color: #fff;
         }
 
         .item-title {
-          margin-top: 15px;
-          font-size: 1rem;
+          margin: 0;
+          font-size: 1.1rem;
           font-weight: 500;
-          color: #333;
+          color: #fff;
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          z-index: 2;
         }
 
         @media (max-width: 1024px) {

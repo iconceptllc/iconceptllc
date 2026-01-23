@@ -6,7 +6,7 @@ import PortfolioSection from "./components/PortfolioSection";
 import ServicesSection from "./components/ServicesSection";
 import ProcessSection from "./components/ProcessSection";
 import NumbersSection from "./components/NumbersSection";
-import TestimonialsSection from "./components/TestimonialsSection";
+// import TestimonialsSection from "./components/TestimonialsSection";
 import ClientsSection from "./components/ClientsSection";
 import Footer from "./components/Footer";
 
@@ -29,7 +29,7 @@ export default function Home() {
             <ServicesSection />
             <ProcessSection />
             <NumbersSection />
-            <TestimonialsSection />
+            {/* <TestimonialsSection /> */}
             <ClientsSection />
             <Footer />
           </main>
