@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© 2024 iConcept. All Rights Reserved.</p>
+          <p>© 2026 iConcept. All Rights Reserved.</p>
           <div className="footer-legal">
             <Link href="/privacy">Privacy Policy</Link>
             <Link href="/terms">Terms of Service</Link>
