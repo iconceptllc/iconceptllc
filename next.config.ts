@@ -8,6 +8,16 @@ const nextConfig: NextConfig = {
         hostname: "res.cloudinary.com",
         pathname: "/dvrw9jbbu/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.iconceptme.com",
+        pathname: "/wp-content/uploads/**",
+      },
+      {
+        protocol: "https",
+        hostname: "iconceptme.com",
+        pathname: "/wp-content/uploads/**",
+      },
     ],
   },
 };
