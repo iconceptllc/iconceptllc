@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { cdn } from "@/lib/cloudinary";
 
 const clients = [
-  { name: "Client 1", logo: "/clients/1.svg" },
-  { name: "Client 2", logo: "/clients/2.svg" },
-  { name: "Client 3", logo: "/clients/3.svg" },
-  { name: "Client 4", logo: "/clients/4.svg" },
+  { name: "Client 1", logo: cdn("/clients/1.svg") },
+  { name: "Client 2", logo: cdn("/clients/2.svg") },
+  { name: "Client 3", logo: cdn("/clients/3.svg") },
+  { name: "Client 4", logo: cdn("/clients/4.svg") },
   { name: "Client 5", logo: "/clients/5.svg" },
   { name: "Client 6", logo: "/clients/6.svg" },
 ];

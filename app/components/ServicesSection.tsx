@@ -2,31 +2,32 @@
 
 import Link from "next/link";
 import { useRef, useCallback } from "react";
+import { cdn } from "@/lib/cloudinary";
 
 const services = [
   {
     number: "01",
     title: "UI/UX Design",
     items: ["UI/UX Design", "Web Development", "Marketing"],
-    image: "/imgs/serv/s1.jpg",
+    image: cdn("/imgs/serv/s1.jpg"),
   },
   {
     number: "02",
     title: "User Research",
     items: ["UI/UX Design", "Web Development", "Marketing"],
-    image: "/imgs/serv/s2.jpg",
+    image: cdn("/imgs/serv/s2.jpg"),
   },
   {
     number: "03",
     title: "Branding",
     items: ["UI/UX Design", "Web Development", "Marketing"],
-    image: "/imgs/serv/s3.jpg",
+    image: cdn("/imgs/serv/s3.jpg"),
   },
   {
     number: "04",
     title: "3D & Motion",
     items: ["UI/UX Design", "Web Development", "Marketing"],
-    image: "/imgs/serv/s4.jpg",
+    image: cdn("/imgs/serv/s4.jpg"),
   },
 ];
 

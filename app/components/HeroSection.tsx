@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef, useCallback } from "react";
+import { cdn } from "@/lib/cloudinary";
 
 const serviceTags = [
   { id: 1, label: "Video Production", color: "tag-pink", finalPos: { top: "15%", left: "25%", rotate: -5 } },
@@ -194,7 +195,7 @@ export default function HeroSection() {
         <div className="hero-main">
           {/* Background Image */}
           <Image
-            src="/hero-bg.jpg"
+            src={cdn("/hero-bg.jpg")}
             alt="Creative Digital Agency"
             fill
             style={{ objectFit: "cover" }}
@@ -429,7 +430,7 @@ export default function HeroSection() {
           right: 0;
           width: 100%;
           height: 100%;
-          background-image: url('/md.png');
+          background-image: url('${cdn("/md.png")}');
           background-size: cover;
           background-position: center bottom;
           pointer-events: none;

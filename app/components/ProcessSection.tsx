@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { cdn } from "@/lib/cloudinary";
 
 const processSteps = [
   {
@@ -42,7 +43,7 @@ export default function ProcessSection() {
       <div className="process-content">
         <div className="process-image">
           <Image
-            src="/process.svg"
+            src={cdn("/process.svg")}
             alt="Process"
             width={500}
             height={500}

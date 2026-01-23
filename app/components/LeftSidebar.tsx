@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { cdn } from "@/lib/cloudinary";
 
 export default function LeftSidebar() {
   return (
@@ -11,7 +12,7 @@ export default function LeftSidebar() {
           {/* Logo */}
           <Link href="/" className="logo">
             <Image
-              src="/iconcept-logo.png"
+              src={cdn("/iconcept-logo.png")}
               alt="iConcept Logo"
               width={170}
               height={50}
@@ -44,14 +45,14 @@ export default function LeftSidebar() {
           {/* Circle Text Animation */}
           <div className="circle-text-wrapper">
             <Image
-              src="/circle-text.svg"
+              src={cdn("/circle-text.svg")}
               alt="Circle Text"
               width={210}
               height={210}
               className="circle-text"
             />
             <Image
-              src="/iconcept-icon.png"
+              src={cdn("/iconcept-icon.png")}
               alt="iConcept Icon"
               width={170}
               height={170}

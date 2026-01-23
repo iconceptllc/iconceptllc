@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { cdn } from "@/lib/cloudinary";
 
 export default function Preloader({
   children,
@@ -85,7 +86,7 @@ export default function Preloader({
       >
         <div className="animate-spin-slow">
           <Image
-            src="/iconcept-icon.png"
+            src={cdn("/iconcept-icon.png")}
             alt="iConcept Logo"
             width={120}
             height={120}

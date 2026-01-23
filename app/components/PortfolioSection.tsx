@@ -2,53 +2,54 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { cdn } from "@/lib/cloudinary";
 
 const portfolioItems = [
   {
     type: "video",
-    src: "/videos/iconcept-showreel.mp4",
+    src: cdn("/videos/iconcept-showreel.mp4"),
     title: "iconcept llc",
     tags: ["UI/UX", "Webflow"],
     colSpan: "full",
   },
   {
     type: "image",
-    src: "/works/w1.png",
+    src: cdn("/works/w1.png"),
     title: "Newz - Magazine Site",
     tags: ["Branding", "UI/UX", "Motion"],
     colSpan: "7",
   },
   {
     type: "image",
-    src: "/works/w2.png",
+    src: cdn("/works/w2.png"),
     title: "LW Rebrand",
     tags: ["Branding"],
     colSpan: "5",
   },
   {
     type: "image",
-    src: "/works/w4.png",
+    src: cdn("/works/w4.png"),
     title: "LW Rebrand",
     tags: ["Branding"],
     colSpan: "4",
   },
   {
     type: "video",
-    src: "/works/w8.mp4",
+    src: cdn("/works/w8.mp4"),
     title: "Newz - Magazine Site",
     tags: ["Branding", "UI/UX", "Motion"],
     colSpan: "8",
   },
   {
     type: "image",
-    src: "/works/w7.png",
+    src: cdn("/works/w7.png"),
     title: "LW Rebrand",
     tags: ["Branding"],
     colSpan: "6",
   },
   {
     type: "image",
-    src: "/works/w6.png",
+    src: cdn("/works/w6.png"),
     title: "ZumarCons Firm",
     tags: ["UI/UX", "Webflow"],
     colSpan: "6",

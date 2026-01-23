@@ -33,6 +33,17 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# media files (hosted on Cloudinary)
+*.mp4
+*.mov
+*.webm
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
+cloudinary-urls.json
+
 # vercel
 .vercel
 
