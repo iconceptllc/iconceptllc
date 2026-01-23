@@ -43,6 +43,11 @@ const servicesSlides = [
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(2);
+  const [transition, setTransition] = useState<{
+    nextIndex: number;
+    direction: "next" | "prev";
+  } | null>(null);
+  const [isSliding, setIsSliding] = useState(false);
   const [tagsAnimated, setTagsAnimated] = useState(false);
   const [animationComplete, setAnimationComplete] = useState(false);
   const [tagPositions, setTagPositions] = useState<{ [key: number]: { x: number; y: number } }>({});
@@ -136,15 +141,51 @@ export default function HeroSection() {
     setVelocity({ x: 0, y: 0 });
   }, [draggingTag, tagPositions, velocity]);
 
+  const touchStartX = useRef(0);
+
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % servicesSlides.length);
+    if (transition) return;
+    const nextIndex = (currentSlide + 1) % servicesSlides.length;
+    setTransition({ nextIndex, direction: "next" });
   };
 
   const prevSlide = () => {
-    setCurrentSlide(
-      (prev) => (prev - 1 + servicesSlides.length) % servicesSlides.length
-    );
+    if (transition) return;
+    const nextIndex =
+      (currentSlide - 1 + servicesSlides.length) % servicesSlides.length;
+    setTransition({ nextIndex, direction: "prev" });
   };
+
+  const handleSliderTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleSliderTouchEnd = (e: React.TouchEvent) => {
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) nextSlide();
+      else prevSlide();
+    }
+  };
+
+  useEffect(() => {
+    if (!transition) {
+      setIsSliding(false);
+      return;
+    }
+
+    const startTimer = setTimeout(() => setIsSliding(true), 30);
+    const finishTimer = setTimeout(() => {
+      setCurrentSlide(transition.nextIndex);
+      setTransition(null);
+      setIsSliding(false);
+    }, 550);
+
+    return () => {
+      clearTimeout(startTimer);
+      clearTimeout(finishTimer);
+    };
+  }, [transition]);
 
   return (
     <section className="hero-section">
@@ -241,21 +282,92 @@ export default function HeroSection() {
           </div>
 
           {/* Services Slider - Bottom Box */}
-          <div className={`services-slider ${servicesSlides[currentSlide].color}`}>
-            <div className="slide-item">
-              <div className="slide-header">
-               
-                <div>
-                  <h4>{servicesSlides[currentSlide].title}</h4>
-                  <span className="subtitle">
-                    {servicesSlides[currentSlide].subtitle}
-                  </span>
-                </div>
+          <div className="services-slider">
+            <div className="slides-viewport" onTouchStart={handleSliderTouchStart} onTouchEnd={handleSliderTouchEnd}>
+              <div
+                className={`slides-track ${isSliding ? "is-animating" : ""}`}
+                style={{
+                  width: transition ? "200%" : "100%",
+                  transform: transition
+                    ? transition.direction === "next"
+                      ? isSliding
+                        ? "translateX(-50%)"
+                        : "translateX(0%)"
+                      : isSliding
+                        ? "translateX(0%)"
+                        : "translateX(-50%)"
+                    : "translateX(0%)",
+                }}
+              >
+                {transition ? (
+                  transition.direction === "next" ? (
+                    <>
+                      <div className={`slide-item ${servicesSlides[currentSlide].color}`}>
+                        <div className="slide-header">
+                          <div>
+                            <h4>{servicesSlides[currentSlide].title}</h4>
+                            <span className="subtitle">
+                              {servicesSlides[currentSlide].subtitle}
+                            </span>
+                          </div>
+                        </div>
+                        <p>{servicesSlides[currentSlide].description}</p>
+                      </div>
+                      <div className={`slide-item ${servicesSlides[transition.nextIndex].color}`}>
+                        <div className="slide-header">
+                          <div>
+                            <h4>{servicesSlides[transition.nextIndex].title}</h4>
+                            <span className="subtitle">
+                              {servicesSlides[transition.nextIndex].subtitle}
+                            </span>
+                          </div>
+                        </div>
+                        <p>{servicesSlides[transition.nextIndex].description}</p>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className={`slide-item ${servicesSlides[transition.nextIndex].color}`}>
+                        <div className="slide-header">
+                          <div>
+                            <h4>{servicesSlides[transition.nextIndex].title}</h4>
+                            <span className="subtitle">
+                              {servicesSlides[transition.nextIndex].subtitle}
+                            </span>
+                          </div>
+                        </div>
+                        <p>{servicesSlides[transition.nextIndex].description}</p>
+                      </div>
+                      <div className={`slide-item ${servicesSlides[currentSlide].color}`}>
+                        <div className="slide-header">
+                          <div>
+                            <h4>{servicesSlides[currentSlide].title}</h4>
+                            <span className="subtitle">
+                              {servicesSlides[currentSlide].subtitle}
+                            </span>
+                          </div>
+                        </div>
+                        <p>{servicesSlides[currentSlide].description}</p>
+                      </div>
+                    </>
+                  )
+                ) : (
+                  <div className={`slide-item ${servicesSlides[currentSlide].color}`}>
+                    <div className="slide-header">
+                      <div>
+                        <h4>{servicesSlides[currentSlide].title}</h4>
+                        <span className="subtitle">
+                          {servicesSlides[currentSlide].subtitle}
+                        </span>
+                      </div>
+                    </div>
+                    <p>{servicesSlides[currentSlide].description}</p>
+                  </div>
+                )}
               </div>
-              <p>{servicesSlides[currentSlide].description}</p>
             </div>
             <div className="slider-controls">
-              <button onClick={prevSlide} aria-label="Previous slide">
+              <button className="control-button prev" onClick={prevSlide} aria-label="Previous slide">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -268,7 +380,7 @@ export default function HeroSection() {
                   <path d="M15 18l-6-6 6-6" />
                 </svg>
               </button>
-              <button onClick={nextSlide} aria-label="Next slide">
+              <button className="control-button next" onClick={nextSlide} aria-label="Next slide">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -517,9 +629,24 @@ export default function HeroSection() {
         .services-slider {
           border-radius: 15px;
           overflow: hidden;
-          display: flex;
-          flex-direction: column;
+          position: relative;
           height: 45%;
+        }
+
+        .slides-viewport {
+          position: relative;
+          overflow: hidden;
+          height: 100%;
+        }
+
+        .slides-track {
+          display: flex;
+          height: 100%;
+          transform: translateX(0%);
+        }
+
+        .slides-track.is-animating {
+          transition: transform 0.5s ease;
         }
 
         .slide-item {
@@ -527,6 +654,7 @@ export default function HeroSection() {
           flex: 1;
           display: flex;
           flex-direction: column;
+          height: 100%;
         }
 
         .slide-header {
@@ -584,28 +712,53 @@ export default function HeroSection() {
         }
 
         .slider-controls {
+          position: absolute;
+          bottom: 15px;
+          right: 22px;
           display: flex;
-          justify-content: flex-end;
           gap: 8px;
-          padding: 0 22px 15px;
+          z-index: 10;
         }
 
-        .slider-controls button {
+        .slider-controls .control-button {
           width: 30px;
           height: 30px;
           border-radius: 50%;
-          border: 1px solid rgba(0, 0, 0, 0.15);
+          border: 1px solid rgba(255, 255, 255, 0.5);
           background: transparent;
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: all 0.3s ease;
-          color: inherit;
+          transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+          color: #fff;
         }
 
-        .slider-controls button:hover {
-          background: rgba(0, 0, 0, 0.1);
+        .slider-controls .control-button svg {
+          transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        .slider-controls .control-button:hover {
+          background: #fff;
+          color: #1f1f1f;
+          transform: translateY(-1px);
+        }
+
+        .slider-controls .control-button:active {
+          transform: translateY(0);
+        }
+
+        .slider-controls .control-button:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+        }
+
+        .slider-controls .control-button.prev:hover svg {
+          transform: translateX(-2px);
+        }
+
+        .slider-controls .control-button.next:hover svg {
+          transform: translateX(2px);
         }
 
         @media (max-width: 1400px) {
