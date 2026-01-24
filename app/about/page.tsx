@@ -49,7 +49,8 @@ export default function AboutPage() {
 
           <main className="right-content">
             <section className="about-hero">
-              <div className="hero-text">
+              <div className="hero-top">
+                <span className="hero-tag">Our Studio</span>
                 <h1>About Us</h1>
                 <p className="subtitle">
                   Thank you for your interest to know about iConcept LLC.
@@ -58,14 +59,45 @@ export default function AboutPage() {
                   iConcept LLC - combinations that make differences.
                 </p>
               </div>
-              <div className="hero-image">
-                <Image
-                  src="https://www.iconceptme.com/wp-content/uploads/2021/03/about-iconcept.jpg"
-                  alt="iConcept team"
-                  width={760}
-                  height={540}
-                  priority
-                />
+
+              <div className="hero-grid">
+                <div className="hero-left">
+                  <h3>We are specialised in</h3>
+                  <ul className="hero-list">
+                    {services.map((service) => (
+                      <li key={service}>{service}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="hero-right">
+                  <div className="hero-image-large">
+                    <Image
+                      src="https://www.iconceptme.com/wp-content/uploads/2021/03/about-iconcept.jpg"
+                      alt="iConcept team"
+                      width={760}
+                      height={640}
+                      priority
+                    />
+                  </div>
+                  <div className="hero-image-small">
+                    <Image
+                      src="https://www.iconceptme.com/wp-content/uploads/2021/03/about-iconcept.jpg"
+                      alt="iConcept studio"
+                      width={420}
+                      height={420}
+                    />
+                  </div>
+                  <div className="hero-card">
+                    <h4>What we do</h4>
+                    <p>
+                      iConcept LLC is a complete digital media service agency
+                      that delivers results. We are good at what we do. The
+                      majority of our business comes from repeat business and
+                      referrals. We have grown organically with strong
+                      foundations and striving for excellence.
+                    </p>
+                  </div>
+                </div>
               </div>
             </section>
 
@@ -80,26 +112,6 @@ export default function AboutPage() {
                     <p>{item.description}</p>
                   </div>
                 ))}
-              </div>
-            </section>
-
-            <section className="about-services">
-              <div className="services-inner">
-                <div className="services-copy">
-                  <h2>What we do</h2>
-                  <p>
-                    iConcept LLC is a complete digital media service agency that
-                    delivers results. We are good at what we do. The majority of
-                    our business comes from repeat business and referrals. We
-                    have grown organically with strong foundations and striving
-                    for excellence.
-                  </p>
-                </div>
-                <ul className="services-list">
-                  {services.map((service) => (
-                    <li key={service}>{service}</li>
-                  ))}
-                </ul>
               </div>
             </section>
 
@@ -175,7 +187,7 @@ export default function AboutPage() {
       <style jsx>{`
         .about-page {
           min-height: 100vh;
-          background: black;
+          background: #0b0b0b;
           color: white;
         }
 
@@ -202,17 +214,53 @@ export default function AboutPage() {
         }
 
         .about-hero {
-          background: #1a1a1a;
-          border-radius: 15px;
-          padding: 60px 40px;
-          display: grid;
-          grid-template-columns: 1.1fr 1fr;
-          gap: 40px;
+          background: linear-gradient(135deg, #111 0%, #0b0b0b 100%);
+          border-radius: 18px;
+          padding: 70px 50px;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .about-hero::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(
+              circle at top right,
+              rgba(139, 92, 246, 0.18),
+              transparent 45%
+            ),
+            radial-gradient(
+              circle at 15% 80%,
+              rgba(59, 130, 246, 0.16),
+              transparent 40%
+            );
+          pointer-events: none;
+        }
+
+        .hero-top {
+          position: relative;
+          z-index: 1;
+          margin-bottom: 50px;
+        }
+
+        .hero-tag {
+          display: inline-flex;
           align-items: center;
+          gap: 8px;
+          padding: 8px 14px;
+          border-radius: 999px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: rgba(255, 255, 255, 0.7);
+          margin-bottom: 20px;
         }
 
         .about-hero h1 {
-          font-size: 3rem;
+          font-size: 3.4rem;
           font-weight: 600;
           margin-bottom: 16px;
         }
@@ -224,21 +272,92 @@ export default function AboutPage() {
         }
 
         .lead {
-          font-size: 1.25rem;
+          font-size: 1.3rem;
           color: #ffffff;
         }
 
-        .hero-image :global(img) {
+        .hero-grid {
+          position: relative;
+          z-index: 1;
+          display: grid;
+          grid-template-columns: 0.7fr 1.3fr;
+          gap: 40px;
+          align-items: start;
+        }
+
+        .hero-left h3 {
+          font-size: 1.3rem;
+          margin-bottom: 20px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .hero-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: grid;
+          gap: 12px;
+        }
+
+        .hero-list li {
+          padding: 12px 16px;
+          border-radius: 999px;
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          background: rgba(255, 255, 255, 0.03);
+          font-size: 0.95rem;
+          color: rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-right {
+          display: grid;
+          grid-template-columns: 1.15fr 0.85fr;
+          grid-template-rows: auto auto;
+          gap: 20px;
+        }
+
+        .hero-image-large {
+          grid-row: 1 / span 2;
+        }
+
+        .hero-image-large :global(img),
+        .hero-image-small :global(img) {
           width: 100%;
           height: auto;
-          border-radius: 12px;
+          border-radius: 18px;
+          display: block;
+        }
+
+        .hero-image-large :global(img) {
+          min-height: 520px;
+          object-fit: cover;
+        }
+
+        .hero-card {
+          background: rgba(15, 15, 15, 0.9);
+          border-radius: 18px;
+          padding: 22px 24px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero-card h4 {
+          font-size: 1.2rem;
+          margin-bottom: 12px;
+        }
+
+        .hero-card p {
+          color: rgba(255, 255, 255, 0.7);
+          line-height: 1.6;
+          font-size: 0.95rem;
         }
 
         .about-highlights {
-          background: #1a1a1a;
-          border-radius: 15px;
+          background: #111;
+          border-radius: 18px;
           padding: 60px 40px;
           margin-top: 20px;
+          border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .sec-head {
@@ -261,10 +380,16 @@ export default function AboutPage() {
         }
 
         .highlight-card {
-          background: #111;
-          border-radius: 14px;
-          padding: 26px;
+          background: #0d0d0d;
+          border-radius: 16px;
+          padding: 28px;
           border: 1px solid rgba(255, 255, 255, 0.05);
+          transition: transform 0.3s ease, border 0.3s ease;
+        }
+
+        .highlight-card:hover {
+          transform: translateY(-6px);
+          border-color: rgba(139, 92, 246, 0.5);
         }
 
         .highlight-card h3 {
@@ -278,59 +403,19 @@ export default function AboutPage() {
           color: rgba(255, 255, 255, 0.7);
         }
 
-        .about-services {
-          background: #f5f5f5;
-          border-radius: 15px;
-          padding: 60px 40px;
-          margin-top: 20px;
-          color: #222;
-        }
-
-        .services-inner {
-          display: grid;
-          grid-template-columns: 1.2fr 1fr;
-          gap: 40px;
-          align-items: center;
-        }
-
-        .services-copy h2 {
-          font-size: 2rem;
-          margin-bottom: 16px;
-        }
-
-        .services-copy p {
-          color: #555;
-          line-height: 1.6;
-        }
-
-        .services-list {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-          display: grid;
-          gap: 12px;
-        }
-
-        .services-list li {
-          background: #fff;
-          padding: 12px 18px;
-          border-radius: 999px;
-          border: 1px solid rgba(0, 0, 0, 0.08);
-          font-size: 0.95rem;
-        }
-
         .about-case-studies {
           margin-top: 20px;
         }
 
         .case-card {
-          background: #1a1a1a;
-          border-radius: 15px;
+          background: linear-gradient(135deg, #121212, #0b0b0b);
+          border-radius: 18px;
           padding: 50px 40px;
           display: flex;
           justify-content: space-between;
           align-items: center;
           gap: 30px;
+          border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .case-card h2 {
@@ -356,22 +441,23 @@ export default function AboutPage() {
         }
 
         .about-founder {
-          background: #f5f5f5;
-          border-radius: 15px;
+          background: #111;
+          border-radius: 18px;
           padding: 60px 40px;
           margin-top: 20px;
           display: grid;
           grid-template-columns: 0.8fr 1.2fr;
           gap: 40px;
-          color: #222;
+          color: #fff;
           align-items: center;
+          border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .founder-image :global(img) {
           width: 100%;
           height: auto;
-          border-radius: 12px;
-          background: #fff;
+          border-radius: 18px;
+          background: #0b0b0b;
         }
 
         .founder-copy h2 {
@@ -386,12 +472,12 @@ export default function AboutPage() {
 
         .role {
           font-size: 0.95rem;
-          color: #666;
+          color: rgba(255, 255, 255, 0.6);
           margin-bottom: 16px;
         }
 
         .founder-copy p {
-          color: #555;
+          color: rgba(255, 255, 255, 0.7);
           line-height: 1.6;
           margin-bottom: 12px;
         }
@@ -401,13 +487,14 @@ export default function AboutPage() {
         }
 
         .contact-card {
-          background: #1a1a1a;
-          border-radius: 15px;
+          background: #0f0f0f;
+          border-radius: 18px;
           padding: 50px 40px;
           display: flex;
           justify-content: space-between;
           align-items: center;
           gap: 30px;
+          border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .contact-card h2 {
@@ -445,8 +532,18 @@ export default function AboutPage() {
             padding-top: 80px;
           }
 
-          .about-hero,
-          .services-inner,
+          .hero-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .hero-right {
+            grid-template-columns: 1fr;
+          }
+
+          .hero-image-large {
+            grid-row: auto;
+          }
+
           .about-founder {
             grid-template-columns: 1fr;
           }
@@ -461,7 +558,6 @@ export default function AboutPage() {
         @media (max-width: 768px) {
           .about-hero,
           .about-highlights,
-          .about-services,
           .case-card,
           .about-founder,
           .contact-card {

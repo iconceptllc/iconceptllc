@@ -38,199 +38,192 @@ export default function ProcessSection() {
     <section className="process-section">
       <div className="sec-head">
         <h6>OUR PROCESS</h6>
+        <p className="sec-subtitle">
+          A streamlined flow from first meeting to final delivery.
+        </p>
       </div>
 
-      <div className="process-timeline">
+      <div className="process-grid">
         {processSteps.map((step, index) => (
-          <div
-            key={step.title}
-            className={`process-step ${index % 2 === 0 ? "left" : "right"}`}
-          >
-            <div className="step-card">
-              <div className="step-meta">
-                <span className="step-count">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span className="step-title">{step.title}</span>
-              </div>
+          <div key={step.title} className="process-card">
+            <div className="card-inner">
+              <span className="step-index">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3>{step.title}</h3>
               <p>{step.description}</p>
             </div>
-            <div className="step-dot">{index + 1}</div>
           </div>
         ))}
       </div>
 
       <style jsx>{`
         .process-section {
-          background: #f5f5f5;
-          border-radius: 15px;
-          padding: 60px 40px;
+          background: #0b0b0b;
+          border-radius: 18px;
+          padding: 70px 50px;
           margin-top: 20px;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .process-section::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(
+              circle at top left,
+              rgba(139, 92, 246, 0.18),
+              transparent 45%
+            ),
+            radial-gradient(
+              circle at 80% 80%,
+              rgba(14, 165, 233, 0.16),
+              transparent 45%
+            );
+          pointer-events: none;
         }
 
         .sec-head {
-          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          position: relative;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           padding-bottom: 20px;
-          margin-bottom: 60px;
+          margin-bottom: 50px;
+          z-index: 1;
         }
 
         .sec-head h6 {
           font-size: 0.875rem;
           font-weight: 500;
           letter-spacing: 1px;
-          color: #333;
-        }
-
-        .process-timeline {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          gap: 30px;
-          padding: 10px 0;
-        }
-
-        .process-timeline::before {
-          content: "";
-          position: absolute;
-          left: 50%;
-          top: 0;
-          bottom: 0;
-          width: 2px;
-          background: rgba(0, 0, 0, 0.1);
-          transform: translateX(-50%);
-        }
-
-        .process-step {
-          position: relative;
-          display: flex;
-          align-items: center;
-        }
-
-        .process-step::after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          width: 60px;
-          height: 2px;
-          background: rgba(0, 0, 0, 0.08);
-          transform: translateY(-50%);
-        }
-
-        .process-step.left {
-          justify-content: flex-end;
-        }
-
-        .process-step.left::after {
-          right: calc(50% + 22px);
-        }
-
-        .process-step.right {
-          justify-content: flex-start;
-        }
-
-        .process-step.right::after {
-          left: calc(50% + 22px);
-        }
-
-        .step-card {
-          width: min(460px, 100%);
-          background: #ffffff;
-          border-radius: 16px;
-          padding: 24px 28px;
-          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-          border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .process-step.left .step-card {
-          margin-right: 60px;
-        }
-
-        .process-step.right .step-card {
-          margin-left: 60px;
-        }
-
-        .step-meta {
-          display: flex;
-          align-items: center;
-          gap: 12px;
+          color: white;
           margin-bottom: 12px;
         }
 
-        .step-count {
-          font-size: 0.75rem;
-          font-weight: 600;
-          letter-spacing: 1px;
-          color: rgba(0, 0, 0, 0.6);
-          text-transform: uppercase;
+        .sec-subtitle {
+          font-size: 1.1rem;
+          color: rgba(255, 255, 255, 0.7);
         }
 
-        .step-title {
-          font-size: 1.35rem;
-          font-weight: 600;
-          color: #222;
+        .process-grid {
+          position: relative;
+          z-index: 1;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 24px;
         }
 
-        .step-card p {
-          font-size: 0.95rem;
-          line-height: 1.6;
-          color: #666;
-        }
-
-        .step-dot {
+        .process-grid::before {
+          content: "";
           position: absolute;
-          left: 50%;
-          width: 44px;
-          height: 44px;
-          border-radius: 50%;
-          background: #8b5cf6;
-          color: #fff;
+          inset: -40px;
+          background-image: linear-gradient(
+              90deg,
+              rgba(255, 255, 255, 0.04) 1px,
+              transparent 1px
+            ),
+            linear-gradient(
+              180deg,
+              rgba(255, 255, 255, 0.04) 1px,
+              transparent 1px
+            );
+          background-size: 140px 140px;
+          opacity: 0.3;
+          pointer-events: none;
+        }
+
+        .process-card {
+          position: relative;
+          padding: 1px;
+          border-radius: 18px;
+          background: linear-gradient(
+            135deg,
+            rgba(139, 92, 246, 0.6),
+            rgba(14, 165, 233, 0.5)
+          );
+          transition: transform 0.3s ease;
+        }
+
+        .process-card::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 18px;
+          background: linear-gradient(
+            135deg,
+            rgba(139, 92, 246, 0.5),
+            rgba(14, 165, 233, 0.4)
+          );
+          opacity: 0;
+          filter: blur(18px);
+          transition: opacity 0.3s ease;
+          z-index: 0;
+        }
+
+        .process-card:hover {
+          transform: translateY(-6px);
+        }
+
+        .process-card:hover::after {
+          opacity: 0.6;
+        }
+
+        .card-inner {
+          position: relative;
+          z-index: 1;
+          background: #0f0f0f;
+          border-radius: 17px;
+          padding: 26px;
+          min-height: 230px;
           display: flex;
+          flex-direction: column;
+          gap: 14px;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .step-index {
+          display: inline-flex;
           align-items: center;
           justify-content: center;
+          width: 48px;
+          height: 48px;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.06);
+          color: #fff;
           font-weight: 600;
-          transform: translateX(-50%);
-          box-shadow: 0 10px 20px rgba(139, 92, 246, 0.35);
+          letter-spacing: 1px;
+          box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+        }
+
+        .card-inner h3 {
+          font-size: 1.3rem;
+          color: #fff;
+        }
+
+        .card-inner p {
+          font-size: 0.95rem;
+          line-height: 1.6;
+          color: rgba(255, 255, 255, 0.7);
         }
 
         @media (max-width: 1024px) {
-          .process-timeline::before {
-            left: 20px;
-          }
-
-          .process-step {
-            justify-content: flex-start;
-          }
-
-          .process-step.left,
-          .process-step.right {
-            padding-left: 20px;
-          }
-
-          .process-step.left::after,
-          .process-step.right::after {
-            left: 20px;
-            right: auto;
-            width: 24px;
-          }
-
-          .process-step.left .step-card,
-          .process-step.right .step-card {
-            margin: 0 0 0 50px;
-          }
-
-          .step-dot {
-            left: 20px;
-            transform: translateX(-50%);
+          .process-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
           }
         }
 
         @media (max-width: 768px) {
           .process-section {
-            padding: 40px 20px;
+            padding: 50px 20px;
           }
 
-          .step-card {
-            padding: 20px 22px;
+          .process-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .card-inner {
+            min-height: auto;
           }
         }
       `}</style>

@@ -2,9 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { cdn } from "@/lib/cloudinary";
+import NavigationMenu from "./NavigationMenu";
 
 export default function LeftSidebar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <aside className="left-sidebar">
       <div className="sidebar-top">
@@ -21,7 +25,7 @@ export default function LeftSidebar() {
           </Link>
 
           <div className="menu-toggle">
-            <button className="menu-icon">
+            <button className="menu-icon" onClick={() => setMenuOpen(true)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -326,6 +330,7 @@ export default function LeftSidebar() {
           }
         }
       `}</style>
+      <NavigationMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </aside>
   );
 }
