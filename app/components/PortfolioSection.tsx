@@ -4,7 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { cdn } from "@/lib/cloudinary";
 
-const portfolioItems = [
+type PortfolioItem = {
+  type: "video" | "image";
+  src: string;
+  title: string;
+  tags: string[];
+  colSpan: string;
+  url?: string;
+  height?: string | number;
+};
+
+const portfolioItems: PortfolioItem[] = [
   {
     type: "video",
     src: cdn("/videos/iconcept-showreel.mp4"),
