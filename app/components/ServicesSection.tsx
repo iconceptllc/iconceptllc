@@ -7,26 +7,26 @@ import { cdn } from "@/lib/cloudinary";
 const services = [
   {
     number: "01",
-    title: "UI/UX Design",
-    items: ["UI/UX Design", "Web Development", "Marketing"],
+    title: "Web Solutions",
+    items: ["UI/UX Design", "Web/Mobile App Development", "E-commerce Storefront"],
     image: cdn("/imgs/serv/s1.jpg"),
   },
   {
     number: "02",
-    title: "User Research",
-    items: ["UI/UX Design", "Web Development", "Marketing"],
+    title: "Marketing Services",
+    items: ["Digital Marketing", "Social Media Marketing", "Branding & Advertissing"],
     image: cdn("/imgs/serv/s2.jpg"),
   },
   {
     number: "03",
-    title: "Branding",
-    items: ["UI/UX Design", "Web Development", "Marketing"],
+    title: "Content Production",
+    items: ["Ad Film Production", "CGI, AI & Motion Graphics", "Audio Video Editing"],
     image: cdn("/imgs/serv/s3.jpg"),
   },
   {
     number: "04",
     title: "3D & Motion",
-    items: ["UI/UX Design", "Web Development", "Marketing"],
+    items: ["2D & 3D Animation", "Product Visualization", "Explainer Videos"],
     image: cdn("/imgs/serv/s4.jpg"),
   },
 ];
