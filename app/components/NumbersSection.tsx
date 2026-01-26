@@ -30,6 +30,9 @@ export default function NumbersSection() {
       <style jsx>{`
         .numbers-section {
           padding: 80px 0;
+          overflow: hidden;
+          max-width: 100%;
+          box-sizing: border-box;
         }
 
         .numbers-grid {

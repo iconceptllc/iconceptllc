@@ -41,12 +41,14 @@ export default function Home() {
           min-height: 100vh;
           background: black;
           color: white;
+          overflow-x: hidden;
         }
 
         .main-container {
           width: 80%;
           max-width: 1600px;
           margin: 0 auto;
+          overflow: hidden;
         }
 
         .content-wrapper {
@@ -64,6 +66,7 @@ export default function Home() {
           min-width: 0;
           max-width: 1226px;
           padding: 20px 0;
+          overflow: hidden;
         }
 
         @media (max-width: 1600px) {

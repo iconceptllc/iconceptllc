@@ -91,6 +91,9 @@ export default function Footer() {
           padding: 80px 40px 40px;
           margin-top: 20px;
           margin-bottom: 40px;
+          overflow: hidden;
+          max-width: 100%;
+          box-sizing: border-box;
         }
 
         .footer-main {

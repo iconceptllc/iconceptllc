@@ -402,6 +402,9 @@ export default function HeroSection() {
       <style jsx>{`
         .hero-section {
           padding: 0;
+          overflow: hidden;
+          max-width: 100%;
+          box-sizing: border-box;
         }
 
         .hero-grid {

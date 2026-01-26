@@ -83,6 +83,9 @@ export default function ProcessSection() {
           border-radius: 15px;
           padding: 60px 40px;
           margin-top: 20px;
+          overflow: hidden;
+          max-width: 100%;
+          box-sizing: border-box;
         }
 
         .sec-head {

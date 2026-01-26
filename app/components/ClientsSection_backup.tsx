@@ -1,73 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import { cdn } from "@/lib/cloudinary";
 
 const clients = [
-  "/clients/1.png",
-  "/clients/2.png",
-  "/clients/3.jpg",
-  "/clients/4.jpg",
-  "/clients/5.png",
-  "/clients/6.jpg",
-  "/clients/7.jpg",
-  "/clients/8.jpg",
-  "/clients/9.jpg",
-  "/clients/10.jpg",
-  "/clients/11.jpg",
-  "/clients/12.jpg",
-  "/clients/13.jpg",
-  "/clients/14.jpg",
-  "/clients/15.jpg",
-  "/clients/16.jpg",
-  "/clients/17.jpg",
-  "/clients/18.jpg",
-  "/clients/19.jpg",
-  "/clients/20.jpg",
-  "/clients/21.jpg",
-  "/clients/22.jpg",
-  "/clients/23.jpg",
-  "/clients/24.jpg",
-  "/clients/25.png",
-  "/clients/26.jpg",
-  "/clients/27.jpg",
-  "/clients/28.jpg",
-  "/clients/29.jpg",
-  "/clients/30.jpg",
-  "/clients/31.jpg",
-  "/clients/32.jpg",
-  "/clients/33.jpg",
-  "/clients/34.jpg",
-  "/clients/35.jpg",
-  "/clients/36.jpg",
-  "/clients/37.jpg",
-  "/clients/38.jpg",
-  "/clients/39.jpg",
-  "/clients/40.jpg",
-  "/clients/41.jpg",
-  "/clients/42.jpg",
-  "/clients/43.jpg",
-  "/clients/44.png",
-  "/clients/45.png",
-  "/clients/46.jpg",
-  "/clients/47.jpg",
-  "/clients/48.png",
-  "/clients/49.png",
-  "/clients/50.jpg",
-  "/clients/51.jpg",
-  "/clients/52.jpg",
-  "/clients/53.jpg",
-  "/clients/54.jpg",
-  "/clients/55.jpg",
-  "/clients/56.jpg",
-  "/clients/57.png",
-  "/clients/58.jpg",
-  "/clients/59.jpg",
-  "/clients/60.jpg",
-  "/clients/61.jpg",
-  "/clients/62.jpg",
-  "/clients/63.jpg",
-  "/clients/64.png",
-  "/clients/65.jpg",
+  { name: "Client 1", logo: cdn("/clients/al-amani-tvr.jpg") },
+  { name: "Client 2", logo: cdn("/clients/al-meshal.jpg") },
+  { name: "Client 3", logo: cdn("/clients/flc-1.jpg") },
+  { name: "Client 4", logo: cdn("/clients/aptech-computer-training-dubai.svg") },
+  { name: "Client 5", logo: "/clients/wem.png" },
+  { name: "Client 6", logo: "/clients/6.svg" },
 ];
 
 export default function ClientsSection() {
@@ -79,25 +21,25 @@ export default function ClientsSection() {
 
       <div className="clients-carousel" aria-label="Client logos">
         <div className="clients-track">
-          {clients.map((logo, index) => (
+          {clients.map((client, index) => (
             <div key={`client-${index}`} className="client-item">
               <Image
-                src={logo}
-                alt={`Client ${index + 1}`}
+                src={client.logo}
+                alt={client.name}
                 width={120}
                 height={60}
-                style={{ objectFit: "contain" }}
+                style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }}
               />
             </div>
           ))}
-          {clients.map((logo, index) => (
+          {clients.map((client, index) => (
             <div key={`client-dup-${index}`} className="client-item">
               <Image
-                src={logo}
-                alt={`Client ${index + 1}`}
+                src={client.logo}
+                alt={client.name}
                 width={120}
                 height={60}
-                style={{ objectFit: "contain" }}
+                style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }}
               />
             </div>
           ))}
@@ -110,9 +52,6 @@ export default function ClientsSection() {
           border-radius: 15px;
           padding: 60px 40px;
           margin-top: 20px;
-          overflow: hidden;
-          max-width: 100%;
-          box-sizing: border-box;
         }
 
         .sec-head {
@@ -138,7 +77,7 @@ export default function ClientsSection() {
           align-items: center;
           gap: 30px;
           width: max-content;
-          animation: marquee 60s linear infinite;
+          animation: marquee 24s linear infinite;
         }
 
         .client-item {
@@ -170,7 +109,7 @@ export default function ClientsSection() {
 
           .clients-track {
             gap: 20px;
-            animation-duration: 45s;
+            animation-duration: 18s;
           }
         }
       `}</style>
