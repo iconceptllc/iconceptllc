@@ -66,14 +66,38 @@ const urlMap: Record<string, string> = {
   "/works/4/6.webp": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167757/iconcept/works/4/6.webp`,
   "/works/4/7.webp": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167758/iconcept/works/4/7.webp`,
   "/works/4/8.webp": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167759/iconcept/works/4/8.webp`,
+  "/works/flc.webp": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769415984/flc_svm2ce.webp`,
+  "/works/aptech.webp": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769415984/aptech_aghszj.webp`,
+  "/works/almeshal.webp": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769415984/almeshal_fcmrik.webp`,
+  "/works/eindravilas.webp": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769415981/eindravilas_ig6qfg.webp`,
+  "/works/leinfort.webp": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769415981/leinfort_qasowi.webp`,
+  "/works/wordpress-website-for-thc.jpg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769415982/wordpress-website-for-thc_ahkum6.jpg`,
+  "/works/space-breeze.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769416037/space-breeze_pwolfh.mp4`,
+  "/works/blue_swim.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769416140/blue_swim_czvwus.mp4`,
+  "/works/rose_abwaje_guidness.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769416121/rose_abwaje_guidness_esiaq1.mp4`,
+  "/works/rose_evil_intredeu.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769416158/rose_evil_intredeu_v0vn37.mp4`,
+  "/works/trop.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769416792/trop_shps76.mp4`,
+  "/works/trop_violet_fabric_softner.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769417238/trop_violet_fabric_softner_bctj41.mp4`,
 };
 
 /**
  * Get the Cloudinary URL for a local public path.
- * Falls back to the local path if not found in the map.
+ * Falls back to dynamic URL generation if not found in the map.
  */
 export function cdn(localPath: string): string {
-  return urlMap[localPath] || localPath;
+  if (urlMap[localPath]) {
+    return urlMap[localPath];
+  }
+
+  // Dynamically generate Cloudinary URL for files not in the map
+  const videoExtensions = [".mp4", ".webm", ".mov", ".avi"];
+  const isVideo = videoExtensions.some((ext) => localPath.toLowerCase().endsWith(ext));
+  const resourceType = isVideo ? "video" : "image";
+
+  // Remove leading slash for the path
+  const cleanPath = localPath.startsWith("/") ? localPath.slice(1) : localPath;
+
+  return `https://res.cloudinary.com/${CLOUD_NAME}/${resourceType}/upload/${cleanPath}`;
 }
 
 export default urlMap;

@@ -14,46 +14,96 @@ const portfolioItems = [
   },
   {
     type: "image",
-    src: cdn("/works/w1.png"),
-    title: "Newz - Magazine Site",
-    tags: ["Branding", "UI/UX", "Motion"],
+    src: cdn("/works/aptech.webp"),
+    title: "Aptech Computer Training",
+    tags: ["Website Development", "UI/UX Design"],
     colSpan: "7",
   },
   {
     type: "image",
-    src: cdn("/works/w2.png"),
-    title: "LW Rebrand",
-    tags: ["Branding"],
+    src: cdn("/works/almeshal.webp"),
+    title: "Al Meshal Electronics & Electrical Appliances Co LLC",
+    tags: ["E-commerce Website", "UI/UX Design"],
     colSpan: "5",
   },
   {
     type: "image",
-    src: cdn("/works/w4.png"),
-    title: "LW Rebrand",
+    src: cdn("/works/wordpress-website-for-thc.jpg"),
+    title: "Thai Healtch Club",
     tags: ["Branding"],
     colSpan: "4",
   },
   {
-    type: "video",
-    src: cdn("/works/w8.mp4"),
-    title: "Newz - Magazine Site",
-    tags: ["Branding", "UI/UX", "Motion"],
+    type: "image",
+    src: cdn("/works/flc.webp"),
+    title: "FLC Marketing Group",
+    tags: ["Website Development", "UI/UX"],
     colSpan: "8",
   },
   {
     type: "image",
-    src: cdn("/works/w7.png"),
-    title: "LW Rebrand",
-    tags: ["Branding"],
+    src: cdn("/works/eindravilas.webp"),
+    title: "Eindravilas",
+    tags: ["Website Development", "UI/UX"],
     colSpan: "6",
   },
   {
     type: "image",
-    src: cdn("/works/w6.png"),
+    src: cdn("/works/leinfort.webp"),
     title: "ZumarCons Firm",
     tags: ["UI/UX", "Webflow"],
     colSpan: "6",
   },
+  {
+    type: "video",
+    src: cdn("/works/space-breeze.mp4"),
+    title: "Space Breeze",
+    tags: ["Branding", "UI/UX", "Motion"],
+    colSpan: "4",
+    height: "600px",
+  },
+  {
+    type: "video",
+    src: cdn("/works/blue_swim.mp4"),
+    title: "Blue swim",
+    tags: ["Branding", "UI/UX", "Motion"],
+    colSpan: "4",
+    height: "600px",
+  },
+  {
+    type: "video",
+    src: cdn("/works/rose_abwaje_guidness.mp4"),
+    title: "Rose Abwaje Guidness",
+    tags: ["Branding", "UI/UX", "Motion"],
+    colSpan: "4",
+    height: "600px",
+  },
+  {
+    type: "video",
+    src: cdn("/works/trop.mp4"),
+    title: "Blue swim",
+    tags: ["Branding", "UI/UX", "Motion"],
+    colSpan: "4",
+    height: "600px",
+  },
+   {
+    type: "video",
+    src: cdn("/works/trop_violet_fabric_softner.mp4"),
+    title: "Blue swim",
+    tags: ["Branding", "UI/UX", "Motion"],
+    colSpan: "4",
+    height: "600px",
+  },
+  {
+    type: "video",
+    src: cdn("/works/rose_evil_intredeu.mp4"),
+    title: "Blue swim",
+    tags: ["Branding", "UI/UX", "Motion"],
+    colSpan: "4",
+    height: "600px",
+  },
+  
+  
 ];
 
 export default function PortfolioSection() {
@@ -67,7 +117,7 @@ export default function PortfolioSection() {
         {portfolioItems.map((item, index) => (
           <div key={index} className={`portfolio-item col-${item.colSpan}`}>
             <Link href="/project-details" className="item-link">
-              <div className="media-wrapper">
+              <div className="media-wrapper" style={item.height ? { height: item.height } : undefined}>
                 {item.type === "video" ? (
                   <video autoPlay muted loop playsInline>
                     <source src={item.src} type="video/mp4" />
