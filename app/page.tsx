@@ -61,13 +61,40 @@ export default function Home() {
 
         .right-content {
           flex: 1;
+          min-width: 0;
           max-width: 1226px;
           padding: 20px 0;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1600px) {
+          .main-container {
+            width: 85%;
+          }
+
+          .left-spacer {
+            width: 280px;
+          }
+        }
+
+        @media (max-width: 1400px) {
           .main-container {
             width: 90%;
+          }
+
+          .left-spacer {
+            width: 260px;
+          }
+        }
+
+        @media (max-width: 1200px) {
+          .left-spacer {
+            width: 240px;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .main-container {
+            width: 92%;
           }
 
           .left-spacer {
@@ -76,6 +103,13 @@ export default function Home() {
 
           .right-content {
             padding-top: 80px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .main-container {
+            width: 100%;
+            padding: 0 15px;
           }
         }
       `}</style>

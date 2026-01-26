@@ -148,6 +148,8 @@ export default function PortfolioSection() {
           border-radius: 15px;
           padding: 60px 40px 50px;
           margin-top: 20px;
+          width: 100%;
+          box-sizing: border-box;
         }
 
         .sec-head {
@@ -167,6 +169,11 @@ export default function PortfolioSection() {
           display: grid;
           grid-template-columns: repeat(12, 1fr);
           gap: 30px 20px;
+          width: 100%;
+        }
+
+        .portfolio-item {
+          min-width: 0;
         }
 
         .col-full {
@@ -229,6 +236,8 @@ export default function PortfolioSection() {
           gap: 8px;
           flex-wrap: wrap;
           z-index: 2;
+          max-width: 70%;
+          justify-content: flex-end;
         }
 
         .tags span {
@@ -250,20 +259,49 @@ export default function PortfolioSection() {
           bottom: 20px;
           left: 20px;
           z-index: 2;
+          right: 20px;
+        }
+
+        @media (max-width: 1400px) {
+          .col-7,
+          .col-8 {
+            grid-column: span 8;
+          }
+          .col-5 {
+            grid-column: span 4;
+          }
         }
 
         @media (max-width: 1024px) {
+          .portfolio-section {
+            padding: 50px 30px 40px;
+          }
+
           .col-7,
           .col-5,
           .col-4,
-          .col-8 {
+          .col-8,
+          .col-6 {
             grid-column: span 6;
+          }
+
+          .media-wrapper {
+            height: 350px;
           }
         }
 
         @media (max-width: 768px) {
           .portfolio-section {
             padding: 40px 20px;
+            border-radius: 10px;
+          }
+
+          .sec-head {
+            margin-bottom: 40px;
+          }
+
+          .portfolio-grid {
+            gap: 20px 15px;
           }
 
           .col-full,
@@ -273,6 +311,38 @@ export default function PortfolioSection() {
           .col-8,
           .col-6 {
             grid-column: span 12;
+          }
+
+          .media-wrapper {
+            height: 300px;
+          }
+
+          .tags {
+            top: 10px;
+            right: 10px;
+            gap: 5px;
+          }
+
+          .tags span {
+            padding: 5px 12px;
+            font-size: 0.75rem;
+          }
+
+          .item-title {
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+            font-size: 1rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .portfolio-section {
+            padding: 30px 15px;
+          }
+
+          .media-wrapper {
+            height: 250px;
           }
         }
       `}</style>

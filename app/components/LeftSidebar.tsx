@@ -311,9 +311,49 @@ export default function LeftSidebar() {
           flex-shrink: 0;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1600px) {
+          .left-sidebar {
+            width: 85%;
+          }
+
+          .left-sidebar > * {
+            width: 280px;
+          }
+        }
+
+        @media (max-width: 1400px) {
           .left-sidebar {
             width: 90%;
+          }
+
+          .left-sidebar > * {
+            width: 260px;
+          }
+
+          .circle-text-wrapper {
+            width: 200px;
+            height: 200px;
+          }
+
+          .contact-info {
+            font-size: 16px;
+          }
+        }
+
+        @media (max-width: 1200px) {
+          .left-sidebar > * {
+            width: 240px;
+          }
+
+          .circle-text-wrapper {
+            width: 180px;
+            height: 180px;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .left-sidebar {
+            width: 92%;
           }
 
           .info-section,
@@ -327,6 +367,13 @@ export default function LeftSidebar() {
 
           .navbar {
             padding-left: 0;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .left-sidebar {
+            width: 100%;
+            padding: 15px;
           }
         }
       `}</style>
