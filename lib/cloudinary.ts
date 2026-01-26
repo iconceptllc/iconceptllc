@@ -80,6 +80,10 @@ const urlMap: Record<string, string> = {
   "/works/trop_violet_fabric_softner.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769417238/trop_violet_fabric_softner_bctj41.mp4`,
   "/works/helin_eren.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769422889/helin_eren_phdqot.mp4`,
   "/works/labrada_supplement.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769424181/labrada_supplement_ixspvy.mp4`,
+  "/works/dac.webp": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769430807/dac_skaljo.webp`,
+  "/works/dac.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/upload/v1769430807/dac_skaljo.webp`,
+  "/works/snickers.webp": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769431911/snickers_xdwwi5.webp`,
+  "/works/americana.webp": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769431911/americana_qwyroc.webp`,
 
 };
 

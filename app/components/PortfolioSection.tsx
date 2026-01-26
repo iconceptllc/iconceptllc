@@ -12,55 +12,19 @@ const portfolioItems = [
     tags: ["UI/UX", "Webflow"],
     colSpan: "full",
   },
-  {
-    type: "image",
-    src: cdn("/works/aptech.webp"),
-    title: "Aptech Computer Training",
-    tags: ["Website Development", "UI/UX Design"],
-    colSpan: "7",
-  },
-  {
-    type: "video",
-    src: cdn("/works/labrada_supplement.mp4"),
-    title: "Labrada Supplement",
-    tags: ["Video", "UI/UX Design"],
-    colSpan: "5",
-  },
-  {
-    type: "video",
-    src: cdn("/works/helin_eren.mp4"),
-    title: "Helin Erin",
-    tags: ["Branding"],
-    colSpan: "4",
-  },
-  {
-    type: "image",
-    src: cdn("/works/flc.webp"),
-    title: "FLC Marketing Group",
-    tags: ["Website Development", "UI/UX"],
-    colSpan: "8",
-  },
-  {
-    type: "image",
-    src: cdn("/works/eindravilas.webp"),
-    title: "Eindravilas",
-    tags: ["Website Development", "UI/UX"],
-    colSpan: "6",
-  },
-  {
-    type: "image",
-    src: cdn("/works/almeshal.webp"),
-    title: "Al Meshal Electronics & Electrical Appliances Co LLC",
-    tags: ["E-commerce Website", "UI/UX Design"],
-    colSpan: "6",
-  },
+  // {
+  //   type: "image",
+  //   src: cdn("/works/aptech.webp"),
+  //   title: "Aptech Computer Training",
+  //   tags: ["Website Development", "UI/UX Design"],
+  //   colSpan: "7",
+  // },
   {
     type: "video",
     src: cdn("/works/space-breeze.mp4"),
     title: "Space Breeze",
     tags: ["Branding", "UI/UX", "Motion"],
     colSpan: "4",
-    height: "600px",
   },
   {
     type: "video",
@@ -68,7 +32,6 @@ const portfolioItems = [
     title: "Blue swim",
     tags: ["Branding", "UI/UX", "Motion"],
     colSpan: "4",
-    height: "600px",
   },
   {
     type: "video",
@@ -76,7 +39,6 @@ const portfolioItems = [
     title: "Rose Abwaje Guidness",
     tags: ["Branding", "UI/UX", "Motion"],
     colSpan: "4",
-    height: "600px",
   },
   {
     type: "video",
@@ -84,7 +46,6 @@ const portfolioItems = [
     title: "Blue swim",
     tags: ["Branding", "UI/UX", "Motion"],
     colSpan: "4",
-    height: "600px",
   },
    {
     type: "video",
@@ -92,7 +53,6 @@ const portfolioItems = [
     title: "Blue swim",
     tags: ["Branding", "UI/UX", "Motion"],
     colSpan: "4",
-    height: "600px",
   },
   {
     type: "video",
@@ -100,8 +60,67 @@ const portfolioItems = [
     title: "Blue swim",
     tags: ["Branding", "UI/UX", "Motion"],
     colSpan: "4",
-    height: "600px",
   },
+  // {
+  //   type: "video",
+  //   src: cdn("/works/labrada_supplement.mp4"),
+  //   title: "Labrada Supplement",
+  //   tags: ["Video", "UI/UX Design"],
+  //   colSpan: "5",
+  // },
+  // {
+  //   type: "video",
+  //   src: cdn("/works/helin_eren.mp4"),
+  //   title: "Helin Erin",
+  //   tags: ["Branding"],
+  //   colSpan: "4",
+  // },
+  {
+    type: "image",
+    src: cdn("/works/dac.webp"),
+    title: "DAC",
+    tags: ["Branding"],
+    colSpan: "4",
+    url: "https://msite.webhostingdubai.net/dac/kw",
+  },
+  {
+    type: "image",
+    src: cdn("/works/snickers.webp"),
+    title: "Snickers",
+    tags: ["Branding"],
+    colSpan: "4",
+    url: "https://msite.webhostingdubai.net/snickers1/",
+  },
+  {
+    type: "image",
+    src: cdn("/works/americana.webp"),
+    title: "Americana",
+    tags: ["Branding"],
+    colSpan: "4",
+    url: "https://msite.webhostingdubai.net/americana/",
+  },
+  // {
+  //   type: "image",
+  //   src: cdn("/works/flc.webp"),
+  //   title: "FLC Marketing Group",
+  //   tags: ["Website Development", "UI/UX"],
+  //   colSpan: "8",
+  // },
+  // {
+  //   type: "image",
+  //   src: cdn("/works/eindravilas.webp"),
+  //   title: "Eindravilas",
+  //   tags: ["Website Development", "UI/UX"],
+  //   colSpan: "6",
+  // },
+  // {
+  //   type: "image",
+  //   src: cdn("/works/almeshal.webp"),
+  //   title: "Al Meshal Electronics & Electrical Appliances Co LLC",
+  //   tags: ["E-commerce Website", "UI/UX Design"],
+  //   colSpan: "6",
+  // },
+  
   
   
 ];
@@ -109,35 +128,60 @@ const portfolioItems = [
 export default function PortfolioSection() {
   return (
     <section className="portfolio-section">
-      <div className="sec-head">
+      {/* <div className="sec-head">
         <h6>OUR PROJECTS</h6>
-      </div>
+      </div> */}
 
       <div className="portfolio-grid">
         {portfolioItems.map((item, index) => (
           <div key={index} className={`portfolio-item col-${item.colSpan}`}>
-            <Link href="/project-details" className="item-link">
-              <div className="media-wrapper" style={item.height ? { height: item.height } : undefined}>
-                {item.type === "video" ? (
-                  <video autoPlay muted loop playsInline>
-                    <source src={item.src} type="video/mp4" />
-                  </video>
-                ) : (
-                  <Image
-                    src={item.src}
-                    alt={item.title}
-                    fill
-                    style={{ objectFit: "cover" }}
-                  />
-                )}
-                <div className="tags">
-                  {item.tags.map((tag, i) => (
-                    <span key={i}>{tag}</span>
-                  ))}
+            {item.url ? (
+              <a href={item.url} className="item-link">
+                <div className="media-wrapper" style={item.height ? { height: item.height } : undefined}>
+                  {item.type === "video" ? (
+                    <video autoPlay muted loop playsInline>
+                      <source src={item.src} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <Image
+                      src={item.src}
+                      alt={item.title}
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  )}
+                  <div className="tags">
+                    {item.tags.map((tag, i) => (
+                      <span key={i}>{tag}</span>
+                    ))}
+                  </div>
+                  <h6 className="item-title">{item.title}</h6>
                 </div>
-              <h6 className="item-title">{item.title}</h6>
-              </div>
-            </Link>
+              </a>
+            ) : (
+              <Link href="/project-details" className="item-link">
+                <div className="media-wrapper" style={item.height ? { height: item.height } : undefined}>
+                  {item.type === "video" ? (
+                    <video autoPlay muted loop playsInline>
+                      <source src={item.src} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <Image
+                      src={item.src}
+                      alt={item.title}
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  )}
+                  <div className="tags">
+                    {item.tags.map((tag, i) => (
+                      <span key={i}>{tag}</span>
+                    ))}
+                  </div>
+                  <h6 className="item-title">{item.title}</h6>
+                </div>
+              </Link>
+            )}
           </div>
         ))}
       </div>
@@ -146,7 +190,7 @@ export default function PortfolioSection() {
         .portfolio-section {
           background: #f5f5f5;
           border-radius: 15px;
-          padding: 60px 40px 50px;
+          padding: 40px;
           margin-top: 20px;
           width: 100%;
           box-sizing: border-box;
