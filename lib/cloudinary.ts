@@ -22,7 +22,7 @@ const urlMap: Record<string, string> = {
   "/testim/3.jpg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167655/iconcept/testim/3.jpg`,
   "/testim/4.jpg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167656/iconcept/testim/4.jpg`,
   "/testim/envato-logo.svg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167656/iconcept/testim/envato-logo.svg`,
-  "/videos/iconcept-showreel.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769167711/iconcept/videos/iconcept-showreel.mp4`,
+  "/videos/iconcept-showreel.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769517355/iconcept-showreel_sqrted.mp4`,
   "/works/w1.png": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167760/iconcept/works/w1.png`,
   "/works/w2.png": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167761/iconcept/works/w2.png`,
   "/works/w4.png": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167764/iconcept/works/w4.jpg`,
@@ -84,6 +84,8 @@ const urlMap: Record<string, string> = {
   "/works/dac.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/upload/v1769430807/dac_skaljo.webp`,
   "/works/snickers.webp": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769431911/snickers_xdwwi5.webp`,
   "/works/americana.webp": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769431911/americana_qwyroc.webp`,
+  "/works/cgi.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769514268/cgi_okugol.mp4`,
+  "/works/anamorphic.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769516165/anamorphic_ij9bes.mp4`,
 
 };
 
