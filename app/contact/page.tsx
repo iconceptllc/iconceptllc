@@ -1,28 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import LeftSidebar from "../components/LeftSidebar";
 import Footer from "../components/Footer";
-
-const contactCards = [
-  {
-    title: "Contact Info",
-    details: [
-      "iconcept llc",
-      "office no : 906,",
-      "capital golden tower,",
-      "business bay,",
-      "dubai, UAE.",
-    ],
-  },
-  {
-    title: "Email",
-    details: ["contact@iconceptme.com"],
-  },
-  {
-    title: "Business Hours",
-    details: ["mon - sat: 9am to 6pm"],
-  },
-];
 
 export default function ContactPage() {
   return (
@@ -34,87 +14,118 @@ export default function ContactPage() {
           <div className="left-spacer" />
 
           <main className="right-content">
-            <section className="contact-hero">
-              <div className="hero-copy">
-                <span className="hero-tag">Contact</span>
-                <h1>Have a project in mind? Let us talk.</h1>
-                <p className="hero-subtitle">
-                  We would love to learn about your goals and how we can help.
-                </p>
-              </div>
-              <div className="hero-visual" aria-hidden="true" />
-            </section>
-
-            <section className="contact-info">
-              <div className="info-grid">
-                {contactCards.map((card) => (
-                  <div key={card.title} className="info-card">
-                    <h3>{card.title}</h3>
-                    <div className="info-details">
-                      {card.details.map((line) => (
-                        <p key={line}>{line}</p>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            <section className="contact-form">
-              <div className="form-grid">
-                <div className="form-copy">
-                  <h2>Send a message</h2>
-                  <p>
-                    Tell us about your project. Our team will respond within 1
-                    to 2 business days.
-                  </p>
+            {/* Hero Header */}
+            <header className="pg-hero">
+              <div className="hero-top">
+                <div className="hero-left">
+                  <span className="hero-tag">Contact</span>
                 </div>
-                <form className="form-card" action="#" method="post">
-                  <div className="form-row">
-                    <label>
-                      Name
-                      <input type="text" name="name" placeholder="Your name" />
-                    </label>
-                    <label>
-                      Email
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="you@company.com"
-                      />
-                    </label>
-                  </div>
-                  <label>
-                    Subject
-                    <input type="text" name="subject" placeholder="Project" />
-                  </label>
-                  <label>
-                    Message
-                    <textarea
-                      name="message"
-                      rows={5}
-                      placeholder="Tell us about your project goals."
-                    />
-                  </label>
-                  <button type="submit" className="submit-btn">
-                    Send a message
-                  </button>
-                </form>
+                <div className="hero-right">
+                  <h1>
+                    Have a project in mind? <br /> Let&apos;s discuss.
+                  </h1>
+                </div>
               </div>
-            </section>
-
-            <section className="contact-map">
-              <div className="map-card">
-                <h2>Visit our studio</h2>
-                <div className="map-frame">
-                  <iframe
-                    src="https://www.google.com/maps?ll=25.177922,55.273788&z=14&t=m&hl=en&gl=AE&mapclient=embed&cid=8314138900576672402"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="iconcept llc location"
+              <div className="hero-image-wrapper">
+                <div className="hero-image-inner">
+                  <Image
+                    src="/h6.png"
+                    alt="Contact hero"
+                    fill
+                    style={{ objectFit: "cover", objectPosition: "center" }}
+                    priority
                   />
                 </div>
               </div>
+            </header>
+
+            {/* Contact Info Cards */}
+            <section className="contact-info">
+              <div className="info-grid">
+                <div className="info-card">
+                  <span className="info-icon">
+                    <i className="fa-solid fa-location-dot"></i>
+                  </span>
+                  <h6>Address Studio</h6>
+                  <p>
+                    Office no: 906, Capital Golden Tower, Business Bay, Dubai,
+                    UAE
+                  </p>
+                </div>
+                <div className="info-card">
+                  <span className="info-icon">
+                    <i className="fa-solid fa-envelope"></i>
+                  </span>
+                  <h6>Mail Support 24/7</h6>
+                  <p>
+                    <a href="mailto:contact@iconceptme.com">
+                      contact@iconceptme.com
+                    </a>
+                  </p>
+                  <p>
+                    <a href="mailto:info@iconceptme.com">
+                      info@iconceptme.com
+                    </a>
+                  </p>
+                </div>
+                <div className="info-card">
+                  <span className="info-icon">
+                    <i className="fa-solid fa-phone"></i>
+                  </span>
+                  <h6>Phone</h6>
+                  <p>(+971) 58 958 8080</p>
+                  <p>(+971) 50 123 4567</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Contact Form */}
+            <section className="contact-form-section">
+              <form className="contact-form" action="#" method="post">
+                <div className="form-row">
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Name"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <input type="text" name="subject" placeholder="Subject" />
+                </div>
+                <div className="form-group">
+                  <textarea
+                    name="message"
+                    placeholder="Message"
+                    rows={4}
+                    required
+                  />
+                </div>
+                <div className="form-submit">
+                  <button type="submit" className="submit-btn">
+                    <span>Send a Message</span>
+                    <span className="arrow-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M7 11.5H17.0635M17.0635 11.5L12.5635 7M17.0635 11.5L12.5635 16" />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </form>
             </section>
 
             <Footer />
@@ -151,90 +162,62 @@ export default function ContactPage() {
           padding: 20px 0;
         }
 
-        .contact-hero {
-          background: linear-gradient(135deg, #111 0%, #0b0b0b 100%);
-          border-radius: 18px;
-          padding: 60px 50px;
-          display: grid;
-          grid-template-columns: 1.2fr 0.8fr;
-          gap: 40px;
-          align-items: center;
-          position: relative;
-          overflow: hidden;
-          border: 1px solid rgba(255, 255, 255, 0.06);
+        /* ===== Hero Header ===== */
+        .pg-hero {
+          margin-bottom: 20px;
         }
 
-        .contact-hero::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(
-              circle at top right,
-              rgba(139, 92, 246, 0.18),
-              transparent 45%
-            ),
-            radial-gradient(
-              circle at 15% 80%,
-              rgba(59, 130, 246, 0.16),
-              transparent 40%
-            );
-          pointer-events: none;
+        .hero-top {
+          display: flex;
+          gap: 30px;
+          margin-bottom: 50px;
+          align-items: flex-start;
         }
 
-        .hero-copy {
-          position: relative;
-          z-index: 1;
+        .hero-left {
+          flex-shrink: 0;
+          padding-top: 8px;
         }
 
         .hero-tag {
           display: inline-flex;
           align-items: center;
-          gap: 8px;
-          padding: 8px 14px;
+          padding: 8px 18px;
           border-radius: 999px;
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.25);
           font-size: 0.8rem;
           text-transform: uppercase;
           letter-spacing: 1px;
-          color: rgba(255, 255, 255, 0.7);
-          margin-bottom: 20px;
+          color: rgba(255, 255, 255, 0.8);
         }
 
-        .contact-hero h1 {
-          font-size: 3rem;
+        .hero-right {
+          flex: 1;
+        }
+
+        .hero-right h1 {
+          font-size: clamp(2.2rem, 5vw, 4.5rem);
           font-weight: 600;
-          margin-bottom: 16px;
+          line-height: 1.15;
+          margin: 0;
         }
 
-        .hero-subtitle {
-          font-size: 1.1rem;
-          color: rgba(255, 255, 255, 0.7);
-        }
-
-        .hero-visual {
-          position: relative;
-          z-index: 1;
+        .hero-image-wrapper {
           width: 100%;
-          min-height: 260px;
-          border-radius: 18px;
-          background: linear-gradient(150deg, #232323, #0b0b0b);
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          box-shadow: 0 30px 50px rgba(0, 0, 0, 0.35);
+          overflow: hidden;
+          border-radius: 40px;
         }
 
-        .hero-visual::before {
-          content: "";
-          position: absolute;
-          inset: 16px;
-          border-radius: 14px;
-          background: url("https://www.iconceptme.com/wp-content/uploads/2021/03/about-iconcept.jpg")
-            center/cover no-repeat;
-          opacity: 0.85;
-          filter: saturate(0.8);
+        .hero-image-inner {
+          position: relative;
+          width: 100%;
+          height: 0;
+          padding-bottom: 55%;
         }
 
+        /* ===== Contact Info Cards ===== */
         .contact-info {
-          margin-top: 20px;
+          margin-top: 60px;
         }
 
         .info-grid {
@@ -244,132 +227,130 @@ export default function ContactPage() {
         }
 
         .info-card {
-          background: #111;
-          border-radius: 18px;
-          padding: 32px 26px;
-          border: 1px solid rgba(255, 255, 255, 0.06);
-          min-height: 220px;
+          background: #141414;
+          border-radius: 20px;
+          padding: 30px;
         }
 
-        .info-card h3 {
-          font-size: 1.1rem;
+        .info-icon {
+          display: block;
+          font-size: 2.2rem;
+          margin-bottom: 24px;
+          color: white;
+        }
+
+        .info-card h6 {
+          font-size: 1rem;
           text-transform: uppercase;
-          letter-spacing: 1px;
-          margin-bottom: 20px;
+          letter-spacing: 0.5px;
+          margin-bottom: 24px;
+          padding-bottom: 24px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          font-weight: 600;
         }
 
-        .info-details p {
-          margin: 0 0 8px;
+        .info-card p {
+          margin: 0 0 6px;
           color: rgba(255, 255, 255, 0.7);
-        }
-
-        .contact-form {
-          margin-top: 20px;
-          background: #0f0f0f;
-          border-radius: 18px;
-          padding: 50px 40px;
-          border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .form-grid {
-          display: grid;
-          grid-template-columns: 0.9fr 1.1fr;
-          gap: 40px;
-          align-items: start;
-        }
-
-        .form-copy h2 {
-          font-size: 2rem;
-          margin-bottom: 12px;
-        }
-
-        .form-copy p {
-          color: rgba(255, 255, 255, 0.7);
+          font-size: 0.95rem;
           line-height: 1.6;
         }
 
-        .form-card {
-          display: grid;
-          gap: 18px;
+        .info-card a {
+          color: rgba(255, 255, 255, 0.7);
+          text-decoration: none;
+          transition: color 0.3s;
+        }
+
+        .info-card a:hover {
+          color: white;
+        }
+
+        /* ===== Contact Form ===== */
+        .contact-form-section {
+          margin-top: 60px;
+        }
+
+        .contact-form {
+          max-width: 100%;
         }
 
         .form-row {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 18px;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
         }
 
-        label {
-          display: grid;
-          gap: 8px;
-          font-size: 0.9rem;
-          color: rgba(255, 255, 255, 0.7);
+        .form-group {
+          margin-bottom: 20px;
         }
 
-        input,
-        textarea {
+        .contact-form input,
+        .contact-form textarea {
           width: 100%;
-          padding: 12px 14px;
-          border-radius: 12px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          background: #141414;
+          padding: 16px 0;
+          border: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+          background: transparent;
           color: white;
-          font-size: 0.95rem;
+          font-size: 1rem;
+          outline: none;
+          transition: border-color 0.3s;
         }
 
-        input::placeholder,
-        textarea::placeholder {
-          color: rgba(255, 255, 255, 0.45);
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+          border-bottom-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+          color: rgba(255, 255, 255, 0.4);
+        }
+
+        .contact-form textarea {
+          resize: vertical;
+        }
+
+        .form-submit {
+          margin-top: 20px;
         }
 
         .submit-btn {
-          padding: 14px 26px;
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 16px 32px;
           border-radius: 999px;
-          border: 1px solid rgba(255, 255, 255, 0.4);
-          background: transparent;
+          border: none;
+          background: #7B61FF;
           color: white;
           text-transform: uppercase;
           letter-spacing: 1px;
           font-size: 0.85rem;
+          font-weight: 500;
           cursor: pointer;
           transition: all 0.3s ease;
-          justify-self: start;
         }
 
         .submit-btn:hover {
-          background: #fff;
-          color: #111;
+          background: #6a4fef;
         }
 
-        .contact-map {
-          margin-top: 20px;
+        .submit-btn .arrow-icon {
+          display: inline-flex;
+          width: 24px;
+          height: 24px;
         }
 
-        .map-card {
-          background: #111;
-          border-radius: 18px;
-          padding: 40px;
-          border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .map-card h2 {
-          font-size: 2rem;
-          margin-bottom: 20px;
-        }
-
-        .map-frame {
-          border-radius: 16px;
-          overflow: hidden;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .map-frame iframe {
+        .submit-btn .arrow-icon svg {
           width: 100%;
-          height: 420px;
-          border: 0;
-          display: block;
+          height: 100%;
+          stroke: currentColor;
+          stroke-width: 1.5;
         }
 
+        /* ===== Responsive ===== */
         @media (max-width: 1024px) {
           .main-container {
             width: 90%;
@@ -383,36 +364,28 @@ export default function ContactPage() {
             padding-top: 80px;
           }
 
-          .contact-hero {
-            grid-template-columns: 1fr;
-          }
-
           .info-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .form-grid {
             grid-template-columns: 1fr;
           }
         }
 
         @media (max-width: 768px) {
-          .contact-hero,
-          .contact-form,
-          .map-card {
-            padding: 36px 20px;
+          .hero-top {
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 30px;
           }
 
-          .contact-hero h1 {
-            font-size: 2.2rem;
+          .hero-right h1 {
+            font-size: 2rem;
+          }
+
+          .hero-image-wrapper {
+            border-radius: 20px;
           }
 
           .form-row {
             grid-template-columns: 1fr;
-          }
-
-          .map-frame iframe {
-            height: 320px;
           }
         }
       `}</style>

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { cdn } from "@/lib/cloudinary";
@@ -7,12 +8,43 @@ import { cdn } from "@/lib/cloudinary";
 type PortfolioItem = {
   type: "video" | "image";
   src: string;
+  images?: string[];
   title: string;
   tags: string[];
   colSpan: string;
   url?: string;
   height?: string | number;
 };
+
+function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <>
+      {images.map((src, i) => (
+        <Image
+          key={i}
+          src={src}
+          alt={`${alt} ${i + 1}`}
+          fill
+          style={{
+            objectFit: "cover",
+            opacity: i === activeIndex ? 1 : 0,
+            transition: "opacity 1s ease-in-out",
+          }}
+          priority={i === 0}
+        />
+      ))}
+    </>
+  );
+}
 
 const portfolioItems: PortfolioItem[] = [
   {
@@ -52,24 +84,24 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     type: "video",
-    src: cdn("/works/space-breeze.mp4"),
-    title: "Space Breeze",
-    tags: ["Branding", "UI/UX", "Motion"],
-    colSpan: "5",
-  },
-  {
-    type: "video",
-    src: cdn("/works/blue_swim.mp4"),
-    title: "Blue swim",
-    tags: ["Branding", "UI/UX", "Motion"],
-    colSpan: "5",
-  },
-  {
-    type: "video",
-    src: cdn("/works/rose_abwaje_guidness.mp4"),
-    title: "Rose Abwaje Guidness",
+    src: cdn("/works/corporate.mp4"),
+    title: "Corporate Video",
     tags: ["Branding", "UI/UX", "Motion"],
     colSpan: "7",
+  },
+  {
+    type: "video",
+    src: cdn("/works/2d.mp4"),
+    title: "2D Animation",
+    tags: ["Branding", "UI/UX", "Motion"],
+    colSpan: "6",
+  },
+  {
+    type: "video",
+    src: cdn("/works/3d.mp4"),
+    title: "3D Animation",
+    tags: ["Branding", "UI/UX", "Motion"],
+    colSpan: "6",
   },
   {
     type: "video",
@@ -99,29 +131,92 @@ const portfolioItems: PortfolioItem[] = [
   //   tags: ["Video", "UI/UX Design"],
   //   colSpan: "5",
   // },
+ 
   {
     type: "image",
-    src: cdn("/works/dac.webp"),
-    title: "DAC",
+    src: cdn("/works/americana-game.webp"),
+    images: [
+      cdn("/works/americana-game.webp"),
+      cdn("/works/americana-game1.webp"),
+      cdn("/works/americana-game2.webp"),
+      cdn("/works/americana-game3.webp"),
+    ],
+    title: "Americana",
     tags: ["Branding"],
     colSpan: "4",
-    url: "https://msite.webhostingdubai.net/dac/kw",
+    height: 660,
   },
   {
     type: "image",
     src: cdn("/works/snickers.webp"),
+    images: [
+      cdn("/works/snickers.webp"),
+      cdn("/works/snickers1.webp"),
+      cdn("/works/snickers2.webp"),
+      cdn("/works/snickers3.webp"),
+      cdn("/works/snickers4.webp"),
+    ],
     title: "Snickers",
     tags: ["Branding"],
     colSpan: "4",
-    url: "https://msite.webhostingdubai.net/snickers1/",
+    height: 660,
   },
   {
     type: "image",
+    src: cdn("/works/persil.webp"),
+    images: [
+      cdn("/works/persil.webp"),
+      cdn("/works/persil1.webp"),
+      cdn("/works/persil2.webp"),
+      cdn("/works/persil3.webp"),
+    ],
+    title: "Persil",
+    tags: ["Branding"],
+    colSpan: "4",
+    height: 660,
+  },
+
+   {
+    type: "image",
+    src: cdn("/works/dac.webp"),
+    images: [
+      cdn("/works/dac.webp"),
+      cdn("/works/dac1.webp"),
+      cdn("/works/dac2.webp"),
+      cdn("/works/dac3.webp"),
+    ],
+    title: "DAC",
+    tags: ["Branding"],
+    colSpan: "4",
+    height: 640,
+  },
+     {
+    type: "image",
     src: cdn("/works/americana.webp"),
+    images: [
+      cdn("/works/americana.webp"),
+      cdn("/works/americana1.webp"),
+      cdn("/works/americana2.webp"),
+      cdn("/works/americana3.webp"),
+    ],
     title: "Americana",
     tags: ["Branding"],
     colSpan: "4",
-    url: "https://msite.webhostingdubai.net/americana/",
+    height: 640,
+  },
+  {
+    type: "image",
+    src: cdn("/works/extra.webp"),
+    images: [
+      cdn("/works/extra.webp"),
+      cdn("/works/extra1.webp"),
+      cdn("/works/extra2.webp"),
+      cdn("/works/extra3.webp"),
+    ],
+    title: "Extra",
+    tags: ["Branding"],
+    colSpan: "4",
+     height: 640,
   },
   // {
   //   type: "image",
@@ -166,6 +261,8 @@ export default function PortfolioSection() {
                     <video autoPlay muted loop playsInline>
                       <source src={item.src} type="video/mp4" />
                     </video>
+                  ) : item.images ? (
+                    <ImageCarousel images={item.images} alt={item.title} />
                   ) : (
                     <Image
                       src={item.src}
@@ -189,6 +286,8 @@ export default function PortfolioSection() {
                     <video autoPlay muted loop playsInline>
                       <source src={item.src} type="video/mp4" />
                     </video>
+                  ) : item.images ? (
+                    <ImageCarousel images={item.images} alt={item.title} />
                   ) : (
                     <Image
                       src={item.src}
