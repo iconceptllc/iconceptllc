@@ -148,6 +148,7 @@ export default function ClientsSection() {
           opacity: 0.6;
           transition: opacity 0.3s ease;
           min-width: 160px;
+          filter: grayscale(1);
         }
 
         .client-item:hover {

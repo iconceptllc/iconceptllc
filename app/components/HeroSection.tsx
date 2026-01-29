@@ -810,11 +810,68 @@ export default function HeroSection() {
             height: auto;
           }
 
-          .services-info,
+          .services-info {
+            width: 100%;
+            height: auto;
+            min-height: 320px;
+            padding: 20px;
+          }
+
+          .services-info h6 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+          }
+
+          .service-tags-wrapper {
+            min-height: 180px;
+          }
+
+          .service-tags {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding-top: 10px;
+          }
+
+          .service-tags .tag {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            font-size: 0.7rem;
+            padding: 6px 14px;
+          }
+
+          .icon-circle {
+            display: none;
+          }
+
           .services-slider {
             width: 100%;
             height: auto;
-            min-height: 280px;
+            min-height: 240px;
+          }
+
+          .slide-item {
+            padding: 18px;
+          }
+
+          .slide-item h4 {
+            font-size: 1.4rem;
+          }
+
+          .slide-item .subtitle {
+            font-size: 0.95rem;
+          }
+
+          .slide-item p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+          }
+
+          .slider-controls {
+            bottom: 12px;
+            right: 18px;
           }
 
           .tagline {
@@ -823,6 +880,32 @@ export default function HeroSection() {
 
           .title-row {
             display: block;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .services-info {
+            min-height: 300px;
+          }
+
+          .service-tags-wrapper {
+            min-height: 160px;
+          }
+
+          .services-info h6 {
+            font-size: 1rem;
+          }
+
+          .services-slider {
+            min-height: 220px;
+          }
+
+          .slide-item h4 {
+            font-size: 1.2rem;
+          }
+
+          .slide-item p {
+            font-size: 0.8rem;
           }
         }
       `}</style>
