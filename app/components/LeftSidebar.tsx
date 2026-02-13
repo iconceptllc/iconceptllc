@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { cdn } from "@/lib/cloudinary";
 import NavigationMenu from "./NavigationMenu";
 
 export default function LeftSidebar() {
@@ -16,7 +15,7 @@ export default function LeftSidebar() {
           {/* Logo */}
           <Link href="/" className="logo">
             <Image
-              src={cdn("/iconcept-logo.png")}
+              src={"/iconcept-logo.png"}
               alt="iConcept Logo"
               width={170}
               height={50}
@@ -49,14 +48,14 @@ export default function LeftSidebar() {
           {/* Circle Text Animation */}
           <div className="circle-text-wrapper">
             <Image
-              src={cdn("/circle-text.svg")}
+              src={"/circle-text.svg"}
               alt="Circle Text"
               width={210}
               height={210}
               className="circle-text"
             />
             <Image
-              src={cdn("/iconcept-icon.png")}
+              src={"/iconcept-icon.png"}
               alt="iConcept Icon"
               width={170}
               height={170}

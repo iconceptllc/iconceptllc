@@ -103,7 +103,7 @@ export default function PortfolioPage() {
                   >
                     <article className="portfolio-card">
                       <div className="card-media">
-                        {project.heroVideo ? (
+                        {project.projectType === "video" && project.heroVideo ? (
                           <video autoPlay muted loop playsInline>
                             <source src={project.heroVideo} type="video/mp4" />
                           </video>

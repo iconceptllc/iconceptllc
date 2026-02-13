@@ -9,25 +9,25 @@ const services = [
     number: "01",
     title: "Web Solutions",
     items: ["UI/UX Design", "Web/Mobile App Development", "E-commerce Storefront"],
-    image: cdn("/imgs/serv/s1.jpg"),
+    image: "/imgs/web-apps.webp",
   },
   {
     number: "02",
     title: "Marketing Services",
     items: ["Digital Marketing", "Social Media Marketing", "Branding & Advertissing"],
-    image: cdn("/imgs/serv/s2.jpg"),
+    image: "/imgs/marketing-services.webp",
   },
   {
     number: "03",
     title: "Content Production",
     items: ["Ad Film Production", "CGI, AI & Motion Graphics", "Audio Video Editing"],
-    image: cdn("/imgs/serv/s3.jpg"),
+    image: "/imgs/content-production.webp",
   },
   {
     number: "04",
     title: "3D & Motion",
     items: ["2D & 3D Animation", "Product Visualization", "Explainer Videos"],
-    image: cdn("/imgs/serv/s4.jpg"),
+    image: "/imgs/3d.webp",
   },
 ];
 

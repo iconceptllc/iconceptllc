@@ -1,22 +1,8 @@
 const CLOUD_NAME = "dvrw9jbbu";
 
 const urlMap: Record<string, string> = {
-  "/hero-bg.jpg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167604/iconcept/hero-bg.jpg`,
-  "/md.png": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167649/iconcept/md.png`,
-  "/iconcept-logo.png": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167606/iconcept/iconcept-logo.png`,
-  "/iconcept-icon.png": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167605/iconcept/iconcept-icon.png`,
-  "/circle-text.svg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167591/iconcept/circle-text.svg`,
-  "/logo-clutch.svg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167643/iconcept/logo-clutch.svg`,
-  "/envato-logo.svg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167599/iconcept/envato-logo.svg`,
-  "/process.svg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167650/iconcept/process.svg`,
-  "/clients/1.svg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167593/iconcept/clients/1.svg`,
-  "/clients/2.svg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167594/iconcept/clients/2.svg`,
-  "/clients/3.svg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167596/iconcept/clients/3.svg`,
-  "/clients/4.svg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167597/iconcept/clients/4.svg`,
-  "/imgs/serv/s1.jpg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167630/iconcept/imgs/serv/s1.jpg`,
-  "/imgs/serv/s2.jpg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167632/iconcept/imgs/serv/s2.jpg`,
-  "/imgs/serv/s3.jpg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167634/iconcept/imgs/serv/s3.jpg`,
-  "/imgs/serv/s4.jpg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167635/iconcept/imgs/serv/s4.jpg`,
+
+
   "/testim/1.jpg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167653/iconcept/testim/1.jpg`,
   "/testim/2.jpg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167654/iconcept/testim/2.jpg`,
   "/testim/3.jpg": `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/v1769167655/iconcept/testim/3.jpg`,

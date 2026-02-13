@@ -14,7 +14,7 @@ const services = [
     description:
       "We craft stunning, high-performance websites and web applications tailored to your business needs. From UI/UX design to full-stack development.",
     tags: ["UI/UX Design", "Web Development", "E-commerce", "CMS Solutions"],
-    image: cdn("/imgs/serv/s1.jpg"),
+    image: "/imgs/web-apps.webp",
   },
   {
     number: "02",
@@ -27,7 +27,7 @@ const services = [
       "SEO",
       "Email Marketing",
     ],
-    image: cdn("/imgs/serv/s2.jpg"),
+    image: "/imgs/marketing-services.webp",
   },
   {
     number: "03",
@@ -39,7 +39,7 @@ const services = [
       "CGI & Motion Graphics",
       "Audio Video Editing",
     ],
-    image: cdn("/imgs/serv/s3.jpg"),
+    image: "/imgs/content-production.webp",
   },
   {
     number: "04",
@@ -51,7 +51,7 @@ const services = [
       "Product Visualization",
       "Explainer Videos",
     ],
-    image: cdn("/imgs/serv/s4.jpg"),
+    image: "/imgs/3d.webp",
   },
 ];
 
