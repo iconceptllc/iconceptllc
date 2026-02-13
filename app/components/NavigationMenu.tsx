@@ -4,7 +4,6 @@ import { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
-import { cdn } from "@/lib/cloudinary";
 
 const menuItems = [
   {
@@ -166,7 +165,7 @@ export default function NavigationMenu({ isOpen, onClose }: NavigationMenuProps)
 
             <div className="info-image">
               <Image
-                src={cdn("/works/w3.jpg")}
+                src={"/works/w3.jpg"}
                 alt="iConcept"
                 fill
                 style={{ objectFit: "cover" }}

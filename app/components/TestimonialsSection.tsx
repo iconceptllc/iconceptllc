@@ -2,27 +2,26 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { cdn } from "@/lib/cloudinary";
 
 const testimonials = [
   {
     name: "Carol Buyers",
     role: "Ceo Founder",
-    image: cdn("/testim/1.jpg"),
+    image: "/testim/1.jpg",
     quote:
       '"Working with was an outstanding experience. Their ability to understand our vision and translate it into a clean, functional design exceeded our expectations. We received incredible feedback on the new website."',
   },
   {
     name: "Carol Buyers",
     role: "Ceo Founder",
-    image: cdn("/testim/2.jpg"),
+    image: "/testim/2.jpg",
     quote:
       '"Working with was an outstanding experience. Their ability to understand our vision and translate it into a clean, functional design exceeded our expectations. We received incredible feedback on the new website."',
   },
   {
     name: "B. Gordon",
     role: "Ceo Founder",
-    image: cdn("/testim/4.jpg"),
+    image: "/testim/4.jpg",
     quote:
       '"Working with was an outstanding experience. Their ability to understand our vision and translate it into a clean, functional design exceeded our expectations. We received incredible feedback on the new website."',
   },
@@ -54,7 +53,7 @@ export default function TestimonialsSection() {
               </div>
               <div className="company-logo">
                 <Image
-                  src={cdn("/envato-logo.svg")}
+                  src={"/envato-logo.svg"}
                   alt="Envato"
                   width={80}
                   height={30}
