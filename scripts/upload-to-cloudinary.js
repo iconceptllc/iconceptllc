@@ -10,15 +10,10 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const PUBLIC_DIR = path.resolve(__dirname, "../public");
+const VIDEOS_DIR = path.resolve(__dirname, "../public/videos");
 const OUTPUT_FILE = path.resolve(__dirname, "../cloudinary-urls.json");
 
-const MEDIA_EXTENSIONS = [
-  ".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg",
-  ".mp4", ".webm", ".mov",
-];
-
-const SKIP_FILES = ["file.svg", "globe.svg", "next.svg", "vercel.svg", "window.svg"];
+const VIDEO_EXTENSIONS = [".mp4", ".webm", ".mov"];
 
 function getAllFiles(dir, fileList = []) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -28,7 +23,7 @@ function getAllFiles(dir, fileList = []) {
       getAllFiles(fullPath, fileList);
     } else {
       const ext = path.extname(entry.name).toLowerCase();
-      if (MEDIA_EXTENSIONS.includes(ext) && !SKIP_FILES.includes(entry.name)) {
+      if (VIDEO_EXTENSIONS.includes(ext)) {
         fileList.push(fullPath);
       }
     }
@@ -37,16 +32,12 @@ function getAllFiles(dir, fileList = []) {
 }
 
 async function uploadFile(filePath) {
-  const relativePath = path.relative(PUBLIC_DIR, filePath).replace(/\\/g, "/");
-  const ext = path.extname(filePath).toLowerCase();
-  const isVideo = [".mp4", ".webm", ".mov"].includes(ext);
-
-  // Use folder structure: iconcept/<relative-path-without-extension>
+  const relativePath = path.relative(path.resolve(__dirname, "../public"), filePath).replace(/\\/g, "/");
   const publicId = "iconcept/" + relativePath.replace(/\.[^.]+$/, "");
 
   const options = {
     public_id: publicId,
-    resource_type: isVideo ? "video" : "image",
+    resource_type: "video",
     overwrite: false,
     unique_filename: false,
   };
@@ -56,10 +47,8 @@ async function uploadFile(filePath) {
     return { localPath: "/" + relativePath, url: result.secure_url };
   } catch (err) {
     if (err.http_code === 409 || (err.message && err.message.includes("already exists"))) {
-      // File already uploaded, get existing URL
-      const resourceType = isVideo ? "video" : "image";
-      const ext2 = path.extname(relativePath);
-      const url = `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/${resourceType}/upload/${publicId}${ext2}`;
+      const ext = path.extname(relativePath);
+      const url = `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/video/upload/${publicId}${ext}`;
       return { localPath: "/" + relativePath, url };
     }
     console.error(`  Failed: ${relativePath} - ${err.message}`);
@@ -68,16 +57,16 @@ async function uploadFile(filePath) {
 }
 
 async function main() {
-  console.log("Scanning public folder for media files...\n");
-  const files = getAllFiles(PUBLIC_DIR);
-  console.log(`Found ${files.length} media files to upload.\n`);
+  console.log("Scanning public/videos for video files...\n");
+  const files = getAllFiles(VIDEOS_DIR);
+  console.log(`Found ${files.length} video files to upload.\n`);
 
   const urlMap = {};
   let uploaded = 0;
   let failed = 0;
 
   for (const file of files) {
-    const rel = path.relative(PUBLIC_DIR, file).replace(/\\/g, "/");
+    const rel = path.relative(path.resolve(__dirname, "../public"), file).replace(/\\/g, "/");
     process.stdout.write(`[${uploaded + failed + 1}/${files.length}] Uploading: ${rel}...`);
 
     const result = await uploadFile(file);

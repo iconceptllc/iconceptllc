@@ -45,8 +45,8 @@ export const portfolioProjects: PortfolioProject[] = [
     year: "2024",
     projectType: "video",
     mediaSize: "full",
-    heroImage: cdn("/works/anamorphic.webp"),
-    heroVideo: cdn("/works/anamorphic.mp4"),
+    heroImage: "/works/anamorphic.webp",
+    heroVideo: cdn("/videos/anamorphic.mp4"),
     overview:
       "Eye-catching 3D anamorphic billboard content that creates stunning visual illusions for outdoor advertising campaigns.",
     description:
@@ -58,7 +58,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Brand Storytelling",
     ],
     gallery: [],
-    videoSrc: cdn("/works/anamorphic.mp4"),
+    videoSrc: cdn("/videos/anamorphic.mp4"),
     tags: ["Anamorphic", "Video Production", "3D"],
   },
   {
@@ -70,8 +70,8 @@ export const portfolioProjects: PortfolioProject[] = [
     year: "2024",
     projectType: "video",
     mediaSize: "full",
-    heroImage: cdn("/works/cgi.webp"),
-    heroVideo: cdn("/works/cgi.mp4"),
+    heroImage: "/works/cgi.webp",
+    heroVideo: cdn("/videos/cgi.mp4"),
     overview:
       "Photorealistic CGI product renders and animations that bring products to life with stunning detail and visual impact.",
     description:
@@ -83,7 +83,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Lighting Design",
     ],
     gallery: [],
-    videoSrc: cdn("/works/cgi.mp4"),
+    videoSrc: cdn("/videos/cgi.mp4"),
     tags: ["CGI", "3D", "Product Visualization"],
   },
   {
@@ -95,8 +95,8 @@ export const portfolioProjects: PortfolioProject[] = [
     year: "2024",
     projectType: "video",
     mediaSize: "full",
-    heroImage: cdn("/works/corporate.webp"),
-    heroVideo: cdn("/works/corporate.mp4"),
+    heroImage: "/works/corporate.webp",
+    heroVideo: cdn("/videos/corporate.mp4"),
     overview:
       "Professional corporate video production showcasing brand identity, company values, and organizational stories.",
     description:
@@ -108,7 +108,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Event Coverage",
     ],
     gallery: [],
-    videoSrc: cdn("/works/corporate.mp4"),
+    videoSrc: cdn("/videos/corporate.mp4"),
     tags: ["Corporate", "Branding", "Video Production"],
   },
   {
@@ -120,8 +120,8 @@ export const portfolioProjects: PortfolioProject[] = [
     year: "2024",
     projectType: "video",
     mediaSize: "full",
-    heroImage: cdn("/works/2d.webp"),
-    heroVideo: cdn("/works/2d.mp4"),
+    heroImage: "/works/2d.webp",
+    heroVideo: cdn("/videos/2d.mp4"),
     overview:
       "Creative 2D animations that tell compelling stories through fluid motion, vibrant visuals, and engaging characters.",
     description:
@@ -133,7 +133,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Brand Animation",
     ],
     gallery: [],
-    videoSrc: cdn("/works/2d.mp4"),
+    videoSrc: cdn("/videos/2d.mp4"),
     tags: ["2D", "Animation", "Motion Graphics"],
   },
   {
@@ -145,8 +145,8 @@ export const portfolioProjects: PortfolioProject[] = [
     year: "2024",
     projectType: "video",
     mediaSize: "full",
-    heroImage: cdn("/works/3d.webp"),
-    heroVideo: cdn("/works/3d.mp4"),
+    heroImage: "/works/3d.webp",
+    heroVideo: cdn("/videos/3d.mp4"),
     overview:
       "Immersive 3D animations that bring concepts to life with depth, realism, and powerful visual impact.",
     description:

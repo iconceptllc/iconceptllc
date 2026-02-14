@@ -1,20 +1,20 @@
-const CLOUD_NAME = "dvrw9jbbu";
+const CLOUD_NAME = "dxtzc8b5m";
 
 const urlMap: Record<string, string> = {
-  "/videos/iconcept-showreel.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769610833/iconcept-showreel_k3aelv.mp4`,
-  "/videos/space-breeze.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769416037/space-breeze_pwolfh.mp4`,
-  "/videos/blue_swim.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769416140/blue_swim_czvwus.mp4`,
-  "/videos/rose_abwaje_guidness.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769416121/rose_abwaje_guidness_esiaq1.mp4`,
-  "/videos/rose_evil_intredeu.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769416158/rose_evil_intredeu_v0vn37.mp4`,
-  "/videos/trop.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769416792/trop_shps76.mp4`,
-  "/videos/trop_violet_fabric_softner.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769417238/trop_violet_fabric_softner_bctj41.mp4`,
-  "/videos/helin_eren.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769422889/helin_eren_phdqot.mp4`,
-  "/videos/corporate.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769607006/corporate_p9ze0d.mp4`,
-  "/videos/labrada_supplement.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769424181/labrada_supplement_ixspvy.mp4`,
-  "/videos/2d.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769607314/2d_zwzzyb.mp4`,
-  "/videos/3d.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769607244/3d_guah0w.mp4`,
-   "/videos/cgi.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769514268/cgi_okugol.mp4`,
-  "/videos/anamorphic.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1769516165/anamorphic_ij9bes.mp4`,
+  "/videos/iconcept-showreel.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1771053947/iconcept-showreel_k3aelv_dw8ppe.mp4`,
+  "/videos/space-breeze.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1771055749/space-breeze_tiebzp.mp4`,
+  "/videos/blue_swim.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1771055989/blue_swim_zh00qh.mp4`,
+  "/videos/rose_abwaje_guidness.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1771056078/rose_abwaje_guidness_ulj0vi.mp4`,
+  "/videos/rose_evil_intredeu.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1771055728/rose_evil_intredeu_v0vn37_y6dam6.mp4`,
+  "/videos/trop.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1771055732/trop_shps76_ef13cp.mp4`,
+  "/videos/trop_violet_fabric_softner.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1771055678/trop_violet_fabric_softner_bctj41_vtpxod.mp4`,
+  "/videos/helin_eren.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1771055618/helin_eren_phdqot_wjxymj.mp4`,
+  "/videos/corporate.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1771055599/corporate_p9ze0d_dlmq0q.mp4`,
+  "/videos/labrada_supplement.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1771056663/labrada_supplement_xkzaiu.mp4`,
+  "/videos/2d.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1771055470/2d_zwzzyb_ducg1v.mp4`,
+  "/videos/3d.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1771055488/3d_guah0w_dniitt.mp4`,
+   "/videos/cgi.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/cgi_okugol_vzsmr5.mp4`,
+  "/videos/anamorphic.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1771055448/anamorphic_ij9bes_zodpue.mp4`,
     
 
 };

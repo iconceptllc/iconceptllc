@@ -25,12 +25,13 @@ const menuItems = [
   },
   {
     title: "PORTFOLIO",
-    href: "#",
-    subItems: [
-      { title: "Portfolio Grid", href: "/portfolio" },
-      { title: "Portfolio Masonry", href: "/portfolio-masonry" },
-      { title: "Project Details", href: "/project-details" },
-    ],
+    href: "/portfolio",
+    subItems: null,
+    // subItems: [
+    //   { title: "Portfolio Grid", href: "/portfolio" },
+    //   { title: "Portfolio Masonry", href: "/portfolio-masonry" },
+    //   { title: "Project Details", href: "/project-details" },
+    // ],
   },
   {
     title: "BLOG",

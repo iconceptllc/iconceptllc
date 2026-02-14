@@ -56,7 +56,7 @@ const portfolioItems: PortfolioItem[] = [
   },
     {
     type: "video",
-    src: cdn("/works/anamorphic.mp4"),
+    src: cdn("/videos/anamorphic.mp4"),
     title: "iconcept llc",
     tags: ["Anamorphic", "Video Production"],
     colSpan: "7",
