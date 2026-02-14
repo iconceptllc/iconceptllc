@@ -160,7 +160,7 @@ export default function NavigationMenu({ isOpen, onClose }: NavigationMenuProps)
 
           <div className="info-content">
             <p className="description">
-              Elevate your digital presence with us - dynamic and stylish template designed for creative agencies and personal brands.
+              iConcept creates bold digital experiences through branding, UI/UX, web development, and high-impact motion content.
             </p>
 
             <div className="info-image">
@@ -174,17 +174,18 @@ export default function NavigationMenu({ isOpen, onClose }: NavigationMenuProps)
 
             <div className="info-bottom">
               <div className="contact-details">
-                <span className="label">OFFICE 1</span>
-                <h6>11 West 53 Street, New York, NY 10019</h6>
-                <h6><a href="tel:+15104570211">+1 510-457-0211</a></h6>
-                <h6><a href="mailto:Hello@email.com">Hello@email.com</a></h6>
+                <span className="label">OFFICE 906</span>
+                <h6>Capital Golden Tower, Business Bay, Dubai, UAE</h6>
+                <h6><a href="tel:+971589588080">+971 58 958 8080</a></h6>
+                <h6><a href="mailto:contact@iconceptme.com">contact@iconceptme.com</a></h6>
               </div>
               <div className="social-links">
                 <ul>
-                  <li><a href="#">Facebook</a></li>
-                  <li><a href="#">twitter</a></li>
-                  <li><a href="#">LinkedIn</a></li>
-                  <li><a href="#">Behance</a></li>
+                  <li><a href="https://www.facebook.com/iconceptllc" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                  {/* <li><a href="https://x.com/Iconceptllc" target="_blank">twitter</a></li> */}
+                  <li><a href="https://www.youtube.com/iconceptllc" target="_blank" rel="noopener noreferrer">Youtube</a></li>
+                  <li><a href="https://www.linkedin.com/in/iconcept-llc-621b53109/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                  <li><a href="https://www.instagram.com/iconceptllc/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                 </ul>
               </div>
             </div>
