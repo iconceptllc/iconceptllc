@@ -249,7 +249,7 @@ export const portfolioProjects: PortfolioProject[] = [
     year: "2024",
     projectType: "game",
     mediaSize: "mobile",
-    heroImage: cdn("/works/snickers.webp"),
+    heroImage: "/works/snickers.webp",
     overview:
       "Engaging football-themed web game created for Snickers' marketing campaign with interactive gameplay and score tracking.",
     description:
@@ -279,7 +279,7 @@ export const portfolioProjects: PortfolioProject[] = [
     year: "2024",
     projectType: "game",
     mediaSize: "mobile",
-    heroImage: cdn("/works/persil.webp"),
+    heroImage: "/works/persil.webp",
     overview:
       "Fun and interactive spinning wheel game for Persil's promotional activities with instant win mechanics.",
     description:
@@ -297,6 +297,111 @@ export const portfolioProjects: PortfolioProject[] = [
       "/works/persil3.webp",
     ],
     tags: ["Web Game", "Spinning Wheel", "Promotional"],
+  },
+  {
+    slug: "americana-scan-and-win",
+    title: "Americana Scan & Win Cash Voucher Campaign",
+    subtitle: "QR-Based Spin & Win Promotional Microsite",
+    category: "Web Games",
+    client: "Americana",
+    year: "2024",
+    projectType: "game",
+    mediaSize: "mobile",
+    heroImage: "/works/americana_win_instant_cash.webp",
+    overview:
+      "An interactive QR-based promotional microsite developed for Americana to drive frozen product sales through a spin-and-win cash voucher campaign.",
+    description:
+      "The Americana Scan & Win campaign microsite was created to increase retail engagement and boost sales of Americana frozen products across participating outlets. Customers who purchased any Americana frozen items worth AED 35 or more could scan a QR code placed in-store or on product packaging to access the campaign page. After selecting their preferred language (English or Arabic), users completed a submission form with basic details, invoice number, and invoice copy. Once validated, an interactive spinning wheel appeared, giving participants a chance to win instant prizes based on availability, including AED 100 vouchers, AED 150 vouchers, or an exclusive Americana recipe book. The microsite was optimized for mobile-first participation, fast entry processing, and real-time prize allocation to ensure a smooth and engaging user experience.",
+    features: [
+      "QR Code–Based Campaign Entry",
+      "Minimum Purchase Validation (AED 35)",
+      "Bilingual Interface (English & Arabic)",
+      "Invoice Upload & Number Verification",
+      "Interactive Spinning Wheel Game",
+      "Instant Voucher Allocation System",
+      "Prize Availability Logic",
+      "Mobile-First Responsive Design",
+      "High-Volume Entry Handling",
+      "Campaign Analytics & Reporting"
+    ],
+    gallery: [
+      "/works/americana_win_instant_cash1.webp",
+      "/works/americana_win_instant_cash2.webp",
+      "/works/americana_win_instant_cash3.webp",
+      "/works/americana_win_instant_cash4.webp",
+      "/works/americana_win_instant_cash5.webp",
+      "/works/americana_win_instant_cash6.webp",
+    ],
+    tags: ["Microsite", "Promotional Campaign", "Spin and Win", "Retail Promotion", "Customer Engagement", "Voucher Campaign"],
+  },
+
+  {
+    slug: "americana-disha-patani-meet-and-greet",
+    title: "Americana Disha Patani Meet & Greet – Scan & Win VIP Cinema Campaign",
+    subtitle: "QR-Based Spin & Win Campaign for VIP Dine-In Cinema Tickets",
+    category: "Web Games",
+    client: "Americana",
+    year: "2024",
+    projectType: "game",
+    mediaSize: "mobile",
+    heroImage: "/works/americana-cinema-tickets.webp",
+    overview:
+      "An interactive promotional microsite developed for Americana featuring a celebrity-led engagement campaign with Disha Patani, offering customers a chance to win VIP dine-in cinema tickets through a QR-based spinning wheel experience.",
+    description:
+      "The Disha Patani Meet & Greet campaign microsite was created to boost in-store sales and brand engagement for Americana frozen products through a high-impact celebrity promotion. Customers who purchased any Americana frozen product worth AED 35 or more could scan a QR code displayed in-store or on product packaging to access the campaign page. <br> After landing on the microsite, users selected their preferred language (English or Arabic) and completed a submission form by entering basic details along with their invoice number and receipt copy. Once validated, an interactive spinning wheel appeared, giving participants a chance to instantly win prizes based on availability, including couple VIP dine-in cinema tickets or an Americana e-recipe booklet. <br> The platform was designed for seamless mobile participation, high-volume campaign traffic, and real-time prize allocation, ensuring a smooth and engaging experience while amplifying brand visibility through a celebrity-driven promotional campaign.",
+    features: [
+      "QR Code–Based Campaign Entry",
+      "Minimum Purchase Validation (AED 35)",
+      "Bilingual Interface (English & Arabic)",
+      "Invoice Upload & Number Verification",
+      "Interactive Spinning Wheel Game",
+      "Instant Voucher Allocation System",
+      "Prize Availability Logic",
+      "Mobile-First Responsive Design",
+      "High-Volume Entry Handling",
+      "Campaign Analytics & Reporting"
+    ],
+    gallery: [
+      "/works/americana-cinema-tickets1.webp",
+      "/works/americana-cinema-tickets2.webp",
+      "/works/americana-cinema-tickets3.webp",
+      "/works/americana-cinema-tickets4.webp",
+      "/works/americana-cinema-tickets5.webp",
+    ],
+    tags: ["Microsite", "Promotional Campaign", "Spin and Win", "Retail Promotion", "Customer Engagement", "Voucher Campaign", "Celebrity Campaign"],
+  },
+
+  {
+    slug: "americana-back-to-school",
+    title: "Americana Back to School – Scan & Win Tuition Fees Campaign",
+    subtitle: "QR-Based Back-to-School Promotional Microsite",
+    category: "Micro Sites",
+    client: "Americana",
+    year: "2024",
+    projectType: "microsite",
+    mediaSize: "mobile",
+    heroImage: "/works/americana-backto-school.webp",
+    overview:
+      "A QR-driven back-to-school promotional microsite encouraging customers to participate in a tuition-fee campaign after purchasing Americana frozen products.",
+    description:
+      "The Back to School campaign microsite was developed for Americana to support a seasonal retail promotion across the UAE. Customers who spent AED 35 or more on selected Americana frozen products could scan a QR code displayed in-store or on product packaging to access the campaign site. After scanning, users were directed to a mobile-optimized microsite where they submitted their purchase details and invoice number to enter the tuition-fee campaign. The platform was built for fast participation, seamless mobile experience, and high campaign traffic, ensuring smooth entry management while reinforcing Americana’s family-focused brand presence during the back-to-school season.",
+    features: [
+      "QR Code–Based Campaign Entry",
+      "Minimum Spend Validation ",
+      "Invoice & Receipt Submission",
+       "High-Volume Entry Handling",
+    "Mobile-First Responsive Design",
+    "Retail Campaign Integration",
+    "User-Friendly Entry Form",
+    "Campaign Analytics & Tracking",
+    ],
+    gallery: [
+      "/works/americana-backto-school1.webp",
+      "/works/americana-backto-school2.webp",
+      "/works/americana-backto-school3.webp",
+      "/works/americana-backto-school4.webp",
+    ],
+    tags: ["Microsite", "Promotional Campaign", "QR Campaign", "FMCG", "Retail Promotion", "Customer Engagement"],
   },
 
   // Micro Sites
