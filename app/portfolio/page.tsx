@@ -108,9 +108,15 @@ export default function PortfolioPage() {
                             <source src={project.heroVideo} type="video/mp4" />
                           </video>
                         ) : project.gallery.length > 0 ? (
-                          <ImageCarousel
-                            images={project.gallery}
+                          // <ImageCarousel
+                          //   images={project.gallery}
+                          //   alt={project.title}
+                          // />
+                          <Image
+                            src={project.heroImage}
                             alt={project.title}
+                            fill
+                            style={{ objectFit: "cover" }}
                           />
                         ) : (
                           <Image

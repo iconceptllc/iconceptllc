@@ -290,7 +290,16 @@ export default function PortfolioDetailPage() {
                 </div>
                 <div className="overview-content">
                   <p className="overview-text">{project.overview}</p>
-                  <p className="description-text">{project.description}</p>
+                  <p className="description-text">
+                    {project.description
+                      .split(/<br\s*\/?>/i)
+                      .map((line, index, arr) => (
+                        <span key={index}>
+                          {line}
+                          {index < arr.length - 1 && <br />}
+                        </span>
+                      ))}
+                  </p>
                 </div>
               </div>
             </section>
