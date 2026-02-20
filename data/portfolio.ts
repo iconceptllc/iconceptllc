@@ -255,8 +255,50 @@ export const portfolioProjects: PortfolioProject[] = [
       "/works/snickers3.webp",
       "/works/snickers4.webp",
     ],
-    liveUrl: "https://msite.webhostingdubai.net/snickers1/",
     tags: ["Web Game", "Football", "Interactive"],
+  },
+   {
+    slug: "loreal-memory-game",
+    title: "L’Oréal Paris UAE – Memory Game Promotional Campaign",
+    subtitle: "In-Store Interactive Microsite for Customer Engagement",
+    category: "Web Games",
+    client: "L’Oréal Paris UAE",
+    year: "2026",
+    projectType: "game",
+    mediaSize: "mobile",
+    heroImage: "/works/loreal_header.webp",
+    overview:
+      "An interactive in-store microsite developed for L'Oréal Paris in the UAE, allowing customers to play a branded memory game on tablets operated by store promoters, with real-time tracking of performance and entry data.",
+    description:
+      "The L’Oréal Paris Memory Game campaign was designed to enhance in-store engagement and create a fun, interactive experience for customers across retail outlets in the UAE. Brand promoters provided tablets with the campaign microsite open, enabling users to enter their personal details and play the memory game.<br><br>The L’Oréal Paris Memory Game campaign was designed to enhance in-store engagement and create a fun, interactive experience for customers across retail outlets in the UAE. Brand promoters provided tablets with the campaign microsite open, enabling users to enter their personal details and play the memory game.<br><br>The microsite was optimized for tablet devices, ensuring smooth gameplay and responsive design. It provided a gamified experience that strengthened brand interaction while allowing L’Oréal Paris to collect valuable engagement data and measure in-store campaign performance.",
+    features: [
+      "In-Store Tablet-Based Interactive Game",
+      "Memory Game with 4 Pairs Challenge",
+      "User Registration and Personal Details Collection",
+      "Timed Gameplay with 40-Second Limit",
+      "Two-Chance Gameplay Mechanism",
+      "Performance Tracking (Duration & Chances)",
+      "Database Logging for Analytics",
+      "Mobile/Tablet-Optimized Design",
+      "Campaign Participation Reporting"
+    ],
+    gallery: [
+      "/works/loreal1.webp",
+      "/works/loreal2.webp",
+      "/works/loreal3.webp",
+      "/works/loreal5.webp",
+      "/works/loreal4.webp",
+    ],
+    tags: ["Microsite",
+        "Promotional Campaign",
+        "In-Store Engagement",
+        "Gamification",
+        "Beauty Brand",
+        "Customer Interaction",
+        "Memory Game",
+        "UAE Campaign",
+        "Data Tracking"
+      ],
   },
   {
     slug: "americana-spin-and-win",
@@ -487,6 +529,41 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     tags: ["Microsite", "Promotional Campaign", "Retail Promotion", "Customer Engagement", "Voucher Campaign"],
   },
+  {
+    slug: "palette-try-it-share-it-win-it",
+    title: "Palette Try It, Share It, Win It – GCC AR Promotional Campaign",
+    subtitle: "QR-Based AR Microsite with User Submission & Prize Draw",
+    category: "Micro Sites",
+    client: "Palette",
+    year: "2024",
+    projectType: "microsite",
+    mediaSize: "mobile",
+    heroImage: "/works/palette_header.webp",
+    overview:
+      "A QR-driven interactive microsite developed for Palette across Bahrain, KSA, Kuwait, Oman, Qatar, and UAE, enabling users to try Palette makeup looks via an internal AR application, submit images with details, and participate in a prize draw for a trip to Paris or a luxury staycation.",
+    description:
+      "A QR-driven interactive microsite developed for Palette across Bahrain, KSA, Kuwait, Oman, Qatar, and UAE, enabling users to try Palette makeup looks via an internal AR application, submit images with details, and participate in a prize draw for a trip to Paris or a luxury staycation.<br><br>After trying and saving their favorite AR look, participants returned to the microsite to upload their image along with basic details and Instagram handle to enter the draw. Winners were eligible for exciting prizes, including a trip to Paris or a luxurious staycation.<br><br>After trying and saving their favorite AR look, participants returned to the microsite to upload their image along with basic details and Instagram handle to enter the draw. Winners were eligible for exciting prizes, including a trip to Paris or a luxurious staycation.",
+    features: [
+     "QR Code–Based Campaign Entry",
+      "GCC Multi-Country Campaign Deployment",
+      "Bilingual Interface (English & Arabic)",
+      "AR Makeup Try-On Integration",
+      "Image Upload & Instagram Handle Collection",
+      "Grand Prize Draw Management",
+      "Mobile-First Responsive Design",
+      "Secure Customer Data Collection",
+      "High-Volume Entry Handling",
+      "Campaign Analytics & Reporting"
+    ],
+    gallery: [
+      "/works/palette1.webp",
+      "/works/palette2.webp",
+      "/works/palette3.webp",
+      "/works/palette4.webp",
+   
+    ],
+    tags: ["Microsite", "Promotional Campaign", "Retail Promotion", "Customer Engagement", "GCC Campaign"],
+  },
 
   {
     slug: "americana-disha-patani-meet-and-greet",
@@ -582,6 +659,35 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     tags: ["Microsite", "Promotional Campaign", "QR Code Campaign", "Retail Promotion", "Customer Engagement"],
   },
+   {
+    slug: "raising-canes-jbr-scan-and-win",
+    title: "Raising Cane’s JBR – Scan & Win Campaign",
+    subtitle: "Buy a Meal & Enter to Win an iPhone 15 or E-Scooter",
+    category: "Micro Sites",
+    client: "Raising Cane’s",
+    year: "2024",
+    projectType: "microsite",
+    mediaSize: "mobile",
+    heroImage: "/works/raising_canes.webp",
+    overview:
+      "A location-specific promotional microsite developed for Raising Cane's at the JBR Dubai branch, giving customers a chance to win an iPhone 15 or an e-scooter when purchasing a meal",
+    description:
+      "The Raising Cane’s JBR Scan & Win campaign was a limited-time retail activation designed to drive footfall and increase meal purchases during the promotional period. Customers who purchased a meal at the JBR Dubai branch scanned a QR code displayed in-store to access the campaign microsite.<br><br>Participants completed a simple entry form by submitting their basic details to enter the draw. Once the form was successfully submitted, users received confirmation that their entry had been recorded.<br><br>Participants completed a simple entry form by submitting their basic details to enter the draw. Once the form was successfully submitted, users received confirmation that their entry had been recorded.",
+    features: [
+      "QR Code–Based Campaign Entry",
+      "Simple User Registration Form",
+      "Mobile-First Responsive Design",
+      "High-Volume Participation Handling",
+      "Secure Customer Data Collection",
+      "Campaign Analytics & Reporting"
+    ],
+    gallery: [
+      "/works/raising_canes1.webp",
+      "/works/raising_canes2.webp",
+
+    ],
+    tags: ["Microsite", "Promotional Campaign", "QR Code Campaign", "Retail Promotion", "Customer Engagement"],
+  },
 
   {
     slug: "dac-microsite",
@@ -611,6 +717,41 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     liveUrl: "https://msite.webhostingdubai.net/dac/kw",
     tags: ["Micro Site", "Campaign", "Web Design"],
+  },
+
+  {
+    slug: "sapora-christmas",
+    title: "Sapora Christmas Campaign – Travel This Festive Season",
+    subtitle: "Scan, Enter & Win with Sapora’s Winner Bottle",
+    category: "Micro Sites",
+    client: "Sapora",
+    year: "2024",
+    projectType: "microsite",
+    mediaSize: "mobile",
+    heroImage: "/works/sapora_header.webp",
+    overview:
+      "A festive instant-win QR promotional microsite developed for Sapora, allowing customers to participate in a holiday-themed campaign for a chance to win gift vouchers, travel vouchers, or receive a digital calendar as a fallback reward.",
+    description:
+      "The Sapora Christmas campaign was designed to drive seasonal engagement and boost in-store product interaction during the festive period. Customers scanned a QR code featured on Sapora’s promotional “winner bottle” and were redirected to a dedicated campaign microsite.<br><br>Upon landing, users selected their preferred language and completed a simple form with their basic details to participate. After submission, the system executed an instant-win logic based on real-time prize availability.<br><br>If all prizes were exhausted or not allocated at the time of entry, users received a branded digital calendar as a fallback reward.<br><br>The microsite was built with an automated prize allocation engine, real-time availability tracking, and secure data capture. Designed for high-traffic participation during the holiday season, the platform ensured seamless entry flow, instant result display, and structured reporting for prize distribution management.",
+    features: [
+      "QR  Campaign Entry",
+      "Invoice & Receipt Submission",
+       "High-Volume Entry Handling",
+       "Instant Win Mechanism",
+"Real-Time Prize Availability Logic",
+    "Mobile-First Responsive Design",
+    "Retail Campaign Integration",
+    "User-Friendly Entry Form",
+    "Campaign Analytics & Tracking",
+    ],
+    gallery: [
+      "/works/sapora1.webp",
+      "/works/sapora2.webp",
+      "/works/sapora3.webp",
+      "/works/sapora4.webp",
+      "/works/sapora5.webp",
+    ],
+    tags: ["Microsite", "Promotional Campaign", "QR Campaign", "FMCG", "Retail Promotion", "Customer Engagement", "Christmas Campaign","Festive Promotion", "Instant Win"],
   },
   
 
@@ -825,6 +966,107 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
     tags: ["Micro Site", "Promotional", "Campaign", "GCC Campaign", "Multi-Country Campaign", "Instant Win"],
   },
+
+  {
+    slug: "alpro-win-barista-touch-coffee-machine",
+    title: "Alpro Win Barista Touch Coffee Machine – Scan & Enter Campaign",
+    subtitle: "QR-Based Promotional Microsite with Multi-Language Support",
+    category: "Micro Sites",
+    client: "Alpro",
+    year: "2024",
+    projectType: "microsite",
+    mediaSize: "full",
+    heroImage: "/works/alpro_win_barista_touch_coffee_machine_header.webp",
+    overview:
+      "A QR-driven promotional microsite developed for Alpro, allowing customers to enter a draw to win a Barista Touch coffee machine through a simple scan-and-submit journey, available in English and Arabic, optimized for both mobile and desktop.",
+    description:
+      "The Alpro “Win Barista Touch Coffee Machine” campaign microsite was created to drive customer engagement and product interaction across retail channels. Customers scanned a QR code displayed on Alpro product packaging or in-store promotions, which redirected them to a responsive microsite compatible with mobile and desktop devices.<br><br>Participants selected their preferred language (English or Arabic) and completed a submission form with their basic details to enter the prize draw. Upon successful submission, users received confirmation that they were entered into the campaign, with winners being contacted directly by the campaign team.<br><br>The microsite was designed for a seamless user experience, secure data collection, and high participation volume, ensuring smooth entry management while maintaining Alpro’s premium brand identity.",
+    features: [
+      "QR Code–Based Campaign Entry",
+      "Multi-Language Support (English & Arabic)",
+      "Mobile & Desktop Responsive Design",
+      "Simple User Submission Form",
+      "Entry Confirmation Workflow",
+      "Secure Customer Data Collection",
+      "High-Volume Participation Handling",
+      "Campaign Analytics & Reporting"
+    ],
+    gallery: [
+      "/works/alpro_win_barista_touch_coffee_machine1.webp",
+      "/works/alpro_win_barista_touch_coffee_machine2.webp",
+      "/works/alpro_win_barista_touch_coffee_machine3.webp",
+      
+    ],
+    tags: ["Micro Site", "Promotional", "Campaign", "GCC Campaign"],
+  },
+  {
+    slug: "ariel-tide-scan-win",
+    title: "Ariel & Tide Scan & Win – AED 2,000 Travel Voucher Campaign",
+    subtitle: "QR-Based Promotional Microsite for Union Coop Selected Stores",
+    category: "Micro Sites",
+    client: "Ariel & Tide",
+    year: "2022",
+    projectType: "microsite",
+    mediaSize: "full",
+    heroImage: "/works/ariel_tide_header.webp",
+    overview:
+      "A QR-driven promotional microsite developed for Ariel and Tide, allowing customers to enter a draw for a chance to win a AED 2,000 travel voucher after purchasing AED 80 or more of selected products at Union Coop stores.",
+    description:
+      "The Ariel & Tide Scan & Win campaign microsite was designed to boost retail engagement and incentivize purchases of Ariel and Tide products at selected Union Coop outlets. Customers who purchased AED 80 or more of participating products scanned a QR code on the packaging or in-store displays, which redirected them to a mobile-optimized campaign page.<br><br>Participants completed a simple submission form with their personal details and purchase information to enter the draw for a chance to win a AED 2,000 travel voucher. Upon submission, users received confirmation of successful entry, and winners were notified directly by the campaign team.<br><br>The microsite was built for mobile-first access, fast form submission, and secure data collection. It supported high-volume participation while providing a smooth and engaging user experience aligned with Ariel and Tide’s brand image.",
+    features: [
+      "QR Code–Based Campaign Entry",
+      "Multi-Language Support (English & Arabic)",
+      "Mobile & Desktop Responsive Design",
+      "Simple User Submission Form",
+      "Entry Confirmation Workflow",
+      "Secure Customer Data Collection",
+      "High-Volume Participation Handling",
+      "Campaign Analytics & Reporting"
+    ],
+    gallery: [
+      "/works/ariel_tide1.webp",
+      "/works/ariel_tide2.webp",
+      "/works/ariel_tide3.webp",
+      "/works/ariel_tide4.webp",
+      
+    ],
+    tags: ["Micro Site", "Promotional", "Campaign", "GCC Campaign"],
+  },
+  {
+    slug: "palette-get-ready-to-fly-eid",
+    title: "Palette – Get Ready to Fly This Eid",
+    subtitle: "Palette – Get Ready to Fly This Eid",
+    category: "Micro Sites",
+    client: "Palette",
+    year: "2025",
+    projectType: "microsite",
+    mediaSize: "mobile",
+    heroImage: "/works/palette_ramadan.webp",
+    overview:
+      "An Eid promotional microsite developed for Palette across the UAE and KSA, allowing customers to scan a QR code, submit their details, and enter a draw for a chance to win their dream trip.",
+    description:
+      "The “Get Ready to Fly This Eid – Color Your Dream Trip” campaign was launched across the UAE and Kingdom of Saudi Arabia to drive seasonal engagement and strengthen in-store brand interaction. Customers scanned a QR code from promotional materials and were redirected to a dedicated campaign microsite.<br><br>The “Get Ready to Fly This Eid – Color Your Dream Trip” campaign was launched across the UAE and Kingdom of Saudi Arabia to drive seasonal engagement and strengthen in-store brand interaction. Customers scanned a QR code from promotional materials and were redirected to a dedicated campaign microsite.<br><br>The microsite was developed with a mobile-first architecture to ensure seamless QR access, fast form processing, and secure customer data collection. Designed to handle large participation volumes across both markets, the platform supported structured entry management and campaign performance tracking.",
+    features: [
+     "QR Code–Based Campaign Entry",
+      "UAE & KSA Deployment",
+      "Bilingual Interface (English & Arabic)",
+      "Mobile-First Responsive Design",
+      "Simple User Submission Form",
+      "Entry Confirmation Workflow",
+      "Secure Customer Data Collection",
+      "High-Volume Participation Handling",
+      "Campaign Analytics & Reporting"
+    ],
+    gallery: [
+      "/works/palette_ramadan1.webp",
+      "/works/palette_ramadan2.webp",
+      "/works/palette_ramadan3.webp",
+      "/works/palette_ramadan4.webp",
+      "/works/palette_ramadan5.webp",
+   
+    ],
+    tags: ["Microsite", "Promotional Campaign", "Retail Promotion", "Customer Engagement", "GCC Campaign"],
+  },
   {
     slug: "americana-microsite",
     title: "Americana Micro Site",
@@ -940,6 +1182,72 @@ export const portfolioProjects: PortfolioProject[] = [
       "/works/hisense2.webp",
     ],
     tags: ["Microsite", "Promotional Campaign", "FIFA Campaign", "Multi-Country Campaign", "Customer Engagement"],
+  },
+  {
+    slug: "pert-scan-win-upgrade",
+    title: "Pert – Scan, Win & Upgrade Campaign",
+    subtitle: "Enter the Draw & Unlock Bigger Rewards",
+    category: "Micro Sites",
+    client: "Pert",
+    year: "2024",
+    projectType: "microsite",
+    mediaSize: "mobile",
+    heroImage: "/works/pert_header.webp",
+    overview:
+      "A dual-stage QR promotional microsite developed for Pert, allowing customers to enter a base draw for a 100 SAR YouGotAGift voucher and unlock a second-tier prize opportunity to win an iPhone 16 and additional rewards upon product purchase validation.",
+    description:
+      "A dual-stage QR promotional microsite developed for Pert, allowing customers to enter a base draw for a 100 SAR YouGotAGift voucher and unlock a second-tier prize opportunity to win an iPhone 16 and additional rewards upon product purchase validation.<br><br>Upon submission, participants were entered into a draw for a chance to win a 100 SAR YouGotAGift voucher and received a thank-you confirmation message.<br><br>As part of the second-stage incentive, users were prompted with an optional upgrade: “If you purchased a Pert product, click here to get a chance to win an iPhone 16 and many more prizes.”<br><br>As part of the second-stage incentive, users were prompted with an optional upgrade: “If you purchased a Pert product, click here to get a chance to win an iPhone 16 and many more prizes.<br><br>The microsite was built with a mobile-first framework, secure receipt upload functionality, structured database logging for both entry stages, and comprehensive campaign tracking to manage eligibility and prize allocation efficiently.",
+    features: [
+      "QR Code–Based Campaign Entry",
+      "Bilingual Interface (English & Arabic)",
+      "Two-Tier Participation Mechanism",
+      "100 SAR YouGotAGift Voucher Draw",
+      "Purchase Validation Workflow (Invoice & Receipt Upload)",
+      "Grand Prize Draw (iPhone 16 & Additional Prizes)",
+      "Mobile-First Responsive Design",
+      "Secure Data & Image Upload Handling",
+      "Automated Entry Confirmation Messages",
+      "Campaign Analytics"
+    ],
+    gallery: [
+      "/works/pert1.webp",
+      "/works/pert2.webp",
+      "/works/pert3.webp",
+      "/works/pert4.webp",
+      "/works/pert5.webp",
+    ],
+    tags: ["Microsite", "Promotional Campaign", "Two-Stage Promotion", "Purchase Validation", "Customer Engagement"],
+  },
+  {
+    slug: "shehrazade-ramadan",
+    title: "Shehrazade – Sweeten Your Ramadan",
+    subtitle: "Shehrazade – Sweeten Your Ramadan",
+    category: "Micro Sites",
+    client: "Shehrazade",
+    year: "2024",
+    projectType: "microsite",
+    mediaSize: "mobile",
+    heroImage: "/works/shehrazade.webp",
+    overview:
+      "A festive Ramadan promotional microsite developed for Shehrazade in the UAE, allowing customers to scan a QR code, submit their details, and participate in a seasonal campaign.",
+    description:
+      "The Shehrazade “Sweeten Your Ramadan” campaign was designed to engage customers during the holy month with a simple and interactive QR-based experience. Customers scanned a QR code from promotional packaging or in-store displays, selected their preferred language, and completed a submission form with their personal details.<br><br>The Shehrazade “Sweeten Your Ramadan” campaign was designed to engage customers during the holy month with a simple and interactive QR-based experience. Customers scanned a QR code from promotional packaging or in-store displays, selected their preferred language, and completed a submission form with their personal details.",
+    features: [
+      "QR Code–Based Campaign Entry",
+      "Bilingual Interface (English & Arabic)",
+      "Mobile-First Responsive Design",
+      "Secure Data & Image Upload Handling",
+      "Campaign Analytics"
+    ],
+    gallery: [
+      "/works/shehrazade1.webp",
+      "/works/shehrazade2.webp",
+      "/works/shehrazade3.webp",
+      "/works/shehrazade4.webp",
+      "/works/shehrazade5.webp",
+    ],
+    tags: ["Microsite", "Promotional Campaign", "Ramadan Campaign",
+"FMCG","UAE Campaign","Seasonal Promotion", "Customer Engagement"],
   },
 ];
 
