@@ -279,7 +279,7 @@ export default function PortfolioSection() {
                 </div>
               </a>
             ) : (
-              <Link href={`/portfolio/`} className="item-link">
+              <Link href={`/portfolio/${item.slug}`} className="item-link">
                 <div className="media-wrapper" style={item.height ? { height: item.height } : undefined}>
                   {item.type === "video" ? (
                     <video autoPlay muted loop playsInline>
