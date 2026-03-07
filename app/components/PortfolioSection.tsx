@@ -284,7 +284,7 @@ export default function PortfolioSection() {
                   {item.type === "video" ? (
                     <video autoPlay muted loop playsInline>
                       <source src={item.src} type="video/mp4" />
-                    </video>
+                    </video> 
                   ) : item.images ? (
                     <ImageCarousel images={item.images} alt={item.title} />
                   ) : (

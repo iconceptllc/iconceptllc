@@ -8,26 +8,26 @@ const services = [
   {
     number: "01",
     title: "Web Solutions",
-    items: ["UI/UX Design", "Web/Mobile App Development", "E-commerce Storefront"],
-    image: "/imgs/web-apps.webp",
+    items: ["Website Designing", "Microsite Development", "E-commerce Storefront", "Hosting & Maintenance"],
+    // image: "/imgs/web-apps.webp",
   },
   {
     number: "02",
     title: "Marketing Services",
-    items: ["Digital Marketing", "Social Media Marketing", "Branding & Advertissing"],
-    image: "/imgs/marketing-services.webp",
+    items: ["Digital Marketing", "Social Media Marketing", "Influencer Marketing", "Branding & Advertissing"],
+    // image: "/imgs/marketing-services.webp",
   },
   {
     number: "03",
     title: "Content Production",
-    items: ["Ad Film Production", "CGI, AI & Motion Graphics", "Audio Video Editing"],
-    image: "/imgs/content-production.webp",
+    items: ["Motion Graphics", "Film Production", "2D & 3D Animation", "Game Development"],
+    // image: "/imgs/content-production.webp",
   },
   {
     number: "04",
     title: "3D & Motion",
     items: ["2D & 3D Animation", "Product Visualization", "Explainer Videos"],
-    image: "/imgs/3d.webp",
+    // image: "/imgs/3d.webp",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function ServicesSection() {
   return (
     <section className="services-section">
       <div className="sec-head">
-        <h6>OUR SERVICES</h6>
+        <h6 className="text-2xl">OUR SERVICES</h6>
       </div>
 
       <div className="services-list">
@@ -132,7 +132,7 @@ export default function ServicesSection() {
         }
 
         .sec-head h6 {
-          font-size: 0.875rem;
+          font-size: 2.2rem;
           font-weight: 500;
           letter-spacing: 1px;
           color: white;
