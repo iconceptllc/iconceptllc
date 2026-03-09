@@ -2,31 +2,34 @@
 
 import Link from "next/link";
 import { useRef, useCallback } from "react";
-import { cdn } from "@/lib/cloudinary";
 
 const services = [
   {
     number: "01",
     title: "Web Solutions",
     items: ["Website Designing", "Microsite Development", "E-commerce Storefront", "Hosting & Maintenance"],
+    href: "/services/web-solutions",
     // image: "/imgs/web-apps.webp",
   },
   {
     number: "02",
     title: "Marketing Services",
     items: ["Digital Marketing", "Social Media Marketing", "Influencer Marketing", "Branding & Advertissing"],
+    href: "/contact",
     // image: "/imgs/marketing-services.webp",
   },
   {
     number: "03",
     title: "Content Production",
     items: ["Motion Graphics", "Film Production", "2D & 3D Animation", "Game Development"],
+    href: "/contact",
     // image: "/imgs/content-production.webp",
   },
   {
     number: "04",
     title: "3D & Motion",
     items: ["2D & 3D Animation", "Product Visualization", "Explainer Videos"],
+    href: "/contact",
     // image: "/imgs/3d.webp",
   },
 ];
@@ -59,7 +62,7 @@ export default function ServicesSection() {
             <div className="service-row">
               <div className="service-left">
                 <span className="number">{service.number}</span>
-                <Link href="/services" className="service-title">
+                <Link href={service.href} className="service-title">
                   {service.title}
                 </Link>
               </div>
@@ -71,7 +74,7 @@ export default function ServicesSection() {
                 </ul>
               </div>
               <div className="service-right">
-                <Link href="/services" className="arrow-btn">
+                <Link href={service.href} className="arrow-btn">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -89,7 +92,7 @@ export default function ServicesSection() {
             <div
               className="reveal-img"
               ref={(el) => { imgRefs.current[index] = el; }}
-              style={{ backgroundImage: `url(${service.image})` }}
+              style={{ backgroundImage: `url(${'image' in service ? service.image : ''})` }}
             />
           </div>
         ))}

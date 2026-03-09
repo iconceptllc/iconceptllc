@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.iconceptme.com)"
+    ],
+    "additionalDirectories": [
+      "d:\\xampp\\htdocs\\projects\\iconcept\\next\\app\\services"
+    ]
+  }
+}
