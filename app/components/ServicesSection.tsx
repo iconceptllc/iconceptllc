@@ -25,13 +25,13 @@ const services = [
     href: "/contact",
     // image: "/imgs/content-production.webp",
   },
-  {
-    number: "04",
-    title: "3D & Motion",
-    items: ["2D & 3D Animation", "Product Visualization", "Explainer Videos"],
-    href: "/contact",
-    // image: "/imgs/3d.webp",
-  },
+  // {
+  //   number: "04",
+  //   title: "3D & Motion",
+  //   items: ["2D & 3D Animation", "Product Visualization", "Explainer Videos"],
+  //   href: "/contact",
+  //   // image: "/imgs/3d.webp",
+  // },
 ];
 
 export default function ServicesSection() {

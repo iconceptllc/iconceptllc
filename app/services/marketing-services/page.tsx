@@ -26,11 +26,10 @@ const services: Service[] = [
       "We are a one-stop digital marketing agency based in Dubai, helping brands grow their online presence through data-driven strategies. From SEO to paid campaigns, we deliver measurable results across every digital channel.",
     features: [
       "Search Engine Optimization",
-      "Pay Per Click (PPC)",
-      "Email Marketing",
-      "Video Marketing",
+      "SEM & PPC",
+      "Google Ads Management",
       "Content Marketing",
-      "Web Banner Creation",
+      "Email Marketing",
     ],
     banner: "/imgs/digital-marketing.webp",
     bannerFit: "cover",
@@ -48,12 +47,10 @@ const services: Service[] = [
     description:
       "Social media has completely changed the world of marketing. We help brands build a loyal community, improve customer service, increase digital exposure, and reach new audiences through strategic social media management.",
     features: [
-      "Brand showcase & identity",
-      "Community management",
-      "Content creation & scheduling",
-      "Audience growth strategy",
-      "Engagement & analytics",
-      "Paid social advertising",
+      "Social Media Management",
+      "Social Media Ads",
+      "Content Creation",
+      "Podcast Creation",
     ],
     banner: "/imgs/social-media-marketing.webp",
     bannerFit: "cover",
@@ -71,12 +68,11 @@ const services: Service[] = [
     description:
       "Customers trust real voices. We connect your brand with the right influencers to deliver authentic, high-impact campaigns that build credibility, extend reach, and drive real engagement with your target audience.",
     features: [
-      "Influencer identification",
-      "Campaign strategy & brief",
-      "Content collaboration",
-      "Reach & performance metrics",
-      "Audience analytics",
-      "ROI reporting",
+      "Identifying Influencers",
+      "Strategy Development",
+      "Brand Collaboration",
+      "Affiliate Marketing",
+      "Product Reviews",
     ],
     banner: "/imgs/influencer-marketing.webp",
     bannerFit: "cover",
@@ -94,12 +90,10 @@ const services: Service[] = [
     description:
       "Your brand is more than a logo — it's the story your audience believes in. We craft compelling brand identities and advertising campaigns that resonate emotionally, differentiate you from competitors, and drive long-term loyalty.",
     features: [
-      "Brand identity design",
-      "Logo & visual systems",
-      "Campaign concept & strategy",
-      "Print & digital advertising",
-      "Brand guidelines",
-      "Market positioning",
+      "Brand Identity Creation",
+      "Brand Storytelling",
+      "Brand Promotions",
+      "Advertising Channels",
     ],
     banner: "/imgs/branding-advertising.webp",
     bannerFit: "cover",
@@ -194,7 +188,7 @@ function ServiceCard({ service }: { service: Service }) {
         </div>
 
         {/* Portfolio row */}
-        <div className="card-portfolio">
+        {/* <div className="card-portfolio">
           <span className="portfolio-label">Related Work</span>
           <div className="portfolio-row">
             {service.portfolio.map((item, i) => (
@@ -225,7 +219,7 @@ function ServiceCard({ service }: { service: Service }) {
               </Link>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </article>
   );
@@ -551,15 +545,20 @@ export default function MarketingServicesPage() {
           margin: 0 0 28px;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 10px 20px;
+          gap: 12px 20px;
         }
 
         .card-features li {
           display: flex;
           align-items: center;
-          gap: 8px;
+          gap: 10px;
           font-size: 0.875rem;
-          color: rgba(255,255,255,0.7);
+          color: rgba(255,255,255,0.85);
+          background: linear-gradient(145deg, rgba(123,97,255,0.15), rgba(123,97,255,0.05));
+          border: 1px solid rgba(123,97,255,0.25);
+          border-radius: 12px;
+          padding: 12px 14px;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.25);
         }
 
         .feat-plus {
