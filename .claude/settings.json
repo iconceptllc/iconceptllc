@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:www.iconceptme.com)"
+      "WebFetch(domain:www.iconceptme.com)",
+      "Bash(node -e \":*)"
     ],
     "additionalDirectories": [
       "d:\\xampp\\htdocs\\projects\\iconcept\\next\\app\\services"

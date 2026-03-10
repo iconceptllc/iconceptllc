@@ -15,7 +15,7 @@ const services = [
     number: "02",
     title: "Marketing Services",
     items: ["Digital Marketing", "Social Media Marketing", "Influencer Marketing", "Branding & Advertissing"],
-    href: "/contact",
+    href: "/services/marketing-services",
     // image: "/imgs/marketing-services.webp",
   },
   {

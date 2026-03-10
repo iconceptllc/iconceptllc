@@ -11,112 +11,111 @@ type Service = {
   title: string;
   description: string;
   features: string[];
-  // Banner image config
   banner: string;
-  bannerW: number;
-  bannerH: number;
   bannerFit: "contain" | "cover";
   bannerBg: string;
   bannerPos?: string;
-  // Portfolio samples
   portfolio: { image: string; title: string; tag: string }[];
 };
 
 const services: Service[] = [
   {
     number: "01",
-    title: "Website Designing",
+    title: "Digital Marketing",
     description:
-      "We create visually compelling, user-centric websites that look great and drive real business results. Using HTML5, CSS3, and modern frameworks, our responsive designs work flawlessly on every device.",
+      "We are a one-stop digital marketing agency based in Dubai, helping brands grow their online presence through data-driven strategies. From SEO to paid campaigns, we deliver measurable results across every digital channel.",
     features: [
-      "Static profile website",
-      "Website with custom CMS",
-      "Website with open source",
-      "WordPress, Wix, Moodle",
-      "React, Node.js, Python",
+      "Search Engine Optimization",
+      "Pay Per Click (PPC)",
+      "Email Marketing",
+      "Video Marketing",
+      "Content Marketing",
+      "Web Banner Creation",
     ],
-    banner: "/imgs/webdesign.webp",
-    bannerW: 754,
-    bannerH: 464,
-    bannerFit: "contain",
-    bannerBg: "linear-gradient(145deg, #1a0f3c 0%, #0d0b20 100%)",
+    banner: "/imgs/digital-marketing.webp",
+    bannerFit: "cover",
+    bannerBg: "#111",
+    bannerPos: "center center",
     portfolio: [
-      { image: "/works/aptech.webp", title: "Aptech", tag: "Web Design" },
-      { image: "/works/flc.webp", title: "FLC", tag: "CMS Website" },
-      { image: "/works/eindravilas.webp", title: "Eindravilas", tag: "Website" },
+      { image: "/works/almarai.webp", title: "Almarai", tag: "Digital Campaign" },
+      { image: "/works/alpro_nutribullet.webp", title: "Alpro", tag: "Digital Marketing" },
+      { image: "/works/bekind_header.webp", title: "Be Kind", tag: "Digital Campaign" },
     ],
   },
   {
     number: "02",
-    title: "E-commerce Storefront",
+    title: "Social Media Marketing",
     description:
-      "From restaurant ordering systems to full retail stores, we build e-commerce solutions tailored to your business model. Our storefronts are fast, secure, and optimized for maximum conversion.",
+      "Social media has completely changed the world of marketing. We help brands build a loyal community, improve customer service, increase digital exposure, and reach new audiences through strategic social media management.",
     features: [
-      "E-commerce Portal",
-      "Amazon Storefront",
-      "Website Maintenance",
+      "Brand showcase & identity",
+      "Community management",
+      "Content creation & scheduling",
+      "Audience growth strategy",
+      "Engagement & analytics",
+      "Paid social advertising",
     ],
-    banner: "/imgs/e-commerce.webp",
-    bannerW: 754,
-    bannerH: 592,
+    banner: "/imgs/social-media-marketing.webp",
     bannerFit: "cover",
     bannerBg: "#111",
-    bannerPos: "right center",
+    bannerPos: "center center",
     portfolio: [
-      { image: "/works/almeshal.webp", title: "Al Meshal Electricals", tag: "E-commerce" },
-      { image: "/works/grandprix.webp", title: "Grandprix UAE", tag: "Enquiry System" },
-      { image: "/works/arkan.webp", title: "Arkan TRC ", tag: "LMS / Course Booking" },
+      { image: "/works/galaxy_choco_wonderland_header.webp", title: "Galaxy", tag: "Social Media" },
+      { image: "/works/gliss_header.webp", title: "Gliss", tag: "Social Campaign" },
+      { image: "/works/palette_header.webp", title: "Palette", tag: "Social Media" },
     ],
   },
   {
     number: "03",
-    title: "Microsite Development",
+    title: "Influencer Marketing",
     description:
-      "Microsites are powerful standalone experiences built around a single campaign or brand story. We design immersive, interactive microsites that captivate audiences and drive specific conversion goals.",
+      "Customers trust real voices. We connect your brand with the right influencers to deliver authentic, high-impact campaigns that build credibility, extend reach, and drive real engagement with your target audience.",
     features: [
-      "Microsite for FMCG Promo",
-      "Online Gamification",
-      "E-Newsletter Creation",
-      "Event Promo Campaign",
-      "Mobile App Development",
+      "Influencer identification",
+      "Campaign strategy & brief",
+      "Content collaboration",
+      "Reach & performance metrics",
+      "Audience analytics",
+      "ROI reporting",
     ],
-    banner: "/works/americana-win-instant-cash.webp",
-    bannerW: 1217,
-    bannerH: 501,
+    banner: "/imgs/influencer-marketing.webp",
     bannerFit: "cover",
-    bannerBg: "#111",
-    bannerPos: "25% center",
+    bannerBg: "#1a0a2e",
+    bannerPos: "center center",
     portfolio: [
-      { image: "/works/snickers.webp", title: "Snickers", tag: "Microsite" },
-      { image: "/works/persil.webp", title: "Persil", tag: "Microsite" },
-      { image: "/works/americana.webp", title: "Americana", tag: "Microsite" },
+      { image: "/works/loreal_header.webp", title: "L'Oréal", tag: "Influencer" },
+      { image: "/works/pert_header.webp", title: "Pert", tag: "Influencer Campaign" },
+      { image: "/works/sapora_header.webp", title: "Sapora", tag: "Influencer" },
     ],
   },
   {
     number: "04",
-    title: "Hosting & Maintenance",
+    title: "Branding & Advertising",
     description:
-      "We offer comprehensive hosting solutions and ongoing maintenance to keep your digital presence performing at its best. From domain registration to server management, we handle every technical detail.",
+      "Your brand is more than a logo — it's the story your audience believes in. We craft compelling brand identities and advertising campaigns that resonate emotionally, differentiate you from competitors, and drive long-term loyalty.",
     features: [
-      "Domain Name Registration",
-      "Web Hosting",
-      "Website Maintenance",
-      "Premium Email Services",
+      "Brand identity design",
+      "Logo & visual systems",
+      "Campaign concept & strategy",
+      "Print & digital advertising",
+      "Brand guidelines",
+      "Market positioning",
     ],
-    banner: "/imgs/domain-registration-and-web-hosting.png",
-    bannerW: 753,
-    bannerH: 444,
-    bannerFit: "contain",
-    bannerBg: "linear-gradient(145deg, #0d2137 0%, #071420 100%)",
+    banner: "/imgs/branding-advertising.webp",
+    bannerFit: "cover",
+    bannerBg: "#071a10",
+    bannerPos: "center center",
     portfolio: [
-     
+      { image: "/works/raising_canes.webp", title: "Raising Cane's", tag: "Branding" },
+      { image: "/works/salerno.webp", title: "Salerno", tag: "Brand Identity" },
+      { image: "/works/shehrazade.webp", title: "Shehrazade", tag: "Branding" },
     ],
   },
 ];
 
 const stats = [
   { value: "20+", label: "Years of Experience" },
-  { value: "800+", label: "Websites Delivered" },
+  { value: "500+", label: "Campaigns Delivered" },
   { value: "98%", label: "Client Satisfaction" },
   { value: "300+", label: "Happy Clients" },
 ];
@@ -160,32 +159,16 @@ function ServiceCard({ service }: { service: Service }) {
   return (
     <article className="service-card">
       {/* Banner */}
-      <div
-        className="card-banner"
-        style={{ background: service.bannerBg }}
-      >
-        {service.bannerFit === "contain" ? (
-          <div className="banner-contain">
-            <Image
-              src={service.banner}
-              alt={service.title}
-              width={service.bannerW}
-              height={service.bannerH}
-              style={{ width: "100%", height: "auto", objectFit: "contain" }}
-            />
-          </div>
-        ) : (
-          <Image
-            src={service.banner}
-            alt={service.title}
-            fill
-            style={{
-              objectFit: "cover",
-              objectPosition: service.bannerPos ?? "center",
-            }}
-          />
-        )}
-        {/* Number badge */}
+      <div className="card-banner" style={{ background: service.bannerBg }}>
+        <Image
+          src={service.banner}
+          alt={service.title}
+          fill
+          style={{
+            objectFit: "cover",
+            objectPosition: service.bannerPos ?? "center",
+          }}
+        />
         <span className="banner-num">{service.number}</span>
       </div>
 
@@ -227,7 +210,11 @@ function ServiceCard({ service }: { service: Service }) {
                     src={item.image}
                     alt={item.title}
                     fill
-                    style={{ objectFit: "cover", transition: "transform 0.4s ease", transform: hovered === i ? "scale(1.06)" : "scale(1)" }}
+                    style={{
+                      objectFit: "cover",
+                      transition: "transform 0.4s ease",
+                      transform: hovered === i ? "scale(1.06)" : "scale(1)",
+                    }}
                   />
                   <div className="port-overlay" />
                 </div>
@@ -244,7 +231,7 @@ function ServiceCard({ service }: { service: Service }) {
   );
 }
 
-export default function WebSolutionsPage() {
+export default function MarketingServicesPage() {
   return (
     <div className="service-detail-page">
       <LeftSidebar />
@@ -255,16 +242,15 @@ export default function WebSolutionsPage() {
 
           <main className="right-content">
 
-            {/* Page banner */}
+            {/* YouTube video banner */}
             <div className="page-banner">
-              <Image
-                src="/imgs/web-solutions-banner.webp"
-                alt="Web Solutions"
-                fill
-                priority
-                style={{ objectFit: "cover", objectPosition: "center" }}
+              <iframe
+                src="https://www.youtube.com/embed/Ft5EjwGejpo?autoplay=1&mute=1&loop=1&playlist=Ft5EjwGejpo&controls=0&start=5&rel=0&showinfo=0&modestbranding=1"
+                allow="autoplay; fullscreen"
+                allowFullScreen
+                frameBorder="0"
+                title="Marketing Services"
               />
-              {/* back pill floats over the banner */}
               <Link href="/services" className="back-pill">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M17 11.5H6.9365M6.9365 11.5L11.4365 7M6.9365 11.5L11.4365 16" stroke="currentColor" strokeWidth="1.5" />
@@ -273,21 +259,21 @@ export default function WebSolutionsPage() {
               </Link>
             </div>
 
-            {/* Hero — tagline + description below the banner */}
+            {/* Hero */}
             <header className="pg-hero">
               <div className="hero-top">
                 <div className="hero-left">
-                  <span className="hero-tag">Web Solutions</span>
+                  <span className="hero-tag">Marketing Services</span>
                 </div>
                 <div className="hero-right">
                   <h1>
-                    Good websites get applause.{" "}
-                    <em>Great websites get business.</em>
+                    One-stop solution for all your{" "}
+                    <em>digital marketing needs.</em>
                   </h1>
                 </div>
               </div>
               <p className="hero-description">
-                Don&apos;t let your website be just another URL on the web. With over 16 years of experience, we craft powerful digital experiences that attract, engage, and convert your ideal customers.
+                From SEO and social media to influencer campaigns and brand advertising — we help your business grow online with strategies that deliver real, measurable results.
               </p>
             </header>
 
@@ -314,8 +300,8 @@ export default function WebSolutionsPage() {
             <section className="cta-section">
               <div className="cta-inner">
                 <div className="cta-text">
-                  <h2>Ready to build something great?</h2>
-                  <p>Let&apos;s create a website that works as hard as you do.</p>
+                  <h2>Ready to grow your brand?</h2>
+                  <p>Let&apos;s build a marketing strategy that delivers real results.</p>
                 </div>
                 <div className="cta-actions">
                   <Link href="/contact" className="cta-primary">
@@ -337,7 +323,6 @@ export default function WebSolutionsPage() {
       </div>
 
       <style jsx global>{`
-        /* ===== Page shell ===== */
         .service-detail-page {
           min-height: 100vh;
           background: #0b0b0b;
@@ -359,16 +344,38 @@ export default function WebSolutionsPage() {
           padding: 20px 0;
         }
 
-        /* ===== Page banner ===== */
+        /* ===== Video banner ===== */
         .page-banner {
           position: relative;
           width: 100%;
-          /* maintain banner's natural ~2.6:1 ratio */
-          aspect-ratio: 1300 / 500;
+          aspect-ratio: 16 / 7;
           border-radius: 20px;
           overflow: hidden;
           margin-bottom: 32px;
-          background: #fff;
+          background: #000;
+        }
+
+        .page-banner iframe {
+          /* scale up to fill the 16:7 crop — iframe is 16:9, so scale to match width and offset vertically */
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100%;
+          /* 16:9 natural height = width * 9/16; our container is 7/16 tall, so scale iframe to fill */
+          height: calc(100% * 16 / 7 * 9 / 16);
+          transform: translate(-50%, -50%);
+          border: none;
+          pointer-events: none;
+        }
+
+        /* Gradient overlay so pill is readable */
+        .page-banner::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 40%, transparent 70%, rgba(0,0,0,0.4) 100%);
+          pointer-events: none;
+          z-index: 1;
         }
 
         .back-pill {
@@ -425,6 +432,7 @@ export default function WebSolutionsPage() {
           text-transform: uppercase;
           letter-spacing: 1px;
           color: rgba(255,255,255,0.8);
+          white-space: nowrap;
         }
 
         .hero-right h1 {
@@ -494,21 +502,10 @@ export default function WebSolutionsPage() {
           overflow: hidden;
         }
 
-        /* Banner */
         .card-banner {
           position: relative;
           height: 440px;
           overflow: hidden;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .banner-contain {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
         }
 
         .banner-num {
@@ -518,7 +515,7 @@ export default function WebSolutionsPage() {
           font-size: 0.7rem;
           letter-spacing: 3px;
           text-transform: uppercase;
-          color: rgba(255,255,255,0.4);
+          color: rgba(255,255,255,0.8);
           background: rgba(0,0,0,0.4);
           backdrop-filter: blur(6px);
           padding: 5px 12px;
@@ -526,15 +523,12 @@ export default function WebSolutionsPage() {
           border: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* Card body */
         .card-body {
           padding: 40px 44px 44px;
           border-top: 1px solid rgba(255,255,255,0.07);
         }
 
-        .card-info {
-          margin-bottom: 40px;
-        }
+        .card-info { margin-bottom: 40px; }
 
         .card-title {
           font-size: clamp(1.8rem, 3vw, 2.4rem);
@@ -557,20 +551,15 @@ export default function WebSolutionsPage() {
           margin: 0 0 28px;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 12px 20px;
+          gap: 10px 20px;
         }
 
         .card-features li {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 8px;
           font-size: 0.875rem;
-          color: rgba(255,255,255,0.85);
-          background: linear-gradient(145deg, rgba(123,97,255,0.15), rgba(123,97,255,0.05));
-          border: 1px solid rgba(123,97,255,0.25);
-          border-radius: 12px;
-          padding: 12px 14px;
-          box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+          color: rgba(255,255,255,0.7);
         }
 
         .feat-plus {
@@ -726,7 +715,8 @@ export default function WebSolutionsPage() {
         }
 
         @media (max-width: 768px) {
-          .page-banner { aspect-ratio: 4 / 3; border-radius: 14px; }
+          .page-banner { aspect-ratio: 16 / 9; border-radius: 14px; }
+          .page-banner iframe { height: 100%; }
           .hero-top { flex-direction: column; gap: 12px; margin-bottom: 16px; }
           .hero-right h1 { font-size: 1.6rem; }
           .hero-description { font-size: 1rem; }

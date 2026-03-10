@@ -22,7 +22,7 @@ const services = [
       "Maximise your online presence with our performance-driven digital marketing services. We help brands grow through strategic campaigns.",
     tags: ["Digital Marketing", "Social Media", "SEO", "Email Marketing"],
     image: "/imgs/marketing-services.webp",
-    href: "/contact",
+    href: "/services/marketing-services",
   },
   {
     number: "03",
