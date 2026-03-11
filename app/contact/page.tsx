@@ -111,7 +111,7 @@ export default function ContactPage() {
                   <h6>Mail Support 24/7</h6>
                   <div className="info-divider" />
                   <a href="mailto:contact@iconceptme.com">contact@iconceptme.com</a>
-                  <a href="mailto:info@iconceptme.com">info@iconceptme.com</a>
+                  {/* <a href="mailto:info@iconceptme.com">info@iconceptme.com</a> */}
                 </div>
 
                 <div className="info-card">
