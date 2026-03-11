@@ -4,6 +4,7 @@ import LeftSidebar from "../components/LeftSidebar";
 import Footer from "../components/Footer";
 import BlogCard from "../components/BlogCard";
 import { getPosts } from "@/lib/wordpress";
+import type { WPPost } from "@/types/wordpress";
 
 export const metadata: Metadata = {
   title: "Blog | iConcept",
@@ -33,7 +34,7 @@ export default async function BlogPage({ searchParams }: PageProps) {
   const params = await searchParams;
   const currentPage = parseInt(params.page ?? "1", 10);
 
-  let posts = [];
+  let posts: WPPost[] = [];
   let totalPages = 1;
 
   try {
