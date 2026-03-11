@@ -72,18 +72,25 @@ export default function LeftSidebar() {
             </ul>
             <span className="copyright">© 2026, All Rights Reserved</span>
             <div className="social-icons">
-              <a href="#" aria-label="Twitter">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              <a href="https://www.facebook.com/iconceptllc" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <path d="M14 8.5h2.5V5.5H14v-1c0-1.1.4-1.5 1.6-1.5H16.5V1c-.7-.1-1.7-.1-2.6-.1C10.8.9 9 2.5 9 5.3V5.5H6.5v3H9V21h5V8.5z" />
                 </svg>
               </a>
-              <a href="#" aria-label="Instagram">
+              <a href="https://www.youtube.com/@iconceptllc" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <rect x="3" y="6.5" width="18" height="11" rx="2.5" ry="2.5" />
+                  <path d="m11 10 4 2-4 2z" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/company/iconcept-llc/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                  <circle cx="5" cy="5" r="2.2" />
+                  <path d="M3.5 9h3v10h-3z" />
+                  <path d="M10 9h2.8v1.8h.1c.4-.9 1.4-1.9 3-1.9 3.1 0 3.7 2 3.7 4.7V19h-3v-4.5c0-1.1-.1-2.5-1.6-2.5s-1.8 1.2-1.8 2.4V19H10z" />
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/iconceptllc/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -91,31 +98,13 @@ export default function LeftSidebar() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2"
+                  strokeWidth="1.6"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                </svg>
-              </a>
-              <a href="#" aria-label="Dribbble">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94" />
-                  <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32" />
-                  <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72" />
                 </svg>
               </a>
             </div>
@@ -253,30 +242,29 @@ export default function LeftSidebar() {
         .social-icons {
           display: flex;
           justify-content: center;
-          gap: 20px;
+          gap: 12px;
           margin-top: 30px;
         }
 
         .social-icons a {
-              color: #999;
-              transition: color .3s;
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              margin: 0 2px;
-              font-size: 14px;
-              width: 50px;
-              height: 50px;
-              line-height: 50px;
-              border-radius: 50%;
-              transition: all 0.4s;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+          width: 44px;
+          height: 44px;
+          border-radius: 14px;
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          background: rgba(255, 255, 255, 0.06);
+          color: rgba(255, 255, 255, 0.85);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.25s ease;
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
         }
 
         .social-icons a:hover {
-          color: white;
-          background: #fff;
-          color: #1f1f1f;
+          background: linear-gradient(135deg, #8b5cf6, #6ee7ff);
+          border-color: transparent;
+          color: #0b0b0b;
+          transform: translateY(-2px);
         }
 
         .sidebar-bottom {

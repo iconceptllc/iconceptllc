@@ -180,9 +180,8 @@ export default function NavigationMenu({ isOpen, onClose }: NavigationMenuProps)
               <div className="social-links">
                 <ul>
                   <li><a href="https://www.facebook.com/iconceptllc" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                  {/* <li><a href="https://x.com/Iconceptllc" target="_blank">twitter</a></li> */}
-                  <li><a href="https://www.youtube.com/iconceptllc" target="_blank" rel="noopener noreferrer">Youtube</a></li>
-                  <li><a href="https://www.linkedin.com/in/iconcept-llc-621b53109/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                  <li><a href="https://www.youtube.com/@iconceptllc" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+                  <li><a href="https://www.linkedin.com/company/iconcept-llc/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
                   <li><a href="https://www.instagram.com/iconceptllc/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                 </ul>
               </div>

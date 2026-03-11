@@ -65,16 +65,16 @@ export default function Footer() {
               <h6>Social</h6>
               <ul>
                 <li>
-                  <a href="#">Twitter / X</a>
+                  <a href="https://www.facebook.com/iconceptllc" target="_blank" rel="noopener noreferrer">Facebook</a>
                 </li>
                 <li>
-                  <a href="#">Instagram</a>
+                  <a href="https://www.youtube.com/@iconceptllc" target="_blank" rel="noopener noreferrer">YouTube</a>
                 </li>
                 <li>
-                  <a href="#">LinkedIn</a>
+                  <a href="https://www.linkedin.com/company/iconcept-llc/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </li>
                 <li>
-                  <a href="#">Dribbble</a>
+                  <a href="https://www.instagram.com/iconceptllc/" target="_blank" rel="noopener noreferrer">Instagram</a>
                 </li>
               </ul>
             </div>
