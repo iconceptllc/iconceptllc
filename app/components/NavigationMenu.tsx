@@ -166,7 +166,7 @@ export default function NavigationMenu({ isOpen, onClose }: NavigationMenuProps)
 
             <div className="info-image">
               <Image
-                src={"/works/w3.jpg"}
+                src={"/imgs/digital-experience.webp"}
                 alt="iConcept"
                 fill
                 style={{ objectFit: "cover" }}
