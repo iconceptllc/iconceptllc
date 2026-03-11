@@ -20,8 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Blog | iConcept",
-    description:
-      "Insights, tips, and creative inspiration from the iConcept team.",
+    description: "Insights, tips, and creative inspiration from the iConcept team.",
   },
   alternates: { canonical: "https://iconceptme.com/blog" },
 };
@@ -46,55 +45,59 @@ export default async function BlogPage({ searchParams }: PageProps) {
   }
 
   return (
-    <div className="page-wrapper">
+    <div className="service-detail-page">
       <LeftSidebar />
 
-      <main className="main-content">
-        {/* Hero */}
-        <section className="blog-hero">
-          <div className="blog-hero__inner">
-            <span className="blog-hero__label">Our Journal</span>
-            <h1 className="blog-hero__title">
-              Ideas. Insights.
-              <br />
-              <span className="gradient-text">Inspiration.</span>
-            </h1>
-            <p className="blog-hero__sub">
-              Stories and strategies from the iConcept creative studio.
-            </p>
-          </div>
-        </section>
+      <div className="main-container">
+        <div className="content-wrapper">
+          <div className="left-spacer" />
 
-        {/* Grid */}
-        <section className="blog-grid-section">
-          <div className="blog-grid-wrap">
-            {posts.length === 0 ? (
-              <div className="blog-empty">
-                <p>No posts found. Check back soon.</p>
+          <main className="right-content">
+
+            {/* Banner */}
+            <div className="blog-page-banner">
+              <Link href="/" className="back-pill">
+                <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+                  <path d="M17 11.5H6.9365M6.9365 11.5L11.4365 7M6.9365 11.5L11.4365 16" stroke="currentColor" strokeWidth="1.5" />
+                </svg>
+                Home
+              </Link>
+              <div className="blog-page-banner__overlay" />
+              <div className="blog-page-banner__text">
+                <span className="blog-page-banner__label">Our Journal</span>
+                <h1 className="blog-page-banner__title">
+                  Ideas. Insights.{" "}
+                  <span className="gradient-text">Inspiration.</span>
+                </h1>
+                <p className="blog-page-banner__sub">
+                  Stories and strategies from the iConcept creative studio.
+                </p>
               </div>
-            ) : (
-              <div className="blog-grid">
-                {posts.map((post) => (
-                  <BlogCard key={post.id} post={post} />
-                ))}
-              </div>
-            )}
+            </div>
 
-            {/* Pagination */}
-            {totalPages > 1 && (
-              <nav className="blog-pagination">
-                {currentPage > 1 && (
-                  <Link
-                    href={`/blog?page=${currentPage - 1}`}
-                    className="blog-pagination__btn"
-                  >
-                    ← Previous
-                  </Link>
-                )}
+            {/* Grid */}
+            <section className="blog-section">
+              {posts.length === 0 ? (
+                <div className="blog-empty">
+                  <p>No posts found. Check back soon.</p>
+                </div>
+              ) : (
+                <div className="blog-grid">
+                  {posts.map((post) => (
+                    <BlogCard key={post.id} post={post} />
+                  ))}
+                </div>
+              )}
 
-                <div className="blog-pagination__pages">
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                    (p) => (
+              {totalPages > 1 && (
+                <nav className="blog-pagination">
+                  {currentPage > 1 && (
+                    <Link href={`/blog?page=${currentPage - 1}`} className="blog-pagination__btn">
+                      ← Previous
+                    </Link>
+                  )}
+                  <div className="blog-pagination__pages">
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
                       <Link
                         key={p}
                         href={`/blog?page=${p}`}
@@ -102,25 +105,21 @@ export default async function BlogPage({ searchParams }: PageProps) {
                       >
                         {p}
                       </Link>
-                    )
+                    ))}
+                  </div>
+                  {currentPage < totalPages && (
+                    <Link href={`/blog?page=${currentPage + 1}`} className="blog-pagination__btn">
+                      Next →
+                    </Link>
                   )}
-                </div>
+                </nav>
+              )}
+            </section>
 
-                {currentPage < totalPages && (
-                  <Link
-                    href={`/blog?page=${currentPage + 1}`}
-                    className="blog-pagination__btn"
-                  >
-                    Next →
-                  </Link>
-                )}
-              </nav>
-            )}
-          </div>
-        </section>
-
-        <Footer />
-      </main>
+            <Footer />
+          </main>
+        </div>
+      </div>
     </div>
   );
 }

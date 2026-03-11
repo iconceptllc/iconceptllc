@@ -17,7 +17,8 @@
       "Bash(cp -r \"d:/xampp/htdocs/projects/expense-tracker/node_modules/@types/react\" \"d:/xampp/htdocs/projects/iconcept/next/node_modules/@types/react\")",
       "Bash(cp -r \"d:/xampp/htdocs/projects/expense-tracker/node_modules/@types/react-dom\" \"d:/xampp/htdocs/projects/iconcept/next/node_modules/@types/react-dom\")",
       "Bash(find d:/xampp/htdocs/projects -maxdepth 5 -name postcss -type d -path *@tailwindcss*)",
-      "Bash(grep -E \"^tailwindcss$\")"
+      "Bash(grep -E \"^tailwindcss$\")",
+      "Bash(\"d:/xampp/htdocs/projects/iconcept/next/app/globals.css.tmp\")"
     ],
     "additionalDirectories": [
       "d:\\xampp\\htdocs\\projects\\iconcept\\next\\app\\services",
