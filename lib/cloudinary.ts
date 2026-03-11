@@ -15,6 +15,7 @@ const urlMap: Record<string, string> = {
   "/videos/3d.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1771055488/3d_guah0w_dniitt.mp4`,
    "/videos/cgi.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/cgi_okugol_vzsmr5.mp4`,
   "/videos/anamorphic.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1771055448/anamorphic_ij9bes_zodpue.mp4`,
+  "/videos/motion-graphics.mp4": `https://res.cloudinary.com/${CLOUD_NAME}/video/upload/v1773210328/motion-graphics_pw7xg8.mp4`,
     
 
 };

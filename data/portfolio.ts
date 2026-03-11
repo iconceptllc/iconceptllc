@@ -237,7 +237,7 @@ export const portfolioProjects: PortfolioProject[] = [
     year: "2024",
     projectType: "game",
     mediaSize: "mobile",
-    heroImage: "/works/snickers.webp",
+    heroImage: "/works/snickers-header.webp",
     overview:
       "Engaging football-themed web game created for Snickers' marketing campaign with interactive gameplay and score tracking.",
     description:

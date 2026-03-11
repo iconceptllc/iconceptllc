@@ -2,7 +2,22 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:www.iconceptme.com)",
-      "Bash(node -e \":*)"
+      "Bash(node -e \":*)",
+      "Bash(grep -vE \"[0-9]\\\\.\\(webp|png\\)$\")",
+      "Bash(grep -E \"\\\\.\\(webp|png\\)$\")",
+      "Bash(find d:/xampp/htdocs/projects/iconcept/next -name index.d.ts -path *@types/react*)",
+      "Bash(find d:/xampp/htdocs/projects/iconcept/next/node_modules -name index.d.ts -path *react*)",
+      "Read(//d/xampp/htdocs/projects/iconcept/**)",
+      "Read(//d/xampp/htdocs/projects/**)",
+      "Bash(npm config:*)",
+      "Bash(node -e \"require\\(''''@types/react''''\\)\")",
+      "Bash(npm list:*)",
+      "Bash(find d:/xampp/htdocs/projects/iconcept/next/node_modules/next -name *.d.ts -path *react*)",
+      "Read(//d/xampp/htdocs/**)",
+      "Bash(cp -r \"d:/xampp/htdocs/projects/expense-tracker/node_modules/@types/react\" \"d:/xampp/htdocs/projects/iconcept/next/node_modules/@types/react\")",
+      "Bash(cp -r \"d:/xampp/htdocs/projects/expense-tracker/node_modules/@types/react-dom\" \"d:/xampp/htdocs/projects/iconcept/next/node_modules/@types/react-dom\")",
+      "Bash(find d:/xampp/htdocs/projects -maxdepth 5 -name postcss -type d -path *@tailwindcss*)",
+      "Bash(grep -E \"^tailwindcss$\")"
     ],
     "additionalDirectories": [
       "d:\\xampp\\htdocs\\projects\\iconcept\\next\\app\\services"

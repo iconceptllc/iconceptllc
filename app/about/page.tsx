@@ -8,34 +8,38 @@ import Footer from "../components/Footer";
 
 const highlights = [
   {
-    title: "iConcept LLC establishment",
+    title: "Award‑winning digital content & web agency",
     description:
-      "A well-recognized digital media service agency since 2000 operating in India and UAE. iConcept LLC is founded by Shibu K Kurup in the year 2000 in India and later in Dubai in the year 2005.",
+      "Based in Dubai with a production hub in Kochi, we craft digital content, web solutions, and marketing for government and private organizations worldwide.",
   },
   {
-    title: "iConcept LLC track record",
+    title: "20+ years of expertise",
     description:
-      "We have an excellent track record and have helped hundreds of companies across the globe including government and private organizations to reap the rewards of the new emerging digital media and internet revolution.",
+      "From early web builds to AI-powered content, our team blends creativity with advanced technology to launch experiences that connect, engage, and grow brands.",
   },
   {
-    title: "Global service provider",
+    title: "Global delivery, local agility",
     description:
-      "Our ability in providing best digital media solutions to our clients across the globe is one of the reason of our success. We are equipped to deliver a project in any international language and adapt the style that our clients require. Our support team is always available online 24/7 to serve our international customers.",
+      "Projects delivered across the UAE, India, and the UK with multilingual capability, rapid support, and culturally tuned storytelling.",
   },
   {
-    title: "Awards and recognitions",
+    title: "Trusted results",
     description:
-      "We are very proud of what we have achieved so far. We have got several awards and recognitions from our reputed clients and government organizations for our best quality work. These awards and recognitions are our inspirations for betterment of our business, but with continued hard work and we know the best is yet to come.",
+      "Hundreds of prestigious projects completed across diverse industries, earning repeat partnerships through reliability, quality, and measurable impact.",
   },
 ];
 
 const services = [
-  "Web solutions",
-  "Mobile app development",
-  "Video production",
-  "Graphic design & content development",
-  "Digital marketing",
-  "Video brochure",
+  "Website Designing & Web App Development",
+  "E-commerce Storefronts & Microsites",
+  "Mobile App Development",
+  "Digital Marketing, SEO, SEM & PPC",
+  "Branding & Advertising",
+  "CGI, AI & Motion Graphics",
+  "2D & 3D Animation",
+  "Ad Film & Content Production",
+  "Game Development (Web / PC / Mobile / AR / VR)",
+  "Audio / Video Editing & Podcast Recording",
 ];
 
 export default function AboutPage() {
@@ -51,12 +55,12 @@ export default function AboutPage() {
             <section className="about-hero">
               <div className="hero-top">
                 <span className="hero-tag">Our Studio</span>
-                <h1>About Us</h1>
+                <h1>About iConcept LLC</h1>
                 <p className="subtitle">
-                  Thank you for your interest to know about iConcept LLC.
+                  Award-winning digital content and web solutions agency with 20+ years of delivery across UAE, India, and the UK.
                 </p>
                 <p className="lead">
-                  iConcept LLC - combinations that make differences.
+                  We inspire ideas, innovate with technology, and deliver impact across web, content production, and marketing.
                 </p>
               </div>
 
@@ -72,8 +76,8 @@ export default function AboutPage() {
                 <div className="hero-right">
                   <div className="hero-image-large">
                     <Image
-                      src="https://www.iconceptme.com/wp-content/uploads/2021/03/about-iconcept.jpg"
-                      alt="iConcept team"
+                      src="/imgs/about.webp"
+                      alt="iConcept team at work"
                       width={760}
                       height={640}
                       priority
@@ -81,8 +85,8 @@ export default function AboutPage() {
                   </div>
                   <div className="hero-image-small">
                     <Image
-                      src="https://www.iconceptme.com/wp-content/uploads/2021/03/about-iconcept.jpg"
-                      alt="iConcept studio"
+                      src="/imgs/inspire-innovate-impact-white.webp"
+                      alt="Inspire · Innovate · Impact"
                       width={420}
                       height={420}
                     />
@@ -90,11 +94,7 @@ export default function AboutPage() {
                   <div className="hero-card">
                     <h4>What we do</h4>
                     <p>
-                      iConcept LLC is a complete digital media service agency
-                      that delivers results. We are good at what we do. The
-                      majority of our business comes from repeat business and
-                      referrals. We have grown organically with strong
-                      foundations and striving for excellence.
+                      From smart, scalable web platforms to high-impact films, CGI, and animation, we combine creativity with advanced technology to build digital experiences that move audiences and grow brands.
                     </p>
                   </div>
                 </div>
@@ -120,10 +120,7 @@ export default function AboutPage() {
                 <div>
                   <h2>Case studies</h2>
                   <p>
-                    We have helped hundreds of companies across the globe
-                    including government and private organizations to reap the
-                    rewards of the new emerging digital media and internet
-                    revolution. Please go through few of our projects.
+                    From CGI-powered product launches to gamified microsites and large-scale government portals, we deliver measurable results across industries. Explore a few of the stories that shaped our journey.
                   </p>
                 </div>
                 <Link href="/portfolio" className="case-link">
@@ -134,47 +131,18 @@ export default function AboutPage() {
 
             <ProcessSection />
 
-            <section className="about-founder">
-              <div className="founder-image">
-                <Image
-                  src="https://www.iconceptme.com/wp-content/uploads/2021/03/shibu-k-kurupu.png"
-                  alt="Shibu K Kurup"
-                  width={360}
-                  height={480}
-                />
-              </div>
-              <div className="founder-copy">
-                <h2>Founder and Managing Director</h2>
-                <h3>Shibu K Kurup</h3>
-                <p className="role">Director, iConcept LLC</p>
-                <p>
-                  Shibu K Kurup is the founder and single owner of iConcept LLC
-                  who takes care of creative direction and global business
-                  development. Shibu has over 20 years of experience in
-                  advertising and digital media services.
-                </p>
-                <p>
-                  Shibu closely follow latest trend of digital technologies and
-                  media services.
-                </p>
-                <p>
-                  He is passionate in film making, photography, travel, creative
-                  design, painting, public speaking and has a great sense of
-                  humor that keeps all his clients, relative and friends in good
-                  spirits.
-                </p>
-              </div>
-            </section>
-
             <section className="about-contact">
               <div className="contact-card">
                 <div>
-                  <h2>Get in touch with us for a project discussion</h2>
-                  <p className="contact-info">+971 50 3690 637</p>
-                  <p className="contact-info">+971 50 3690 637</p>
+                  <h2>Let’s shape your next digital experience</h2>
+                  <p className="contact-info">+971 50 369 0637</p>
+                  <p className="contact-info">+971 58 958 8080</p>
+                  <p className="contact-info">
+                    <a href="mailto:contact@iconceptme.com">contact@iconceptme.com</a>
+                  </p>
                 </div>
                 <Link href="/contact" className="contact-link">
-                  Talk to us, today
+                  Talk to us today
                 </Link>
               </div>
             </section>
@@ -440,48 +408,6 @@ export default function AboutPage() {
           color: #111;
         }
 
-        .about-founder {
-          background: #111;
-          border-radius: 18px;
-          padding: 60px 40px;
-          margin-top: 20px;
-          display: grid;
-          grid-template-columns: 0.8fr 1.2fr;
-          gap: 40px;
-          color: #fff;
-          align-items: center;
-          border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .founder-image :global(img) {
-          width: 100%;
-          height: auto;
-          border-radius: 18px;
-          background: #0b0b0b;
-        }
-
-        .founder-copy h2 {
-          font-size: 2rem;
-          margin-bottom: 8px;
-        }
-
-        .founder-copy h3 {
-          font-size: 1.5rem;
-          margin-bottom: 8px;
-        }
-
-        .role {
-          font-size: 0.95rem;
-          color: rgba(255, 255, 255, 0.6);
-          margin-bottom: 16px;
-        }
-
-        .founder-copy p {
-          color: rgba(255, 255, 255, 0.7);
-          line-height: 1.6;
-          margin-bottom: 12px;
-        }
-
         .about-contact {
           margin-top: 20px;
         }
@@ -542,10 +468,6 @@ export default function AboutPage() {
 
           .hero-image-large {
             grid-row: auto;
-          }
-
-          .about-founder {
-            grid-template-columns: 1fr;
           }
 
           .case-card,
