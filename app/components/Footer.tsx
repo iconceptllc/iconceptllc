@@ -29,6 +29,9 @@ export default function Footer() {
                   <Link href="/services">Services</Link>
                 </li>
                 <li>
+                  <Link href="/blog">Blog</Link>
+                </li>
+                <li>
                   <Link href="/portfolio">Portfolio</Link>
                 </li>
                 <li>
@@ -41,16 +44,19 @@ export default function Footer() {
               <h6>Services</h6>
               <ul>
                 <li>
-                  <Link href="/services">Web Design</Link>
+                  <Link href="/services">All Services</Link>
                 </li>
                 <li>
-                  <Link href="/services">Branding</Link>
+                  <Link href="/services/web-solutions">Web Solutions</Link>
                 </li>
                 <li>
-                  <Link href="/services">Marketing</Link>
+                  <Link href="/services/marketing-services">Marketing Services</Link>
                 </li>
                 <li>
-                  <Link href="/services">Development</Link>
+                  <Link href="/services/content-production">Content Production</Link>
+                </li>
+                <li>
+                  <Link href="/contact">3D &amp; Motion</Link>
                 </li>
               </ul>
             </div>
