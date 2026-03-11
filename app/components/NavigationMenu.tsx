@@ -35,11 +35,8 @@ const menuItems = [
   },
   {
     title: "BLOG",
-    href: "#",
-    subItems: [
-      { title: "Blog Grid", href: "/blog" },
-      { title: "Blog Details", href: "/blog-details" },
-    ],
+    href: "/blog",
+    subItems: null,
   },
   {
     title: "CONTACT US",

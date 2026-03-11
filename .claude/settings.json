@@ -20,7 +20,8 @@
       "Bash(grep -E \"^tailwindcss$\")"
     ],
     "additionalDirectories": [
-      "d:\\xampp\\htdocs\\projects\\iconcept\\next\\app\\services"
+      "d:\\xampp\\htdocs\\projects\\iconcept\\next\\app\\services",
+      "d:\\xampp\\htdocs\\projects\\iconcept\\next\\app\\blog"
     ]
   }
 }

@@ -18,6 +18,11 @@ const nextConfig: NextConfig = {
         hostname: "iconceptme.com",
         pathname: "/wp-content/uploads/**",
       },
+      {
+        protocol: "https",
+        hostname: "blog.iconceptme.com",
+        pathname: "/wp-content/uploads/**",
+      },
     ],
   },
 };
