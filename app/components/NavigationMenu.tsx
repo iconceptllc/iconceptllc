@@ -11,18 +11,25 @@ const menuItems = [
     href: "/",
     subItems: null,
   },
-  {
-    title: "PAGES",
-    href: "#",
+    {
+    title: "SERVICES",
+    href: "/services",
     subItems: [
-      { title: "About Us", href: "/about" },
-      { title: "Our Services", href: "/services" },
-      { title: "Our Team", href: "/team" },
-      { title: "Pricing", href: "/pricing" },
-      { title: "FAQS", href: "/faqs" },
-      { title: "Contact Us", href: "/contact" },
+      { title: "All Services", href: "/services" },
+      { title: "Web Solutions", href: "/services/web-solutions" },
+      { title: "Marketing Services", href: "/services/marketing-services" },
+      { title: "Content Production", href: "/services/content-production" },
     ],
   },
+  // {
+  //   title: "PAGES",
+  //   href: "#",
+  //   subItems: [
+  //     { title: "About Us", href: "/about" },
+  //     { title: "Our Services", href: "/services" },
+  //     { title: "Contact Us", href: "/contact" },
+  //   ],
+  // },
   {
     title: "PORTFOLIO",
     href: "/portfolio",
@@ -32,6 +39,11 @@ const menuItems = [
     //   { title: "Portfolio Masonry", href: "/portfolio-masonry" },
     //   { title: "Project Details", href: "/project-details" },
     // ],
+  },
+  {
+    title: "ABOUT US",
+    href: "/about",
+    subItems: null,
   },
   {
     title: "BLOG",
