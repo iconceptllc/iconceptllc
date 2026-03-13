@@ -64,7 +64,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="hero-grid">
+              {/* <div className="hero-grid">
                 <div className="hero-left">
                   <h3>We are specialised in</h3>
                   <ul className="hero-list">
@@ -98,7 +98,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </section>
 
             <section className="about-highlights">
@@ -123,8 +123,21 @@ export default function AboutPage() {
                     From CGI-powered product launches to gamified microsites and large-scale government portals, we deliver measurable results across industries. Explore a few of the stories that shaped our journey.
                   </p>
                 </div>
-                <Link href="/portfolio" className="case-link">
-                  View projects
+                <Link href="/portfolio" style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  whiteSpace: 'nowrap',
+                  padding: '14px 28px',
+                  borderRadius: '999px',
+                  border: '1px solid rgba(123, 97, 255, 0.5)',
+                  background: 'linear-gradient(135deg, rgba(123, 97, 255, 0.15), rgba(123, 97, 255, 0.05))',
+                  color: '#fff',
+                  fontSize: '0.9rem',
+                  fontWeight: 500,
+                  textDecoration: 'none',
+                }}>
+                  View projects <span>→</span>
                 </Link>
               </div>
             </section>
@@ -141,8 +154,21 @@ export default function AboutPage() {
                     <a href="mailto:contact@iconceptme.com">contact@iconceptme.com</a>
                   </p>
                 </div>
-                <Link href="/contact" className="contact-link">
-                  Talk to us today
+                <Link href="/contact" style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  whiteSpace: 'nowrap',
+                  padding: '14px 28px',
+                  borderRadius: '999px',
+                  border: '1px solid rgba(123, 97, 255, 0.5)',
+                  background: 'linear-gradient(135deg, rgba(123, 97, 255, 0.15), rgba(123, 97, 255, 0.05))',
+                  color: '#fff',
+                  fontSize: '0.9rem',
+                  fontWeight: 500,
+                  textDecoration: 'none',
+                }}>
+                  Talk to us today <span>→</span>
                 </Link>
               </div>
             </section>
@@ -397,15 +423,27 @@ export default function AboutPage() {
         }
 
         .case-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          white-space: nowrap;
           padding: 14px 28px;
           border-radius: 999px;
-          border: 1px solid rgba(255, 255, 255, 0.4);
+          border: 1px solid rgba(123, 97, 255, 0.5);
+          background: linear-gradient(135deg, rgba(123, 97, 255, 0.15), rgba(123, 97, 255, 0.05));
+          color: #fff;
+          font-size: 0.9rem;
+          font-weight: 500;
+          letter-spacing: 0.02em;
           transition: all 0.3s ease;
+          text-decoration: none;
         }
 
         .case-link:hover {
-          background: #fff;
-          color: #111;
+          background: linear-gradient(135deg, rgba(123, 97, 255, 0.35), rgba(123, 97, 255, 0.2));
+          border-color: rgba(123, 97, 255, 0.9);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(123, 97, 255, 0.25);
         }
 
         .about-contact {
@@ -434,15 +472,27 @@ export default function AboutPage() {
         }
 
         .contact-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          white-space: nowrap;
           padding: 14px 28px;
           border-radius: 999px;
-          border: 1px solid rgba(255, 255, 255, 0.4);
+          border: 1px solid rgba(123, 97, 255, 0.5);
+          background: linear-gradient(135deg, rgba(123, 97, 255, 0.15), rgba(123, 97, 255, 0.05));
+          color: #fff;
+          font-size: 0.9rem;
+          font-weight: 500;
+          letter-spacing: 0.02em;
           transition: all 0.3s ease;
+          text-decoration: none;
         }
 
         .contact-link:hover {
-          background: #fff;
-          color: #111;
+          background: linear-gradient(135deg, rgba(123, 97, 255, 0.35), rgba(123, 97, 255, 0.2));
+          border-color: rgba(123, 97, 255, 0.9);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(123, 97, 255, 0.25);
         }
 
         @media (max-width: 1024px) {

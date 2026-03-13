@@ -9,8 +9,7 @@ export default function Footer() {
         <div className="footer-main">
           <div className="footer-cta">
             <h2>
-              Let&apos;s Create <br />
-              Something Great <br />
+              Let&apos;s Create Something Great{" "}
               <span className="highlight">Together</span>
             </h2>
           </div>
@@ -110,9 +109,9 @@ export default function Footer() {
         }
 
         .footer-cta h2 {
-          font-size: 3.5rem;
+          font-size: clamp(1.8rem, 3.2vw, 3.5rem);
           font-weight: 500;
-          line-height: 1.2;
+          line-height: 1.25;
           color: #333;
         }
 
@@ -185,14 +184,20 @@ export default function Footer() {
           color: #8b5cf6;
         }
 
+        @media (max-width: 1366px) {
+          .footer {
+            padding: 60px 32px 36px;
+          }
+
+          .footer-main {
+            gap: 40px;
+          }
+        }
+
         @media (max-width: 1024px) {
           .footer-main {
             grid-template-columns: 1fr;
             gap: 40px;
-          }
-
-          .footer-cta h2 {
-            font-size: 2.5rem;
           }
         }
 

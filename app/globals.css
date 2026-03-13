@@ -266,6 +266,37 @@ a:hover {
 }
 
 /* ============================================
+   WhatsApp Floating Button
+   ============================================ */
+
+.whatsapp-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 99;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-fab:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.65);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-fab { bottom: 20px; right: 16px; width: 44px; height: 44px; }
+}
+
+/* ============================================
    Work With Us Button
    ============================================ */
 
@@ -346,8 +377,14 @@ a:hover {
   .left-spacer { width: 260px; }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1366px) {
+  .main-container { width: 92%; }
   .left-spacer { width: 240px; }
+}
+
+@media (max-width: 1200px) {
+  .main-container { width: 94%; }
+  .left-spacer { width: 220px; }
 }
 
 @media (max-width: 1024px) {
@@ -455,7 +492,7 @@ a:hover {
   margin-bottom: 48px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .blog-grid { grid-template-columns: repeat(2, 1fr); }
   .blog-page-banner { aspect-ratio: unset; min-height: 220px; }
 }
