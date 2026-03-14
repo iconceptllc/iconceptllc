@@ -3,71 +3,42 @@
 import Image from "next/image";
 
 const clients = [
-  "/clients/1.png",
-  "/clients/2.png",
-  "/clients/3.jpg",
-  "/clients/4.jpg",
-  "/clients/5.png",
-  "/clients/6.jpg",
-  "/clients/7.jpg",
-  "/clients/8.jpg",
-  "/clients/9.jpg",
-  "/clients/10.jpg",
-  "/clients/11.jpg",
-  "/clients/12.jpg",
-  "/clients/13.jpg",
-  "/clients/14.jpg",
-  "/clients/15.jpg",
-  "/clients/16.jpg",
-  "/clients/17.jpg",
-  "/clients/18.jpg",
-  "/clients/19.jpg",
-  "/clients/20.jpg",
-  "/clients/21.jpg",
-  "/clients/22.jpg",
-  "/clients/23.jpg",
-  "/clients/24.jpg",
-  "/clients/25.png",
-  "/clients/26.jpg",
-  "/clients/27.jpg",
-  "/clients/28.jpg",
-  "/clients/29.jpg",
-  "/clients/30.jpg",
-  "/clients/31.jpg",
-  "/clients/32.jpg",
-  "/clients/33.jpg",
-  "/clients/34.jpg",
-  "/clients/35.jpg",
-  "/clients/36.jpg",
-  "/clients/37.jpg",
-  "/clients/38.jpg",
-  "/clients/39.jpg",
-  "/clients/40.jpg",
-  "/clients/41.jpg",
-  "/clients/42.jpg",
-  "/clients/43.jpg",
-  "/clients/44.png",
-  "/clients/45.png",
-  "/clients/46.jpg",
-  "/clients/47.jpg",
-  "/clients/48.png",
-  "/clients/49.png",
-  "/clients/50.jpg",
-  "/clients/51.jpg",
-  "/clients/52.jpg",
-  "/clients/53.jpg",
-  "/clients/54.jpg",
-  "/clients/55.jpg",
-  "/clients/56.jpg",
-  "/clients/57.png",
-  "/clients/58.jpg",
-  "/clients/59.jpg",
-  "/clients/60.jpg",
-  "/clients/61.jpg",
-  "/clients/62.jpg",
-  "/clients/63.jpg",
-  "/clients/64.png",
-  "/clients/65.jpg",
+  { src: "/clients/ajmal.webp",                                    alt: "Ajmal" },
+  { src: "/clients/almarai.svg",                                   alt: "Almarai" },
+  { src: "/clients/americana.webp",                                alt: "Americana" },
+  { src: "/clients/snickers.svg",                                  alt: "Snickers" },
+  { src: "/clients/persil.svg",                                    alt: "Persil" },
+  { src: "/clients/hisense.svg",                                   alt: "Hisense" },
+  { src: "/clients/extra.svg",                                     alt: "Extra" },
+  { src: "/clients/sap-ariba.svg",                                 alt: "SAP Ariba" },
+  { src: "/clients/nbf.svg",                                       alt: "NBF" },
+  { src: "/clients/nmc.svg",                                       alt: "NMC" },
+  { src: "/clients/emsteel.webp",                                  alt: "Emirates Steel" },
+  { src: "/clients/the-department-of-economic-development-dubai.webp", alt: "Dubai DED" },
+  { src: "/clients/uae-ministry-of-public-works.webp",             alt: "UAE Ministry of Public Works" },
+  { src: "/clients/sharjah-taxi.svg",                              alt: "Sharjah Taxi" },
+  { src: "/clients/arkan.webp",                                    alt: "Arkan" },
+  { src: "/clients/dunes.svg",                                     alt: "Dunes" },
+  { src: "/clients/galaxy.svg",                                    alt: "Galaxy" },
+  { src: "/clients/flc-marketing-group.svg",                       alt: "FLC Marketing Group" },
+  { src: "/clients/circor_logo_white.svg",                         alt: "Circor" },
+  { src: "/clients/sapora.svg",                                    alt: "Sapora" },
+  { src: "/clients/wem.svg",                                       alt: "WEM" },
+  { src: "/clients/bg-middleeast.webp",                            alt: "BG Middle East" },
+  { src: "/clients/dac.webp",                                      alt: "DAC" },
+  { src: "/clients/alpro.webp",                                    alt: "Alpro" },
+  { src: "/clients/alyoum.webp",                                   alt: "Al Youm" },
+  { src: "/clients/aptech.webp",                                   alt: "Aptech" },
+  { src: "/clients/enfm.webp",                                     alt: "ENFM" },
+  { src: "/clients/jewels.webp",                                   alt: "Jewels" },
+  { src: "/clients/mamis-illam.webp",                              alt: "Mamis Illam" },
+  { src: "/clients/maryaj.webp",                                   alt: "Maryaj" },
+  { src: "/clients/meridian.webp",                                 alt: "Meridian" },
+  { src: "/clients/pert.webp",                                     alt: "PERT" },
+  { src: "/clients/petromar.webp",                                 alt: "Petromar" },
+  { src: "/clients/solas.webp",                                    alt: "Solas" },
+  { src: "/clients/trigon.webp",                                   alt: "Trigon" },
+  { src: "/clients/alamani.webp",                                  alt: "Al Amani" },
 ];
 
 export default function ClientsSection() {
@@ -79,22 +50,22 @@ export default function ClientsSection() {
 
       <div className="clients-carousel" aria-label="Client logos">
         <div className="clients-track">
-          {clients.map((logo, index) => (
+          {clients.map((client, index) => (
             <div key={`client-${index}`} className="client-item">
               <Image
-                src={logo}
-                alt={`Client ${index + 1}`}
+                src={client.src}
+                alt={client.alt}
                 width={120}
                 height={60}
                 style={{ objectFit: "contain" }}
               />
             </div>
           ))}
-          {clients.map((logo, index) => (
+          {clients.map((client, index) => (
             <div key={`client-dup-${index}`} className="client-item">
               <Image
-                src={logo}
-                alt={`Client ${index + 1}`}
+                src={client.src}
+                alt={client.alt}
                 width={120}
                 height={60}
                 style={{ objectFit: "contain" }}
