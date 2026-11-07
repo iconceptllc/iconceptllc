@@ -240,6 +240,17 @@ function ServiceCard({ service }: { service: Service }) {
 }
 
 export default function ContentProductionPage() {
+  const [autoplayBanner, setAutoplayBanner] = useState(false);
+
+  useEffect(() => {
+    const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updateBanner = () => setAutoplayBanner(!motionPreference.matches);
+
+    updateBanner();
+    motionPreference.addEventListener("change", updateBanner);
+    return () => motionPreference.removeEventListener("change", updateBanner);
+  }, []);
+
   return (
     <div className="service-detail-page">
       <LeftSidebar />
@@ -252,14 +263,24 @@ export default function ContentProductionPage() {
 
             {/* YouTube video banner */}
             <div className="page-banner">
-              <iframe
-                src="https://www.youtube.com/embed/oDqQ91o2LSA?autoplay=1&mute=1&loop=1&playlist=oDqQ91o2LSA&controls=0&start=2&rel=0&showinfo=0&modestbranding=1&enablejsapi=1"
-                data-pause-on-play
-                allow="autoplay; fullscreen"
-                allowFullScreen
-                frameBorder="0"
-                title="Content Production"
-              />
+              {autoplayBanner ? (
+                <iframe
+                  src="https://www.youtube.com/embed/oDqQ91o2LSA?autoplay=1&mute=1&loop=1&playlist=oDqQ91o2LSA&controls=0&start=2&rel=0&showinfo=0&modestbranding=1&enablejsapi=1"
+                  data-pause-on-play
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                  frameBorder="0"
+                  title="Content Production"
+                />
+              ) : (
+                <Image
+                  src="/imgs/content-production.webp"
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 85vw"
+                  className="page-banner-poster"
+                />
+              )}
               <Link href="/services" className="back-pill">
                 <svg viewBox="0 0 24 24" fill="none">
                   <path d="M17 11.5H6.9365M6.9365 11.5L11.4365 7M6.9365 11.5L11.4365 16" stroke="currentColor" strokeWidth="1.5" />
@@ -373,6 +394,10 @@ export default function ContentProductionPage() {
           transform: translate(-50%, -50%);
           border: none;
           pointer-events: none;
+          object-fit: cover;
+        }
+
+        .page-banner-poster {
           object-fit: cover;
         }
 
