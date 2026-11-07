@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import LeftSidebar from "../../components/LeftSidebar";
 import Footer from "../../components/Footer";
+import VideoPoster from "../../components/VideoPoster";
 import {
   getProjectBySlug,
   portfolioProjects,
@@ -267,9 +268,7 @@ export default function PortfolioDetailPage() {
               {/* Hero Media */}
               <div className="hero-media">
                 {project.heroVideo ? (
-                  <video autoPlay muted loop playsInline>
-                    <source src={project.heroVideo} type="video/mp4" />
-                  </video>
+                  <VideoPoster videoKey={project.heroVideo} title={project.title} priority />
                 ) : (
                   <Image
                     src={project.heroImage}
@@ -342,9 +341,7 @@ export default function PortfolioDetailPage() {
             {project.videoSrc && project.projectType === "video" && (
               <section className="video-section">
                 <div className="video-container">
-                  <video autoPlay muted loop playsInline controls>
-                    <source src={project.videoSrc} type="video/mp4" />
-                  </video>
+                  <VideoPoster videoKey={project.videoSrc} title={project.title} playback />
                 </div>
               </section>
             )}
@@ -580,6 +577,7 @@ export default function PortfolioDetailPage() {
         }
 
         .video-container {
+          aspect-ratio: 16 / 9;
           border-radius: 24px;
           overflow: hidden;
         }

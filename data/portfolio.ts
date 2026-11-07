@@ -1,4 +1,4 @@
-﻿import { cdn } from "@/lib/cloudinary";
+import type { VideoKey } from "@/lib/videos";
 
 export type MediaType = "video" | "image";
 export type ProjectType = "microsite" | "game" | "website" | "video";
@@ -20,14 +20,14 @@ export type PortfolioProject = {
   projectType: ProjectType;
   mediaSize: MediaSize; // mobile = 3/5, tablet = 4/5, full = 100%
   heroImage: string;
-  heroVideo?: string;
+  heroVideo?: VideoKey;
   overview: string;
   description: string;
   features: string[];
   // For image galleries (stacking cards effect)
   gallery: string[];
   // For video projects
-  videoSrc?: string;
+  videoSrc?: VideoKey;
   // External link
   liveUrl?: string;
   // Tags for filtering
@@ -46,7 +46,7 @@ export const portfolioProjects: PortfolioProject[] = [
     projectType: "video",
     mediaSize: "full",
     heroImage: "/works/anamorphic.webp",
-    heroVideo: cdn("/videos/anamorphic.mp4"),
+    heroVideo: "anamorphic",
     overview:
       "Eye-catching 3D anamorphic billboard content that creates stunning visual illusions for outdoor advertising campaigns.",
     description:
@@ -58,7 +58,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Brand Storytelling",
     ],
     gallery: [],
-    videoSrc: cdn("/videos/anamorphic.mp4"),
+    videoSrc: "anamorphic",
     tags: ["Anamorphic", "Video Production", "3D"],
   },
   {
@@ -71,7 +71,7 @@ export const portfolioProjects: PortfolioProject[] = [
     projectType: "video",
     mediaSize: "full",
     heroImage: "/works/cgi.webp",
-    heroVideo: cdn("/videos/cgi.mp4"),
+    heroVideo: "cgi",
     overview:
       "Photorealistic CGI product renders and animations that bring products to life with stunning detail and visual impact.",
     description:
@@ -83,7 +83,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Lighting Design",
     ],
     gallery: [],
-    videoSrc: cdn("/videos/cgi.mp4"),
+    videoSrc: "cgi",
     tags: ["CGI", "3D", "Product Visualization"],
   },
   {
@@ -96,7 +96,7 @@ export const portfolioProjects: PortfolioProject[] = [
     projectType: "video",
     mediaSize: "full",
     heroImage: "/works/corporate.webp",
-    heroVideo: cdn("/videos/corporate.mp4"),
+    heroVideo: "corporate",
     overview:
       "Professional corporate video production showcasing brand identity, company values, and organizational stories.",
     description:
@@ -108,7 +108,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Event Coverage",
     ],
     gallery: [],
-    videoSrc: cdn("/videos/corporate.mp4"),
+    videoSrc: "corporate",
     tags: ["Corporate", "Branding", "Video Production"],
   },
   {
@@ -121,7 +121,7 @@ export const portfolioProjects: PortfolioProject[] = [
     projectType: "video",
     mediaSize: "full",
     heroImage: "/works/2d.webp",
-    heroVideo: cdn("/videos/2d.mp4"),
+    heroVideo: "2d",
     overview:
       "Creative 2D animations that tell compelling stories through fluid motion, vibrant visuals, and engaging characters.",
     description:
@@ -133,7 +133,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Brand Animation",
     ],
     gallery: [],
-    videoSrc: cdn("/videos/2d.mp4"),
+    videoSrc: "2d",
     tags: ["2D", "Animation", "Motion Graphics"],
   },
   {
@@ -146,7 +146,7 @@ export const portfolioProjects: PortfolioProject[] = [
     projectType: "video",
     mediaSize: "full",
     heroImage: "/works/3d.webp",
-    heroVideo: cdn("/videos/3d.mp4"),
+    heroVideo: "3d",
     overview:
       "Immersive 3D animations that bring concepts to life with depth, realism, and powerful visual impact.",
     description:
@@ -158,7 +158,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Visual Effects",
     ],
     gallery: [],
-    videoSrc: cdn("/works/3d.mp4"),
+    videoSrc: "3d-detail",
     tags: ["3D", "Animation", "CGI"],
   },
 

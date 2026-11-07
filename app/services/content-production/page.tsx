@@ -5,13 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import LeftSidebar from "../../components/LeftSidebar";
 import Footer from "../../components/Footer";
-import { cdn } from "@/lib/cloudinary";
+import VideoPoster from "../../components/VideoPoster";
+import { videos, type VideoKey } from "@/lib/videos";
 
-// Generate a thumbnail from a Cloudinary video URL by replacing extension with .jpg
-function videoThumb(videoPath: string): string {
-  const url = cdn(videoPath);
-  // Insert so_2 (frame at 2s) and swap extension
-  return url.replace("/video/upload/", "/video/upload/so_2/").replace(/\.mp4$/, ".jpg");
+function videoThumb(videoKey: VideoKey): string {
+  return videos[videoKey].poster;
 }
 
 type Service = {
@@ -20,7 +18,7 @@ type Service = {
   description: string;
   features: string[];
   banner?: string;
-  heroVideo?: string;
+  heroVideo?: VideoKey;
   bannerFit: "contain" | "cover";
   bannerBg: string;
   bannerPos?: string;
@@ -40,14 +38,14 @@ const services: Service[] = [
       "Advertising Motion Graphics",
       "UI/UX Motion Graphics",
     ],
-    heroVideo: cdn("/videos/motion-graphics.mp4"),
+    heroVideo: "motion-graphics",
     bannerFit: "cover",
     bannerBg: "#0a0a1a",
     bannerPos: "center center",
     portfolio: [
-      { image: videoThumb("/videos/cgi.mp4"), title: "CGI Visualization", tag: "CGI & Motion", slug: "cgi-product-visualization" },
-      { image: videoThumb("/videos/3d.mp4"), title: "3D Animation", tag: "3D Motion", slug: "3d-animation" },
-      { image: videoThumb("/videos/anamorphic.mp4"), title: "Anamorphic Billboard", tag: "VFX", slug: "anamorphic-billboard" },
+      { image: videoThumb("cgi"), title: "CGI Visualization", tag: "CGI & Motion", slug: "cgi-product-visualization" },
+      { image: videoThumb("3d"), title: "3D Animation", tag: "3D Motion", slug: "3d-animation" },
+      { image: videoThumb("anamorphic"), title: "Anamorphic Billboard", tag: "VFX", slug: "anamorphic-billboard" },
     ],
   },
   {
@@ -62,14 +60,14 @@ const services: Service[] = [
       "Architectural Visualization",
       "Anamorphic Videos",
     ],
-    heroVideo: cdn("/videos/3d.mp4"),
+    heroVideo: "3d",
     bannerFit: "cover",
     bannerBg: "#111",
     bannerPos: "center center",
     portfolio: [
-      { image: videoThumb("/videos/2d.mp4"), title: "2D Animation", tag: "2D Animation", slug: "2d-animation" },
-      { image: videoThumb("/videos/3d.mp4"), title: "3D Animation", tag: "3D Render", slug: "3d-animation" },
-      { image: videoThumb("/videos/anamorphic.mp4"), title: "Anamorphic Billboard", tag: "Anamorphic", slug: "anamorphic-billboard" },
+      { image: videoThumb("2d"), title: "2D Animation", tag: "2D Animation", slug: "2d-animation" },
+      { image: videoThumb("3d"), title: "3D Animation", tag: "3D Render", slug: "3d-animation" },
+      { image: videoThumb("anamorphic"), title: "Anamorphic Billboard", tag: "Anamorphic", slug: "anamorphic-billboard" },
     ],
   },
   {
@@ -90,9 +88,9 @@ const services: Service[] = [
     bannerBg: "#111",
     bannerPos: "center top",
     portfolio: [
-      { image: videoThumb("/videos/corporate.mp4"), title: "Corporate Video", tag: "Film Production", slug: "corporate-video" },
-      { image: videoThumb("/videos/2d.mp4"), title: "2D Animation", tag: "Animation Ad", slug: "2d-animation" },
-      { image: videoThumb("/videos/anamorphic.mp4"), title: "Anamorphic Billboard", tag: "Digital Ad", slug: "anamorphic-billboard" },
+      { image: videoThumb("corporate"), title: "Corporate Video", tag: "Film Production", slug: "corporate-video" },
+      { image: videoThumb("2d"), title: "2D Animation", tag: "Animation Ad", slug: "2d-animation" },
+      { image: videoThumb("anamorphic"), title: "Anamorphic Billboard", tag: "Digital Ad", slug: "anamorphic-billboard" },
     ],
   },
   {
@@ -167,15 +165,7 @@ function ServiceCard({ service }: { service: Service }) {
       {/* Banner */}
       <div className="card-banner" style={{ background: service.bannerBg }}>
         {service.heroVideo ? (
-          <video
-            src={service.heroVideo}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            aria-hidden="true"
-          />
+          <VideoPoster videoKey={service.heroVideo} title={service.title} playback />
         ) : (
           <Image
             src={service.banner!}
@@ -263,7 +253,8 @@ export default function ContentProductionPage() {
             {/* YouTube video banner */}
             <div className="page-banner">
               <iframe
-                src="https://www.youtube.com/embed/oDqQ91o2LSA?autoplay=1&mute=1&loop=1&playlist=oDqQ91o2LSA&controls=0&start=2&rel=0&showinfo=0&modestbranding=1"
+                src="https://www.youtube.com/embed/oDqQ91o2LSA?autoplay=1&mute=1&loop=1&playlist=oDqQ91o2LSA&controls=0&start=2&rel=0&showinfo=0&modestbranding=1&enablejsapi=1"
+                data-pause-on-play
                 allow="autoplay; fullscreen"
                 allowFullScreen
                 frameBorder="0"

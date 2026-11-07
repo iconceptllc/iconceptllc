@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import LeftSidebar from "../components/LeftSidebar";
 import Footer from "../components/Footer";
+import VideoPoster from "../components/VideoPoster";
 import { getProjectsByCategory } from "@/data/portfolio";
 
 const categories = [
@@ -104,9 +105,7 @@ export default function PortfolioPage() {
                     <article className="portfolio-card">
                       <div className="card-media">
                         {project.projectType === "video" && project.heroVideo ? (
-                          <video autoPlay muted loop playsInline>
-                            <source src={project.heroVideo} type="video/mp4" />
-                          </video>
+                          <VideoPoster videoKey={project.heroVideo} title={project.title} />
                         ) : project.gallery.length > 0 ? (
                           // <ImageCarousel
                           //   images={project.gallery}

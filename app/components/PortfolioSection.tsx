@@ -3,18 +3,17 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { cdn } from "@/lib/cloudinary";
+import VideoPoster from "./VideoPoster";
+import type { VideoKey } from "@/lib/videos";
 
 type PortfolioItem = {
-  type: "video" | "image";
-  src: string;
   images?: string[];
   title: string;
   tags: string[];
   colSpan: string;
   url?: string;
   height?: string | number;
-};
+} & ({ type: "video"; src: VideoKey } | { type: "image"; src: string });
 
 function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -49,14 +48,14 @@ function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
 const portfolioItems: PortfolioItem[] = [
   {
     type: "video",
-    src: cdn("/videos/iconcept-showreel.mp4"),
+    src: "iconcept-showreel",
     title: "iconcept llc",
     tags: ["UI/UX", "Webflow"],
     colSpan: "full",
   },
     {
     type: "video",
-    src: cdn("/videos/anamorphic.mp4"),
+    src: "anamorphic",
     title: "iconcept llc",
     tags: ["Anamorphic", "Video Production"],
     colSpan: "7",
@@ -70,56 +69,56 @@ const portfolioItems: PortfolioItem[] = [
   // },
    {
     type: "video",
-    src: cdn("/videos/cgi.mp4"),
+    src: "cgi",
     title: "Space Breeze",
     tags: ["Video Production", "CGI"],
     colSpan: "5",
   },
     {
     type: "video",
-    src: cdn("/videos/helin_eren.mp4"),
+    src: "helin_eren",
     title: "Helin Erin",
     tags: ["Explainer Video"],
     colSpan: "5",
   },
   {
     type: "video",
-    src: cdn("/videos/corporate.mp4"),
+    src: "corporate",
     title: "Corporate Video",
     tags: ["Branding"],
     colSpan: "7",
   },
   {
     type: "video",
-    src: cdn("/videos/2d.mp4"),
+    src: "2d",
     title: "2D Animation",
     tags: ["2D", "Video"],
     colSpan: "6",
   },
   {
     type: "video",
-    src: cdn("/videos/3d.mp4"),
+    src: "3d",
     title: "3D Animation",
     tags: ["3D", "Video"],
     colSpan: "6",
   },
   {
     type: "video",
-    src: cdn("/videos/trop.mp4"),
+    src: "trop",
     title: "Trop",
     tags: ["Branding", "UI/UX", "Motion"],
     colSpan: "4",
   },
    {
     type: "video",
-    src: cdn("/videos/trop_violet_fabric_softner.mp4"),
+    src: "trop_violet_fabric_softner",
     title: "Trop",
     tags: ["CGI Video"],
     colSpan: "4",
   },
   {
     type: "video",
-    src: cdn("/videos/rose_evil_intredeu.mp4"),
+    src: "rose_evil_intredeu",
     title: "Blue swim",
     tags: ["Branding", "UI/UX", "Motion"],
     colSpan: "4",
@@ -251,61 +250,40 @@ export default function PortfolioSection() {
       </div> */}
 
       <div className="portfolio-grid">
-        {portfolioItems.map((item, index) => (
-          <div key={index} className={`portfolio-item col-${item.colSpan}`}>
-            {item.url ? (
-              <a href={item.url} className="item-link">
-                <div className="media-wrapper" style={item.height ? { height: item.height } : undefined}>
-                  {item.type === "video" ? (
-                    <video autoPlay muted loop playsInline>
-                      <source src={item.src} type="video/mp4" />
-                    </video>
-                  ) : item.images ? (
-                    <ImageCarousel images={item.images} alt={item.title} />
-                  ) : (
-                    <Image
-                      src={item.src}
-                      alt={item.title}
-                      fill
-                      style={{ objectFit: "cover" }}
-                    />
-                  )}
-                  <div className="tags">
-                    {item.tags.map((tag, i) => (
-                      <span key={i}>{tag}</span>
-                    ))}
-                  </div>
-                  <h6 className="item-title">{item.title}</h6>
-                </div>
-              </a>
-            ) : (
-              <Link href={`/portfolio/`} className="item-link">
-                <div className="media-wrapper" style={item.height ? { height: item.height } : undefined}>
-                  {item.type === "video" ? (
-                    <video autoPlay muted loop playsInline>
-                      <source src={item.src} type="video/mp4" />
-                    </video> 
-                  ) : item.images ? (
-                    <ImageCarousel images={item.images} alt={item.title} />
-                  ) : (
-                    <Image
-                      src={item.src}
-                      alt={item.title}
-                      fill
-                      style={{ objectFit: "cover" }}
-                    />
-                  )}
-                  <div className="tags">
-                    {item.tags.map((tag, i) => (
-                      <span key={i}>{tag}</span>
-                    ))}
-                  </div>
-                  <h6 className="item-title">{item.title}</h6>
-                </div>
-              </Link>
-            )}
-          </div>
-        ))}
+        {portfolioItems.map((item, index) => {
+          const media = (
+            <div className="media-wrapper" style={item.height ? { height: item.height } : undefined}>
+              {item.type === "video" ? (
+                <VideoPoster videoKey={item.src} title={item.title} playback />
+              ) : item.images ? (
+                <ImageCarousel images={item.images} alt={item.title} />
+              ) : (
+                <Image src={item.src} alt={item.title} fill style={{ objectFit: "cover" }} />
+              )}
+              <div className="tags">
+                {item.tags.map((tag, i) => <span key={i}>{tag}</span>)}
+              </div>
+              <h6 className={`item-title${item.type === "video" ? " item-title-with-link" : ""}`}>{item.title}</h6>
+              {item.type === "video" && (
+                <Link href="/portfolio" className="view-portfolio-link" aria-label={`View Portfolio after ${item.title}`}>
+                  View Portfolio <span aria-hidden="true">↗</span>
+                </Link>
+              )}
+            </div>
+          );
+
+          return (
+            <div key={index} className={`portfolio-item col-${item.colSpan}`}>
+              {item.type === "video" ? (
+                <div className="item-link">{media}</div>
+              ) : item.url ? (
+                <a href={item.url} className="item-link">{media}</a>
+              ) : (
+                <Link href="/portfolio" className="item-link">{media}</Link>
+              )}
+            </div>
+          );
+        })}
       </div>
 
       <style jsx>{`
@@ -428,6 +406,40 @@ export default function PortfolioSection() {
           right: 20px;
         }
 
+        .item-title-with-link {
+          right: 155px;
+        }
+
+        .portfolio-item :global(.view-portfolio-link) {
+          position: absolute;
+          right: 20px;
+          bottom: 20px;
+          z-index: 3;
+          padding: 7px 12px;
+          border-radius: 30px;
+          background: rgba(0, 0, 0, 0.68);
+          color: #fff;
+          font-size: 0.8rem;
+          text-decoration: none;
+        }
+
+        .portfolio-item :global(.view-portfolio-link:focus-visible) {
+          outline: 3px solid #fff;
+          outline-offset: 2px;
+        }
+
+        .media-wrapper:has(iframe) .tags,
+        .media-wrapper:has(iframe) .item-title {
+          display: none;
+        }
+
+        .media-wrapper:has(iframe) :global(.view-portfolio-link) {
+          top: 15px;
+          left: 15px;
+          right: auto;
+          bottom: auto;
+        }
+
         @media (max-width: 1400px) {
           .col-7,
           .col-8 {
@@ -500,6 +512,9 @@ export default function PortfolioSection() {
             right: 15px;
             font-size: 1rem;
           }
+
+          .item-title-with-link { right: 145px; }
+          .portfolio-item :global(.view-portfolio-link) { right: 15px; bottom: 15px; }
         }
 
         @media (max-width: 480px) {
